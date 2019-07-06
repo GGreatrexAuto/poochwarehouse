@@ -63,17 +63,12 @@
     <Compile Include="Pages\OnSale.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.cs" />
-    <Compile Include="Tests\PreReleaseLogon.feature.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PreReleaseLogon.feature</DependentUpon>
-    </Compile>
     <Compile Include="Tests\PreReleaseLogonSteps.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
     <None Include="Tests\PreReleaseLogon.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <Generator>SpecFlow.Tools.MsBuild.Generation</Generator>
       <LastGenOutput>PreReleaseLogon.feature.cs</LastGenOutput>
     </None>
   </ItemGroup>
