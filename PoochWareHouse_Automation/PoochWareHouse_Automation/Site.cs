@@ -9,17 +9,17 @@ namespace PoochWareHouse_Automation
 {
     public class Site
     {
-        public void InitialiseChromeDriver()
+        public void InitialiseChromeDriver(string url)
         {
             Driver._webdriver = new ChromeDriver();
-            Driver._webdriver.Navigate().GoToUrl(Config.SiteToTest);
+            Driver._webdriver.Navigate().GoToUrl(url);
             Driver.WaitForUpTo(Config.GlobalTimeOut);
         }
 
-        public void InitialiseFirefoxDriver()
+        public void InitialiseFirefoxDriver(string url)
         {
             Driver._webdriver = new FirefoxDriver();
-            Driver._webdriver.Navigate().GoToUrl(Config.SiteToTest);
+            Driver._webdriver.Navigate().GoToUrl(url);
             Driver.WaitForUpTo(Config.GlobalTimeOut);
         }
     }

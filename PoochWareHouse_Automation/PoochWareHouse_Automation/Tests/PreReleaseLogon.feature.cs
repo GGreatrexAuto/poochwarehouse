@@ -32,8 +32,9 @@ namespace PoochWareHouse_Automation.Tests
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Pre Release Logon", "\tIn order to avoid silly mistakes\r\n\tAs a math idiot\r\n\tI want to be told the sum o" +
-                    "f two numbers", ProgrammingLanguage.CSharp, new string[] {
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Pre Release Logon", "\tIn order to keep customers informed of poochwarehouse servies & products\r\n\tAs a " +
+                    "visitor to the site before prerelease\r\n\tI want to be able to leave my email cont" +
+                    "act address", ProgrammingLanguage.CSharp, new string[] {
                         "ComingSoon"});
             testRunner.OnFeatureStart(featureInfo);
         }
@@ -79,19 +80,47 @@ namespace PoochWareHouse_Automation.Tests
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Customer opts to be notified of the store when it comes online with a valid email" +
                     " address", null, ((string[])(null)));
-#line 8
+#line 9
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 9
- testRunner.Given("I access the Poochwarehouse.co.uk website", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 10
-  testRunner.But("the store is not online for business", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "But ");
+ testRunner.Given("I access the Poochwarehouse.co.uk website", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 11
-  testRunner.And("the customer enters a valid email address to be notified of launch", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.But("the store is not online for business", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "But ");
 #line 12
- testRunner.When("I press the notify me button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+  testRunner.And("the customer enters a valid email address to be notified of launch", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 13
+ testRunner.When("I press the notify me button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 14
  testRunner.Then("the challenge contact password screen will be displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("An early access customer can opt to logon to the poochwarehouse site from the com" +
+            "ing soon page when correct details are entered")]
+        public virtual void AnEarlyAccessCustomerCanOptToLogonToThePoochwarehouseSiteFromTheComingSoonPageWhenCorrectDetailsAreEntered()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("An early access customer can opt to logon to the poochwarehouse site from the com" +
+                    "ing soon page when correct details are entered", null, ((string[])(null)));
+#line 16
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 17
+ testRunner.Given("Given I access the Poochwarehouse.co.uk website", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 18
+  testRunner.But("the store is not online for business", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "But ");
+#line 19
+  testRunner.And("the customer selects the Enter Using Password button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 20
+  testRunner.And("the login page is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 21
+  testRunner.And("the customer enters a valid password", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 22
+ testRunner.When("the enter button is selected", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 23
+ testRunner.Then("the poockwarehouse homepage will be displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

@@ -11,11 +11,12 @@ namespace PoochWareHouse_Automation.Tests
         private readonly Site _site = new Site();
         private readonly ComingSoon _comingSoon = new ComingSoon();
         private readonly ContactPasswordChallenge _contactPasswordChallenge = new ContactPasswordChallenge();
+        private readonly string _preReleaseUrl = Config.PoochwarehousePreReleasePage;
 
         [Given(@"I access the Poochwarehouse.co.uk website")]
         public void GivenIOpenTheWebPage()
         {
-            _site.InitialiseChromeDriver();
+            _site.InitialiseChromeDriver(_preReleaseUrl);
         }
 
         [Given(@"the store is not online for business")]
