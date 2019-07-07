@@ -79,9 +79,11 @@
     <Compile Include="Config.cs" />
     <Compile Include="Driver.cs" />
     <Compile Include="EntryPoint.cs" />
+    <Compile Include="Hooks.cs" />
     <Compile Include="Pages\AllProducts.cs" />
     <Compile Include="Pages\Collections.cs" />
     <Compile Include="Pages\ComingSoon.cs" />
+    <Compile Include="Pages\ContactPasswordChallenge.cs" />
     <Compile Include="Pages\HomePage.cs" />
     <Compile Include="Pages\OnSale.cs" />
     <Compile Include="Pages\PageElements\HeaderMenu.cs" />
