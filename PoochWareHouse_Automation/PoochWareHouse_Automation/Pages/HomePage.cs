@@ -13,6 +13,7 @@ namespace PoochWareHouse_Automation.Pages
             
         }
 
-        //IWebElement PoochWareHouseLogo => Driver._webdriver.FindElement(By.Id())
+        public IWebElement HomePageImageFrame =>
+            Driver._webdriver.FindElement(By.XPath("//*[@id=\"shopify-section-1561397436218\"]"));
     }
 }

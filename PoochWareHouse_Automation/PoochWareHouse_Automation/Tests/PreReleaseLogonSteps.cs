@@ -11,9 +11,12 @@ namespace PoochWareHouse_Automation.Tests
         private readonly Site _site = new Site();
         private readonly ComingSoon _comingSoon = new ComingSoon();
         private readonly ContactPasswordChallenge _contactPasswordChallenge = new ContactPasswordChallenge();
+        private readonly ComingSoonLogonPage _comingSoonLogonPage = new ComingSoonLogonPage();
+        private readonly HomePage _homePage = new HomePage();
         private readonly string _preReleaseUrl = Config.PoochwarehousePreReleasePage;
 
         [Given(@"I access the Poochwarehouse.co.uk website")]
+        [Given(@"poochwarehouse is not yet live")]
         public void GivenIOpenTheWebPage()
         {
             _site.InitialiseChromeDriver(_preReleaseUrl);
@@ -45,6 +48,71 @@ namespace PoochWareHouse_Automation.Tests
             var expectedBannerText = "To continue, let us know you're not a robot.";
 
             Assert.AreEqual(expectedBannerText, _contactPasswordChallenge.ChallengeContactPasswordBannerText.Text);
+        }
+
+        [Given(@"a potential customer attempts to access the site")]
+        [Given(@"the customer selects the Enter Using Password button")]
+        public void GivenTheCustomerSelectsTheEnterUsingPasswordButton()
+        {
+            _comingSoon.EnterUsingPasswordButton.Click();
+        }
+
+        [Given(@"the login page is displayed")]
+        public void GivenTheLoginPageIsDisplayed()
+        {
+            var expectedPageTitle = "ENTER STORE USING PASSWORD";
+            var actualPageTitle = _comingSoonLogonPage.PageTitle.Text;
+
+            Assert.AreEqual(expectedPageTitle, actualPageTitle,  
+                $@"The actual page title [{actualPageTitle}] did not match the expected page title [{expectedPageTitle}].");
+        }
+
+        [Given(@"the customer enters a valid password")]
+        public void GivenTheCustomerEntersAValidPassword()
+        {
+            _comingSoonLogonPage.PasswordField.SendKeys(Config.PreReleasePassword);
+        }
+
+        [Given(@"enters an incorrect password")]
+        public void GivenEntersAnIncorrectPassword()
+        {
+            var invalidPassword = "invalid";
+
+            _comingSoonLogonPage.PasswordField.SendKeys(invalidPassword);
+        }
+
+
+        [When(@"the enter button is selected")]
+        public void WhenTheEnterButtonIsSelected()
+        {
+            _comingSoonLogonPage.SubmitPasswordButton.Click();
+        }
+
+        [Then(@"the poochwarehouse homepage will be displayed")]
+        public void ThenThePoochwarehouseHomepageWillBeDisplayed()
+        {
+            Assert.IsTrue(_homePage.HomePageImageFrame.Displayed, "The homepage (main image frame) was not displayed.");
+        }
+
+        [Then(@"an error will be displayed")]
+        public void ThenAnErrorWillBeDisplayed()
+        {
+            var expectedInvalidPasswordError = "Password incorrect, please try again.";
+            var actualInvalidPasswordError = _comingSoonLogonPage.ErrorSection.Text;
+
+            Assert.Multiple(() =>
+            {
+                Assert.IsTrue(_comingSoonLogonPage.ErrorSection.Displayed,
+                    "Expected an error to be displayed, but it was not.");
+                Assert.AreEqual(expectedInvalidPasswordError, actualInvalidPasswordError,
+                    $@"The expected error [{expectedInvalidPasswordError}] did not match the actual [{actualInvalidPasswordError}].");
+            });
+    }
+
+        [Then(@"the homepage will not be displayed")]
+        public void ThenTheHomepageWillNotBeDisplayed()
+        {
+            Assert.IsFalse(_homePage.HomePageImageFrame.Displayed, "The homepage was displayed when it should not have been.");
         }
 
 

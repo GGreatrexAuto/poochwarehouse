@@ -108,7 +108,7 @@ this.ScenarioInitialize(scenarioInfo);
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 17
- testRunner.Given("Given I access the Poochwarehouse.co.uk website", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("I access the Poochwarehouse.co.uk website", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 18
   testRunner.But("the store is not online for business", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "But ");
 #line 19
@@ -120,7 +120,7 @@ this.ScenarioInitialize(scenarioInfo);
 #line 22
  testRunner.When("the enter button is selected", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 23
- testRunner.Then("the poockwarehouse homepage will be displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("the poochwarehouse homepage will be displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
