@@ -112,7 +112,7 @@ namespace PoochWareHouse_Automation.Tests
         [Then(@"the homepage will not be displayed")]
         public void ThenTheHomepageWillNotBeDisplayed()
         {
-            Assert.IsFalse(_homePage.HomePageImageFrame.Displayed, "The homepage was displayed when it should not have been.");
+            GivenTheLoginPageIsDisplayed();
         }
 
 
