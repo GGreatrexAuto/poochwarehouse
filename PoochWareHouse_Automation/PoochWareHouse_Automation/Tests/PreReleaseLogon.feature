@@ -1,4 +1,4 @@
-﻿@ComingSoon
+﻿@ComingSoon @deprecated
 
 Feature: Pre Release Logon
 	In order to keep customers informed of poochwarehouse servies & products
