@@ -19,7 +19,6 @@ namespace PoochWareHouse_Automation
         }
 
         [BeforeScenario]
-
         public void BeforeScenario()
         {
             //TODO: implement logic that has to run before executing each scenario
@@ -28,15 +27,10 @@ namespace PoochWareHouse_Automation
         [AfterScenario]
         public void AfterScenario()
         {
-            try
+            if (Driver._webdriver != null)
             {
                 Driver._webdriver.Quit();
             }
-            catch (Exception e)
-            {
-                Console.WriteLine("Exception thrown when attempting to quit browser driver.");
-                throw;
-            }            
         }
     }
 }
