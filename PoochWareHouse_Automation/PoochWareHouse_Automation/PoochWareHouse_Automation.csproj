@@ -82,6 +82,7 @@
     <Compile Include="Hooks.cs" />
     <Compile Include="Navigation\FooterNavigation.cs" />
     <Compile Include="Pages\AllProducts.cs" />
+    <Compile Include="Pages\Collections\CollectionsPagesGenericItems.cs" />
     <Compile Include="Pages\ComingSoonHoldingPages\ComingSoon.cs" />
     <Compile Include="Pages\ComingSoonHoldingPages\ComingSoonLogonPage.cs" />
     <Compile Include="Pages\ComingSoonHoldingPages\ContactPasswordChallenge.cs" />
@@ -113,9 +114,7 @@
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Pages\Collections\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
