@@ -81,6 +81,7 @@
     <Compile Include="EntryPoint.cs" />
     <Compile Include="Hooks.cs" />
     <Compile Include="Navigation\FooterNavigation.cs" />
+    <Compile Include="Navigation\HomePageNavigation.cs" />
     <Compile Include="Pages\AllProducts.cs" />
     <Compile Include="Pages\Collections\CollectionsPagesGenericItems.cs" />
     <Compile Include="Pages\ComingSoonHoldingPages\ComingSoon.cs" />

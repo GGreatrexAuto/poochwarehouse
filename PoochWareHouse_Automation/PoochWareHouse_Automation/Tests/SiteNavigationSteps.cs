@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using NUnit.Framework;
 using PoochWareHouse_Automation.Navigation;
+using PoochWareHouse_Automation.Pages;
 using PoochWareHouse_Automation.Pages.InformationalPages;
 using TechTalk.SpecFlow;
 
@@ -19,15 +20,17 @@ namespace PoochWareHouse_Automation.Tests
         private readonly Site _site;
         private readonly FooterNavigation _footerNavigation;
         private readonly InformationalPagesGenericItems _genericItems;
+        private readonly HomePageNavigation _homepage;
 
         public SiteNavigationSteps()
         {
             _site = new Site();
             _footerNavigation = new FooterNavigation();
             _genericItems = new InformationalPagesGenericItems();
+            _homepage = new HomePageNavigation();
         }
 
-        [Given(@"I have accessed the PoochwareHouse website")]
+        [Given(@"I have accessed the PoochwareHouse website homepage")]
         public void GivenIHaveAccessedThePoochwareHouseWebsite()
         {
             _site.InitialiseChromeDriver(Config.PoochwarehouseHomePage);
@@ -65,6 +68,54 @@ namespace PoochWareHouse_Automation.Tests
             }
         }
 
+        [When(@"I click the '(.*)' in the collections frame")]
+        public void WhenIClickTheInTheCollectionsFrame(string collectionsLink)
+        {
+            switch (collectionsLink)
+            {
+                case "Beds & Blankets":
+                    _homepage.ToCollectionsBedsBlankets();
+                    break;
+                case "Bowls & Food":
+                    _homepage.ToCollectionsBowlsFood();
+                    break;
+                case "Grooming":
+                    _homepage.ToCollectionsGrooming();
+                    break;
+                case "Collars & Leads":
+                    _homepage.ToCollectionsCollarsLeads();
+                    break;
+                case "Health Care":
+                    _homepage.ToCollectionsHealthCare();
+                    break;
+                case "Training":
+                    _homepage.ToCollectionsTraining();
+                    break;
+                case "Small Dogs & Puppies":
+                    _homepage.ToCollectionsSmallDogsPuppies();
+                    break;
+                case "Large Dogs":
+                    _homepage.ToCollectionsLargeDogs();
+                    break;
+                case "Toys & Games":
+                    _homepage.ToCollectionsToysGames();
+                    break;
+                case "On the go":
+                    _homepage.ToCollectionsOnTheGo();
+                    break;
+                case "Summertime":
+                    _homepage.ToCollectionsSummerTime();
+                    break;
+                case "Wintertime":
+                    _homepage.ToCollectionsWinterTime();
+                    break;
+                default:
+                    Console.WriteLine(
+                        $"collectionsLink [{collectionsLink}] passed into method was not recognised, is there a typo?");
+                    break;
+            }
+        }
+
         [Then(@"the '(.*)' informational page will load")]
         public void ThenTheInformationalPageWillLoad(string expectedHeading)
         {
@@ -76,6 +127,16 @@ namespace PoochWareHouse_Automation.Tests
                 $"The expected page heading [{expectedHeading}] was not displayed, the actua; heading was [{actualHeading}].");
         }
 
+        [Then(@"the '(.*)' products collection page will load")]
+        public void ThenTheProductsCollectionPageWillLoad(string expectedHeading)
+        {
+            ScenarioContext.Current.Pending();
+        }
 
+        [Then(@"the products description for the collection will be correct")]
+        public void ThenTheProductsDescriptionForTheCollectionWillBeCorrect()
+        {
+            ScenarioContext.Current.Pending();
+        }
     }
 }
