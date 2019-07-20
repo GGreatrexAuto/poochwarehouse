@@ -35,7 +35,6 @@ Scenario Outline: Confirm collections section links navigate to the correct prod
 	| Summer Time        | Summer Time        |
 	| Winter Time        | Winter Time        |
 	
-	@WIP
 Scenario Outline: Confirm collections drop down in header frame navigates to the correct products page
 	Given I have accessed the PoochwareHouse website homepage
 		And click the collections drop down option in the page header

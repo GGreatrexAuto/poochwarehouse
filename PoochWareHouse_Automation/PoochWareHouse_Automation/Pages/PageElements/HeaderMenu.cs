@@ -16,32 +16,17 @@ namespace PoochWareHouse_Automation.Pages.PageElements
         public static IWebElement Search => Driver._webdriver.FindElement(By.XPath("//*[@id=\"shopify-section-header\"]/div[2]/header/div/div[2]/div/button[1]/svg"));
         public static IWebElement Login => Driver._webdriver.FindElement(By.XPath("//*[@id=\"shopify-section-header\"]/div[2]/header/div/div[2]/div/a[1]/svg"));
         public static IWebElement Basket => Driver._webdriver.FindElement(By.XPath("//*[@id=\"shopify-section-header\"]/div[2]/header/div/div[2]/div/a[2]/svg"));
-        //public IWebElement CollectionsSubMenuBedsBlankets
-        //public IWebElement CollectionsSubMenuBowlsFood
-        //public IWebElement CollectionsSubMenuGrooming
-        //public IWebElement CollectionsSubMenuCollarsLeads
-        //public IWebElement CollectionsSubMenuHealthCare
-        //public IWebElement CollectionsSubMenuTraining
-        //public IWebElement CollectionsSubMenuSmallDogsPuppy
-        //public IWebElement CollectionsSubMenuLargeDogs
-        //public IWebElement CollectionsSubMenuToysGames
-        //public IWebElement CollectionsSubMenuOnTheGo
-        //public IWebElement CollectionsSubMenuSummerTime
-        //public IWebElement CollectionsSubMenuWinterTime
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        public static IWebElement CollectionsSubMenuBedsBlankets => Driver._webdriver.FindElement(By.XPath("//*[@id=\"SiteNavLabel-collections\"]/ul/li[1]/a/span"));
+        public static IWebElement CollectionsSubMenuBowlsFood => Driver._webdriver.FindElement(By.XPath("//*[@id=\"SiteNavLabel-collections\"]/ul/li[2]/a/span"));
+        public static IWebElement CollectionsSubMenuGrooming => Driver._webdriver.FindElement(By.XPath("//*[@id=\"SiteNavLabel-collections\"]/ul/li[3]/a/span"));
+        public static IWebElement CollectionsSubMenuCollarsLeads => Driver._webdriver.FindElement(By.XPath("//*[@id=\"SiteNavLabel-collections\"]/ul/li[4]/a/span"));
+        public static IWebElement CollectionsSubMenuHealthCare => Driver._webdriver.FindElement(By.XPath("//*[@id=\"SiteNavLabel-collections\"]/ul/li[5]/a/span"));
+        public static IWebElement CollectionsSubMenuTraining => Driver._webdriver.FindElement(By.XPath("//*[@id=\"SiteNavLabel-collections\"]/ul/li[6]/a/span"));
+        public static IWebElement CollectionsSubMenuSmallDogsPuppy => Driver._webdriver.FindElement(By.XPath("//*[@id=\"SiteNavLabel-collections\"]/ul/li[7]/a/span"));
+        public static IWebElement CollectionsSubMenuLargeDogs => Driver._webdriver.FindElement(By.XPath("//*[@id=\"SiteNavLabel-collections\"]/ul/li[8]/a/span"));
+        public static IWebElement CollectionsSubMenuToysGames => Driver._webdriver.FindElement(By.XPath("//*[@id=\"SiteNavLabel-collections\"]/ul/li[9]/a/span"));
+        public static IWebElement CollectionsSubMenuOnTheGo => Driver._webdriver.FindElement(By.XPath("//*[@id=\"SiteNavLabel-collections\"]/ul/li[10]/a/span"));
+        public static IWebElement CollectionsSubMenuSummerTime => Driver._webdriver.FindElement(By.XPath("//*[@id=\"SiteNavLabel-collections\"]/ul/li[11]/a/span"));
+        public static IWebElement CollectionsSubMenuWinterTime => Driver._webdriver.FindElement(By.XPath("//*[@id=\"SiteNavLabel-collections\"]/ul/li[12]/a/span"));
     }
 }

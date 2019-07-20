@@ -124,6 +124,54 @@ namespace PoochWareHouse_Automation.Tests
             }
         }
 
+        [When(@"I click the '(.*)' option on the drop down list")]
+        public void WhenIClickTheOptionOnTheDropDownList(string collectionsDropDown)
+        {
+            switch (collectionsDropDown)
+            {
+                case "Beds & Blankets":
+                    _headerNavigation.ToBedsBlankets();
+                    break;
+                case "Bowls & Food":
+                    _headerNavigation.ToBowlsFood();
+                    break;
+                case "Grooming":
+                    _headerNavigation.ToGrooming();
+                    break;
+                case "Collars & Leads":
+                    _headerNavigation.ToCollarsLeads();
+                    break;
+                case "Health Care":
+                    _headerNavigation.ToHealthCare();
+                    break;
+                case "Training":
+                    _headerNavigation.ToTraining();
+                    break;
+                case "Small Dogs & Puppy":
+                    _headerNavigation.ToSmallDogsPuppy();
+                    break;
+                case "Large Dogs":
+                    _headerNavigation.ToLargeDogs();
+                    break;
+                case "Toys & Games":
+                    _headerNavigation.ToToysGames();
+                    break;
+                case "On the go":
+                    _headerNavigation.ToOnTheGo();
+                    break;
+                case "Summer Time":
+                    _headerNavigation.ToSummerTime();
+                    break;
+                case "Winter Time":
+                    _headerNavigation.ToWinterTime();
+                    break;
+                default:
+                    Console.WriteLine(
+                        $"collectionsDropDown [{collectionsDropDown}] passed into method was not recognised, is there a typo?");
+                    break;
+            }
+        }
+
         [Then(@"the '(.*)' informational page will load")]
         public void ThenTheInformationalPageWillLoad(string expectedHeading)
         {

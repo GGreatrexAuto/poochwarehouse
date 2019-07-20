@@ -127,7 +127,6 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Confirm collections drop down in header frame navigates to the correct products p" +
             "age")]
-        [NUnit.Framework.CategoryAttribute("WIP")]
         [NUnit.Framework.TestCaseAttribute("Beds & Blankets", "Beds & Blankets", null)]
         [NUnit.Framework.TestCaseAttribute("Bowls & Food", "Bowls & Food", null)]
         [NUnit.Framework.TestCaseAttribute("Grooming", "Grooming", null)]
@@ -142,14 +141,8 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.TestCaseAttribute("Winter Time", "Winter Time", null)]
         public virtual void ConfirmCollectionsDropDownInHeaderFrameNavigatesToTheCorrectProductsPage(string collectionsDropDown, string heading, string[] exampleTags)
         {
-            string[] @__tags = new string[] {
-                    "WIP"};
-            if ((exampleTags != null))
-            {
-                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
-            }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Confirm collections drop down in header frame navigates to the correct products p" +
-                    "age", null, @__tags);
+                    "age", null, exampleTags);
 #line 39
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
