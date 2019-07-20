@@ -9,6 +9,7 @@ using PoochWareHouse_Automation.Navigation;
 using PoochWareHouse_Automation.Pages;
 using PoochWareHouse_Automation.Pages.Collections;
 using PoochWareHouse_Automation.Pages.InformationalPages;
+using PoochWareHouse_Automation.Pages.PageElements;
 using TechTalk.SpecFlow;
 
 namespace PoochWareHouse_Automation.Tests
@@ -21,22 +22,32 @@ namespace PoochWareHouse_Automation.Tests
         private readonly Site _site;
         private readonly FooterNavigation _footerNavigation;
         private readonly InformationalPagesGenericItems _genericItems;
-        private readonly HomePageNavigation _homepage;
+        private readonly HomePageNavigation _homepageNavigation;
         private readonly CollectionsPagesGenericItems _collections;
+        private readonly HeaderMenu _headerMenu;
+        private readonly HeaderNavigation _headerNavigation;
 
         public SiteNavigationSteps()
         {
             _site = new Site();
             _footerNavigation = new FooterNavigation();
             _genericItems = new InformationalPagesGenericItems();
-            _homepage = new HomePageNavigation();
+            _homepageNavigation = new HomePageNavigation();
             _collections = new CollectionsPagesGenericItems();
+            _headerMenu = new HeaderMenu();
+            _headerNavigation = new HeaderNavigation();
         }
 
         [Given(@"I have accessed the PoochwareHouse website homepage")]
         public void GivenIHaveAccessedThePoochwareHouseWebsite()
         {
             _site.InitialiseChromeDriver(Config.PoochwarehouseHomePage);
+        }
+
+        [Given(@"click the collections drop down option in the page header")]
+        public void GivenClickTheCollectionsDropDownOptionInThePageHeader()
+        {
+            _headerMenu.CollectionsDropDownLink.Click();
         }
 
         [When(@"I click the '(.*)' in the website footer")]
@@ -77,40 +88,40 @@ namespace PoochWareHouse_Automation.Tests
             switch (collectionsLink)
             {
                 case "Beds & Blankets":
-                    _homepage.ToCollectionsBedsBlankets();
+                    _homepageNavigation.ToCollectionsBedsBlankets();
                     break;
                 case "Bowls & Food":
-                    _homepage.ToCollectionsBowlsFood();
+                    _homepageNavigation.ToCollectionsBowlsFood();
                     break;
                 case "Grooming":
-                    _homepage.ToCollectionsGrooming();
+                    _homepageNavigation.ToCollectionsGrooming();
                     break;
                 case "Collars & Leads":
-                    _homepage.ToCollectionsCollarsLeads();
+                    _homepageNavigation.ToCollectionsCollarsLeads();
                     break;
                 case "Health Care":
-                    _homepage.ToCollectionsHealthCare();
+                    _homepageNavigation.ToCollectionsHealthCare();
                     break;
                 case "Training":
-                    _homepage.ToCollectionsTraining();
+                    _homepageNavigation.ToCollectionsTraining();
                     break;
                 case "Small Dogs & Puppy":
-                    _homepage.ToCollectionsSmallDogsPuppies();
+                    _homepageNavigation.ToCollectionsSmallDogsPuppies();
                     break;
                 case "Large Dogs":
-                    _homepage.ToCollectionsLargeDogs();
+                    _homepageNavigation.ToCollectionsLargeDogs();
                     break;
                 case "Toys & Games":
-                    _homepage.ToCollectionsToysGames();
+                    _homepageNavigation.ToCollectionsToysGames();
                     break;
                 case "On the go":
-                    _homepage.ToCollectionsOnTheGo();
+                    _homepageNavigation.ToCollectionsOnTheGo();
                     break;
                 case "Summer Time":
-                    _homepage.ToCollectionsSummerTime();
+                    _homepageNavigation.ToCollectionsSummerTime();
                     break;
                 case "Winter Time":
-                    _homepage.ToCollectionsWinterTime();
+                    _homepageNavigation.ToCollectionsWinterTime();
                     break;
                 default:
                     Console.WriteLine(

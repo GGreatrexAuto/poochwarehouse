@@ -16,6 +16,32 @@ namespace PoochWareHouse_Automation.Pages.PageElements
         public IWebElement Search => Driver._webdriver.FindElement(By.XPath("//*[@id=\"shopify-section-header\"]/div[2]/header/div/div[2]/div/button[1]/svg"));
         public IWebElement Login => Driver._webdriver.FindElement(By.XPath("//*[@id=\"shopify-section-header\"]/div[2]/header/div/div[2]/div/a[1]/svg"));
         public IWebElement Basket => Driver._webdriver.FindElement(By.XPath("//*[@id=\"shopify-section-header\"]/div[2]/header/div/div[2]/div/a[2]/svg"));
-        
+        //public IWebElement CollectionsSubMenuBedsBlankets
+        //public IWebElement CollectionsSubMenuBowlsFood
+        //public IWebElement CollectionsSubMenuGrooming
+        //public IWebElement CollectionsSubMenuCollarsLeads
+        //public IWebElement CollectionsSubMenuHealthCare
+        //public IWebElement CollectionsSubMenuTraining
+        //public IWebElement CollectionsSubMenuSmallDogsPuppy
+        //public IWebElement CollectionsSubMenuLargeDogs
+        //public IWebElement CollectionsSubMenuToysGames
+        //public IWebElement CollectionsSubMenuOnTheGo
+        //public IWebElement CollectionsSubMenuSummerTime
+        //public IWebElement CollectionsSubMenuWinterTime
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     }
 }

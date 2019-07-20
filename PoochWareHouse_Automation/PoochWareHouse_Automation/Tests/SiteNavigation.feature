@@ -34,3 +34,24 @@ Scenario Outline: Confirm collections section links navigate to the correct prod
 	| On the go          | On The Go          |
 	| Summer Time        | Summer Time        |
 	| Winter Time        | Winter Time        |
+
+Scenario Outline: Confirm collections drop down in header frame navigates to the correct products page
+	Given I have accessed the PoochwareHouse website homepage
+		And click the collections drop down option in the page header
+	When I click the '<collectionsDropDown>' option on the drop down list
+	Then the '<heading>' products collection page will load
+
+	Examples: 
+	| collectionsDropDown | heading            |
+	| Beds & Blankets     | Beds & Blankets    |
+	| Bowls & Food        | Bowls & Food       |
+	| Grooming            | Grooming           |
+	| Collars & Leads     | Collars & Leads    |
+	| Health Care         | Health Care        |
+	| Training            | Training           |
+	| Small Dogs & Puppy  | Small Dogs & Puppy |
+	| Large Dogs          | Large Dogs         |
+	| Toys & Games        | Toys & Games       |
+	| On the go           | On The Go          |
+	| Summer Time         | Summer Time        |
+	| Winter Time         | Winter Time        |
