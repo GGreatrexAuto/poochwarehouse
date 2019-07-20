@@ -85,11 +85,43 @@ namespace PoochWareHouse_Automation.Tests
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 4
- testRunner.Given("I have accessed the PoochwareHouse website", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("I have accessed the PoochwareHouse website homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 5
  testRunner.When(string.Format("I click the \'{0}\' in the website footer", pageLink), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 6
  testRunner.Then(string.Format("the \'{0}\' informational page will load", heading), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Confirm collections section links navigate to the correct products page")]
+        [NUnit.Framework.TestCaseAttribute("Beds & Blankets", "Beds & Blankets", null)]
+        [NUnit.Framework.TestCaseAttribute("Bowls & Food", "Bowls & Food", null)]
+        [NUnit.Framework.TestCaseAttribute("Grooming", "Grooming", null)]
+        [NUnit.Framework.TestCaseAttribute("Collars & Leads", "Collars & Leads", null)]
+        [NUnit.Framework.TestCaseAttribute("Health Care", "Health Care", null)]
+        [NUnit.Framework.TestCaseAttribute("Training", "Training", null)]
+        [NUnit.Framework.TestCaseAttribute("Small Dogs & Puppies", "Small Dogs & Puppies", null)]
+        [NUnit.Framework.TestCaseAttribute("Large Dogs", "Large Dogs", null)]
+        [NUnit.Framework.TestCaseAttribute("Toys & Games", "Toys & Games", null)]
+        [NUnit.Framework.TestCaseAttribute("On the go", "On the go", null)]
+        [NUnit.Framework.TestCaseAttribute("Summertime", "Summertime", null)]
+        [NUnit.Framework.TestCaseAttribute("Wintertime", "Wintertime", null)]
+        public virtual void ConfirmCollectionsSectionLinksNavigateToTheCorrectProductsPage(string collectionLink, string heading, string[] exampleTags)
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Confirm collections section links navigate to the correct products page", null, exampleTags);
+#line 18
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 19
+ testRunner.Given("I have accessed the PoochwareHouse website homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 20
+ testRunner.When(string.Format("I click the \'{0}\' in the collections frame", collectionLink), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 21
+ testRunner.Then(string.Format("the \'{0}\' products collection page will load", heading), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 22
+  testRunner.And("the products description for the collection will be correct", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }

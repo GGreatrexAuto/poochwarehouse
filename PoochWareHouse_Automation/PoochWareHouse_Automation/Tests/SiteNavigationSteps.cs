@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using NUnit.Framework;
 using PoochWareHouse_Automation.Navigation;
 using PoochWareHouse_Automation.Pages;
+using PoochWareHouse_Automation.Pages.Collections;
 using PoochWareHouse_Automation.Pages.InformationalPages;
 using TechTalk.SpecFlow;
 
@@ -21,6 +22,7 @@ namespace PoochWareHouse_Automation.Tests
         private readonly FooterNavigation _footerNavigation;
         private readonly InformationalPagesGenericItems _genericItems;
         private readonly HomePageNavigation _homepage;
+        private readonly CollectionsPagesGenericItems _collections;
 
         public SiteNavigationSteps()
         {
@@ -28,6 +30,7 @@ namespace PoochWareHouse_Automation.Tests
             _footerNavigation = new FooterNavigation();
             _genericItems = new InformationalPagesGenericItems();
             _homepage = new HomePageNavigation();
+            _collections = new CollectionsPagesGenericItems();
         }
 
         [Given(@"I have accessed the PoochwareHouse website homepage")]
@@ -124,19 +127,24 @@ namespace PoochWareHouse_Automation.Tests
             var actualHeading = _genericItems.GenericPageHeading.Text;
 
             Assert.AreEqual(expectedHeading, actualHeading, 
-                $"The expected page heading [{expectedHeading}] was not displayed, the actua; heading was [{actualHeading}].");
+                $"The expected page heading [{expectedHeading}] was not displayed, the actual heading was [{actualHeading}].");
         }
 
         [Then(@"the '(.*)' products collection page will load")]
         public void ThenTheProductsCollectionPageWillLoad(string expectedHeading)
         {
-            ScenarioContext.Current.Pending();
+            Assert.IsTrue(_collections.CollectionsGenericPageHeading.Displayed);
+
+            var actualHeading = _collections.CollectionsGenericPageHeading.Text;
+
+            Assert.AreEqual(expectedHeading, actualHeading, 
+                $"The expected page heading [{expectedHeading}] was not displayed, the actual heading was [{actualHeading}].");
         }
 
         [Then(@"the products description for the collection will be correct")]
         public void ThenTheProductsDescriptionForTheCollectionWillBeCorrect()
         {
-            ScenarioContext.Current.Pending();
+            //TodoTODO: not complete yet.
         }
     }
 }
