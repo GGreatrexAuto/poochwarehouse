@@ -94,7 +94,7 @@ namespace PoochWareHouse_Automation.Tests
                 case "Training":
                     _homepage.ToCollectionsTraining();
                     break;
-                case "Small Dogs & Puppies":
+                case "Small Dogs & Puppy":
                     _homepage.ToCollectionsSmallDogsPuppies();
                     break;
                 case "Large Dogs":
@@ -106,10 +106,10 @@ namespace PoochWareHouse_Automation.Tests
                 case "On the go":
                     _homepage.ToCollectionsOnTheGo();
                     break;
-                case "Summertime":
+                case "Summer Time":
                     _homepage.ToCollectionsSummerTime();
                     break;
-                case "Wintertime":
+                case "Winter Time":
                     _homepage.ToCollectionsWinterTime();
                     break;
                 default:
@@ -136,9 +136,10 @@ namespace PoochWareHouse_Automation.Tests
             Assert.IsTrue(_collections.CollectionsGenericPageHeading.Displayed);
 
             var actualHeading = _collections.CollectionsGenericPageHeading.Text;
+            var actualHeadingManiplulated = actualHeading.Substring(13);
 
-            Assert.AreEqual(expectedHeading, actualHeading, 
-                $"The expected page heading [{expectedHeading}] was not displayed, the actual heading was [{actualHeading}].");
+            Assert.AreEqual(expectedHeading, actualHeadingManiplulated, 
+                $"The expected page heading [{expectedHeading}] was not displayed, the actual heading was [{actualHeadingManiplulated}].");
         }
 
         [Then(@"the products description for the collection will be correct")]

@@ -102,12 +102,12 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.TestCaseAttribute("Collars & Leads", "Collars & Leads", null)]
         [NUnit.Framework.TestCaseAttribute("Health Care", "Health Care", null)]
         [NUnit.Framework.TestCaseAttribute("Training", "Training", null)]
-        [NUnit.Framework.TestCaseAttribute("Small Dogs & Puppies", "Small Dogs & Puppies", null)]
+        [NUnit.Framework.TestCaseAttribute("Small Dogs & Puppy", "Small Dogs & Puppy", null)]
         [NUnit.Framework.TestCaseAttribute("Large Dogs", "Large Dogs", null)]
         [NUnit.Framework.TestCaseAttribute("Toys & Games", "Toys & Games", null)]
-        [NUnit.Framework.TestCaseAttribute("On the go", "On the go", null)]
-        [NUnit.Framework.TestCaseAttribute("Summertime", "Summertime", null)]
-        [NUnit.Framework.TestCaseAttribute("Wintertime", "Wintertime", null)]
+        [NUnit.Framework.TestCaseAttribute("On the go", "On The Go", null)]
+        [NUnit.Framework.TestCaseAttribute("Summer Time", "Summer Time", null)]
+        [NUnit.Framework.TestCaseAttribute("Winter Time", "Winter Time", null)]
         public virtual void ConfirmCollectionsSectionLinksNavigateToTheCorrectProductsPage(string collectionLink, string heading, string[] exampleTags)
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Confirm collections section links navigate to the correct products page", null, exampleTags);

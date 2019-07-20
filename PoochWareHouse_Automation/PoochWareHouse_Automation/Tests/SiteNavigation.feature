@@ -22,16 +22,16 @@ Scenario Outline: Confirm collections section links navigate to the correct prod
 		And the products description for the collection will be correct
 
 	Examples: 
-	| collectionLink            | heading             |
-	| Beds & Blankets            | Beds & Blankets            |
-	| Bowls & Food                 | Bowls & Food                 |
-	| Grooming | Grooming |
-	| Collars & Leads      | Collars & Leads      |
-	| Health Care     | Health Care      |
-	| Training        | Training        |
-	| Small Dogs & Puppies          | Small Dogs & Puppies          |
-	| Large Dogs          | Large Dogs          |
-	| Toys & Games          | Toys & Games          |
-	| On the go          | On the go          |
-	| Summertime          | Summertime          |
-	| Wintertime          | Wintertime          |
+	| collectionLink     | heading            |
+	| Beds & Blankets    | Beds & Blankets    |
+	| Bowls & Food       | Bowls & Food       |
+	| Grooming           | Grooming           |
+	| Collars & Leads    | Collars & Leads    |
+	| Health Care        | Health Care        |
+	| Training           | Training           |
+	| Small Dogs & Puppy | Small Dogs & Puppy |
+	| Large Dogs         | Large Dogs         |
+	| Toys & Games       | Toys & Games       |
+	| On the go          | On The Go          |
+	| Summer Time        | Summer Time        |
+	| Winter Time        | Winter Time        |
