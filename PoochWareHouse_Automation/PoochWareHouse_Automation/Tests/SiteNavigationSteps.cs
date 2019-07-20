@@ -21,20 +21,14 @@ namespace PoochWareHouse_Automation.Tests
     {
         private readonly Site _site;
         private readonly FooterNavigation _footerNavigation;
-        private readonly InformationalPagesGenericItems _genericItems;
         private readonly HomePageNavigation _homepageNavigation;
-        private readonly CollectionsPagesGenericItems _collections;
-        private readonly HeaderMenu _headerMenu;
         private readonly HeaderNavigation _headerNavigation;
 
         public SiteNavigationSteps()
         {
             _site = new Site();
             _footerNavigation = new FooterNavigation();
-            _genericItems = new InformationalPagesGenericItems();
             _homepageNavigation = new HomePageNavigation();
-            _collections = new CollectionsPagesGenericItems();
-            _headerMenu = new HeaderMenu();
             _headerNavigation = new HeaderNavigation();
         }
 
@@ -47,7 +41,7 @@ namespace PoochWareHouse_Automation.Tests
         [Given(@"click the collections drop down option in the page header")]
         public void GivenClickTheCollectionsDropDownOptionInThePageHeader()
         {
-            _headerMenu.CollectionsDropDownLink.Click();
+            HeaderMenu.CollectionsDropDownLink.Click();
         }
 
         [When(@"I click the '(.*)' in the website footer")]
@@ -133,9 +127,9 @@ namespace PoochWareHouse_Automation.Tests
         [Then(@"the '(.*)' informational page will load")]
         public void ThenTheInformationalPageWillLoad(string expectedHeading)
         {
-            Assert.IsTrue(_genericItems.GenericPageHeading.Displayed);
+            Assert.IsTrue(InformationalPagesGenericItems.GenericPageHeading.Displayed);
 
-            var actualHeading = _genericItems.GenericPageHeading.Text;
+            var actualHeading = InformationalPagesGenericItems.GenericPageHeading.Text;
 
             Assert.AreEqual(expectedHeading, actualHeading, 
                 $"The expected page heading [{expectedHeading}] was not displayed, the actual heading was [{actualHeading}].");
@@ -144,9 +138,9 @@ namespace PoochWareHouse_Automation.Tests
         [Then(@"the '(.*)' products collection page will load")]
         public void ThenTheProductsCollectionPageWillLoad(string expectedHeading)
         {
-            Assert.IsTrue(_collections.CollectionsGenericPageHeading.Displayed);
+            Assert.IsTrue(CollectionsPagesGenericItems.CollectionsGenericPageHeading.Displayed);
 
-            var actualHeading = _collections.CollectionsGenericPageHeading.Text;
+            var actualHeading = CollectionsPagesGenericItems.CollectionsGenericPageHeading.Text;
             var actualHeadingManiplulated = actualHeading.Substring(13);
 
             Assert.AreEqual(expectedHeading, actualHeadingManiplulated, 

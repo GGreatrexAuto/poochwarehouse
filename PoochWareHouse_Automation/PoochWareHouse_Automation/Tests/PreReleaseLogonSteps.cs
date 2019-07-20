@@ -12,7 +12,6 @@ namespace PoochWareHouse_Automation.Tests
         private readonly ComingSoon _comingSoon = new ComingSoon();
         private readonly ContactPasswordChallenge _contactPasswordChallenge = new ContactPasswordChallenge();
         private readonly ComingSoonLogonPage _comingSoonLogonPage = new ComingSoonLogonPage();
-        private readonly HomePage _homePage = new HomePage();
         private readonly string _preReleaseUrl = Config.PoochwarehousePreReleasePage;
 
         [Given(@"I access the Poochwarehouse.co.uk website")]
@@ -91,7 +90,7 @@ namespace PoochWareHouse_Automation.Tests
         [Then(@"the poochwarehouse homepage will be displayed")]
         public void ThenThePoochwarehouseHomepageWillBeDisplayed()
         {
-            Assert.IsTrue(_homePage.HomePageImageFrame.Displayed, "The homepage (main image frame) was not displayed.");
+            Assert.IsTrue(HomePage.HomePageImageFrame.Displayed, "The homepage (main image frame) was not displayed.");
         }
 
         [Then(@"an error will be displayed")]

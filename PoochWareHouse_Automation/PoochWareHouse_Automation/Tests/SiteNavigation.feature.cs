@@ -120,8 +120,47 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.When(string.Format("I click the \'{0}\' in the collections frame", collectionLink), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 21
  testRunner.Then(string.Format("the \'{0}\' products collection page will load", heading), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
-#line 22
-  testRunner.And("the products description for the collection will be correct", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Confirm collections drop down in header frame navigates to the correct products p" +
+            "age")]
+        [NUnit.Framework.CategoryAttribute("WIP")]
+        [NUnit.Framework.TestCaseAttribute("Beds & Blankets", "Beds & Blankets", null)]
+        [NUnit.Framework.TestCaseAttribute("Bowls & Food", "Bowls & Food", null)]
+        [NUnit.Framework.TestCaseAttribute("Grooming", "Grooming", null)]
+        [NUnit.Framework.TestCaseAttribute("Collars & Leads", "Collars & Leads", null)]
+        [NUnit.Framework.TestCaseAttribute("Health Care", "Health Care", null)]
+        [NUnit.Framework.TestCaseAttribute("Training", "Training", null)]
+        [NUnit.Framework.TestCaseAttribute("Small Dogs & Puppy", "Small Dogs & Puppy", null)]
+        [NUnit.Framework.TestCaseAttribute("Large Dogs", "Large Dogs", null)]
+        [NUnit.Framework.TestCaseAttribute("Toys & Games", "Toys & Games", null)]
+        [NUnit.Framework.TestCaseAttribute("On the go", "On The Go", null)]
+        [NUnit.Framework.TestCaseAttribute("Summer Time", "Summer Time", null)]
+        [NUnit.Framework.TestCaseAttribute("Winter Time", "Winter Time", null)]
+        public virtual void ConfirmCollectionsDropDownInHeaderFrameNavigatesToTheCorrectProductsPage(string collectionsDropDown, string heading, string[] exampleTags)
+        {
+            string[] @__tags = new string[] {
+                    "WIP"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Confirm collections drop down in header frame navigates to the correct products p" +
+                    "age", null, @__tags);
+#line 39
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 40
+ testRunner.Given("I have accessed the PoochwareHouse website homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 41
+  testRunner.And("click the collections drop down option in the page header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 42
+ testRunner.When(string.Format("I click the \'{0}\' option on the drop down list", collectionsDropDown), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 43
+ testRunner.Then(string.Format("the \'{0}\' products collection page will load", heading), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

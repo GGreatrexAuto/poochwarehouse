@@ -13,6 +13,7 @@ namespace PoochWareHouse_Automation
         // For additional details on SpecFlow hooks see http://go.specflow.org/doc-hooks
 
         [BeforeScenario("deprecated")]
+        [BeforeScenario("WIP")]
         public void IgnoredTest()
         {
             Assert.Ignore("The site is now live and this test no longer applies.");

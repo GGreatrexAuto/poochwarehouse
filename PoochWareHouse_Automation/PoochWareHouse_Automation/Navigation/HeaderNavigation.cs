@@ -9,10 +9,9 @@ namespace PoochWareHouse_Automation.Navigation
 {
     public class HeaderNavigation
     {
-        private HeaderMenu _headerMenu;
         public HeaderNavigation()
         {
-            _headerMenu = new HeaderMenu();
+            
         }
 
 

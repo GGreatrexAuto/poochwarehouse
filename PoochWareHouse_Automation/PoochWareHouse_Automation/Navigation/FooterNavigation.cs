@@ -9,46 +9,44 @@ namespace PoochWareHouse_Automation.Navigation
 {
     public class FooterNavigation
     {
-        private QuickLinksFooter _footerLinks;
-
         public FooterNavigation()
         {
-            _footerLinks = new QuickLinksFooter();
+        
         }
 
         public void ToFaq()
         {
-            _footerLinks.FAQLink.Click();   
+            QuickLinksFooter.FAQLink.Click();   
         }
 
         public void ToAboutUs()
         {
-            _footerLinks.AboutUsLink.Click();
+            QuickLinksFooter.AboutUsLink.Click();
         }
 
         public void ToDeliveryAndShipping()
         {
-            _footerLinks.DeliveryAndShippingLink.Click();
+            QuickLinksFooter.DeliveryAndShippingLink.Click();
         }
 
         public void ToReturnsPolicy()
         {
-            _footerLinks.ReturnsPolicyLink.Click();
+            QuickLinksFooter.ReturnsPolicyLink.Click();
         }
 
         public void ToPrivacyPolicy()
         {
-            _footerLinks.PrivacyPolicyLink.Click();
+            QuickLinksFooter.PrivacyPolicyLink.Click();
         }
 
         public void ToTermsOfUse()
         {
-            _footerLinks.TermsOfUseLink.Click();
+            QuickLinksFooter.TermsOfUseLink.Click();
         }
 
         public void ToContactUs()
         {
-            _footerLinks.ContactUsLink.Click();
+            QuickLinksFooter.ContactUsLink.Click();
         }
     }
 }

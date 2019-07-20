@@ -7,9 +7,9 @@ using OpenQA.Selenium;
 
 namespace PoochWareHouse_Automation.Pages.InformationalPages
 {
-    public class InformationalPagesGenericItems
+    public static class InformationalPagesGenericItems
     {
-        public IWebElement GenericPageHeading =>
+        public static IWebElement GenericPageHeading =>
             Driver._webdriver.FindElement(By.XPath("//*[@id=\"MainContent\"]/div/div/div/div[1]/h1"));
     }
 }
