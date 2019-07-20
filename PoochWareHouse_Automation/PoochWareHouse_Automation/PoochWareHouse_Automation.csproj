@@ -84,7 +84,7 @@
     <Compile Include="Navigation\HeaderNavigation.cs" />
     <Compile Include="Navigation\HomePageNavigation.cs" />
     <Compile Include="Pages\AllProducts.cs" />
-    <Compile Include="Pages\Collections\CollectionsPagesGenericItems.cs" />
+    <Compile Include="Pages\Collections\ProductsPagesGenericItems.cs" />
     <Compile Include="Pages\Collections\CollectionsStaticText.cs" />
     <Compile Include="Pages\ComingSoonHoldingPages\ComingSoon.cs" />
     <Compile Include="Pages\ComingSoonHoldingPages\ComingSoonLogonPage.cs" />

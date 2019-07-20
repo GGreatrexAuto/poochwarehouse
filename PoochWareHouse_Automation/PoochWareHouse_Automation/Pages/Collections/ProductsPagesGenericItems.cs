@@ -7,13 +7,16 @@ using OpenQA.Selenium;
 
 namespace PoochWareHouse_Automation.Pages.Collections
 {
-    public static class CollectionsPagesGenericItems
+    public static class ProductsPagesGenericItems
     {
-        public static IWebElement CollectionsGenericPageHeading => Driver._webdriver.FindElement(
+        public static IWebElement ProductsGenericPageHeading => Driver._webdriver.FindElement(
             By.XPath("//*[@id=\"shopify-section-collection-template\"]/div/header/div[1]/div[2]/h1/span"));
 
-        public static IWebElement CollectionsGenericPageDescription =>
+        public static IWebElement ProductsGenericPageDescription =>
             Driver._webdriver.FindElement(
                 By.XPath("//*[@id=\"shopify-section-collection-template\"]/div/header/div[2]"));
-    }
+
+        public static IWebElement ProductsGenericPageHeadingNoImage => Driver._webdriver.FindElement(
+            By.XPath("//*[@id=\"shopify-section-collection-template\"]/div/header/div[1]/div/h1/span/span"));
+        }
 }

@@ -143,17 +143,39 @@ this.ScenarioInitialize(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Confirm collections drop down in header frame navigates to the correct products p" +
                     "age", null, exampleTags);
-#line 39
+#line 38
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 40
+#line 39
  testRunner.Given("I have accessed the PoochwareHouse website homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 41
+#line 40
   testRunner.And("click the collections drop down option in the page header", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 42
+#line 41
  testRunner.When(string.Format("I click the \'{0}\' option on the drop down list", collectionsDropDown), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 43
+#line 42
  testRunner.Then(string.Format("the \'{0}\' products collection page will load", heading), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Confirm non-collections links in the header frame navigate to the correcrt produc" +
+            "ts page")]
+        [NUnit.Framework.TestCaseAttribute("On Sale", "Sale Items", null)]
+        [NUnit.Framework.TestCaseAttribute("All Products", "Products", null)]
+        public virtual void ConfirmNon_CollectionsLinksInTheHeaderFrameNavigateToTheCorrecrtProductsPage(string headerLink, string heading, string[] exampleTags)
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Confirm non-collections links in the header frame navigate to the correcrt produc" +
+                    "ts page", null, exampleTags);
+#line 59
+ this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 60
+ testRunner.Given("I have accessed the PoochwareHouse website homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 61
+ testRunner.When(string.Format("I click the \'{0}\' header option", headerLink), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 62
+ testRunner.Then(string.Format("the \'{0}\' products page wil load", heading), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

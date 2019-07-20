@@ -68,5 +68,25 @@ namespace PoochWareHouse_Automation.Navigation
         {
             HeaderMenu.CollectionsSubMenuWinterTime.Click();
         }
+
+        public void ToSaleItems()
+        {
+            HeaderMenu.OnSaleLink.Click();
+        }
+
+        public void ToAllProducts()
+        {
+            HeaderMenu.AllProductsLink.Click();
+        }
+
+        public void ToHomePage()
+        {
+            HeaderMenu.HomeLink.Click();
+        }
+
+        public void ToHomePageViaLogo()
+        {
+            HeaderMenu.PoochWareHouseLogo.Click();
+        }
     }
 }

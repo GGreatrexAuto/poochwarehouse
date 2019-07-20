@@ -172,6 +172,24 @@ namespace PoochWareHouse_Automation.Tests
             }
         }
 
+        [When(@"I click the '(.*)' header option")]
+        public void WhenIClickTheHeaderOption(string headerOption)
+        {
+            switch (headerOption)
+            {
+                case "On Sale":
+                    _headerNavigation.ToSaleItems();
+                    break;
+                case "All Products":
+                    _headerNavigation.ToAllProducts();
+                    break;
+                default:
+                    Console.WriteLine($"headerOption [{headerOption}] passed into method was not recognised, is there a typo?");
+                    break;
+            }
+        }
+
+
         [Then(@"the '(.*)' informational page will load")]
         public void ThenTheInformationalPageWillLoad(string expectedHeading)
         {
@@ -184,11 +202,22 @@ namespace PoochWareHouse_Automation.Tests
         }
 
         [Then(@"the '(.*)' products collection page will load")]
+        [Then(@"the '(.*)' products page wil load")]
         public void ThenTheProductsCollectionPageWillLoad(string expectedHeading)
         {
-            Assert.IsTrue(CollectionsPagesGenericItems.CollectionsGenericPageHeading.Displayed);
+            Assert.IsTrue(ProductsPagesGenericItems.ProductsGenericPageHeading.Displayed);
 
-            var actualHeading = CollectionsPagesGenericItems.CollectionsGenericPageHeading.Text;
+            var actualHeading = string.Empty;
+
+            if (expectedHeading == "Products")
+            {
+                actualHeading = ProductsPagesGenericItems.ProductsGenericPageHeadingNoImage.Text;
+            }
+            else
+            {
+                actualHeading = ProductsPagesGenericItems.ProductsGenericPageHeading.Text;
+            }
+            
             var actualHeadingManiplulated = actualHeading.Substring(13);
 
             Assert.AreEqual(expectedHeading, actualHeadingManiplulated, 

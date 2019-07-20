@@ -55,3 +55,14 @@ Scenario Outline: Confirm collections drop down in header frame navigates to the
 	| On the go           | On The Go          |
 	| Summer Time         | Summer Time        |
 	| Winter Time         | Winter Time        |
+
+	@WIP
+	Scenario Outline: Confirm non-collections links in the header frame navigate to the correcrt products page
+	Given I have accessed the PoochwareHouse website homepage
+	When I click the '<headerLink>' header option
+	Then the '<heading>' products page wil load
+
+	Examples: 
+	| headerLink   | heading    |
+	| On Sale      | Sale Items |
+	| All Products | Products   |
