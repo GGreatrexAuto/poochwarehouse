@@ -19,7 +19,6 @@ Scenario Outline: Confirm collections section links navigate to the correct prod
 	Given I have accessed the PoochwareHouse website homepage
 	When I click the '<collectionLink>' in the collections frame
 	Then the '<heading>' products collection page will load
-		And the products description for the collection will be correct
 
 	Examples: 
 	| collectionLink     | heading            |

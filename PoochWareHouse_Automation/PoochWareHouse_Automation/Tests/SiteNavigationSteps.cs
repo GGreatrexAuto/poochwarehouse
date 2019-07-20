@@ -141,11 +141,5 @@ namespace PoochWareHouse_Automation.Tests
             Assert.AreEqual(expectedHeading, actualHeadingManiplulated, 
                 $"The expected page heading [{expectedHeading}] was not displayed, the actual heading was [{actualHeadingManiplulated}].");
         }
-
-        [Then(@"the products description for the collection will be correct")]
-        public void ThenTheProductsDescriptionForTheCollectionWillBeCorrect()
-        {
-            //TodoTODO: not complete yet.
-        }
     }
 }
