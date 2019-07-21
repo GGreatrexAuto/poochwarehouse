@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using NUnit.Framework;
+using OpenQA.Selenium.Support.UI;
 using PoochWareHouse_Automation.Navigation;
 using PoochWareHouse_Automation.Pages;
 using PoochWareHouse_Automation.Pages.Collections;
@@ -183,10 +184,22 @@ namespace PoochWareHouse_Automation.Tests
                 case "All Products":
                     _headerNavigation.ToAllProducts();
                     break;
+                case "Login":
+                    _headerNavigation.ToLoginForm();
+                    break;
+                case "Your Cart":
+                    _headerNavigation.ToYourCart();
+                    break;
                 default:
                     Console.WriteLine($"headerOption [{headerOption}] passed into method was not recognised, is there a typo?");
                     break;
             }
+        }
+
+        [When(@"I click the '(.*)' option")]
+        public void WhenIClickTheOption(string homePageNavigationType)
+        {
+            ScenarioContext.Current.Pending();
         }
 
 
@@ -202,7 +215,7 @@ namespace PoochWareHouse_Automation.Tests
         }
 
         [Then(@"the '(.*)' products collection page will load")]
-        [Then(@"the '(.*)' products page wil load")]
+        [Then(@"the '(.*)' products page will load")]
         public void ThenTheProductsCollectionPageWillLoad(string expectedHeading)
         {
             var actualHeading = string.Empty;
@@ -212,16 +225,44 @@ namespace PoochWareHouse_Automation.Tests
                 Assert.IsTrue(AllProducts.ProductsPageHeading.Displayed, "The expected page heading was not displayed.");
                 actualHeading = AllProducts.ProductsPageHeading.Text;
             }
-            else
+            else if (expectedHeading == "Sale Items")
             {
                 Assert.IsTrue(ProductsPagesGenericItems.ProductsGenericPageHeading.Displayed, "The expected page heading was not displayed.");
                 actualHeading = ProductsPagesGenericItems.ProductsGenericPageHeading.Text;
-                
+            }
+            else if(expectedHeading == "Login")
+            {
+                Assert.IsTrue(LoginForm.LoginPageheader.Displayed, "The expected page heading was not displayed.");
+                actualHeading = LoginForm.LoginPageheader.Text;
+            }
+            else if(expectedHeading == "Your Cart")
+            {
+                Assert.IsTrue(YourCart.YourCartPageHeading.Displayed, "The expected page heading was not displayed.");
+                actualHeading = YourCart.YourCartPageHeading.Text;
+            }
+            else
+            {
+                Console.WriteLine(
+                    $"expectedHeading [{expectedHeading}] passed into method was not recognised, is there a typo?");
             }
 
             var actualHeadingManipulated = actualHeading.Substring(13);
             Assert.AreEqual(expectedHeading, actualHeadingManipulated,
                 $"The expected page heading [{expectedHeading}] was not displayed, the actual heading was [{actualHeadingManipulated}].");
+        }
+
+        [Then(@"the user will be navigated to the poochwarehouse homepage")]
+        public void ThenTheUserWillBeNavigatedToThePoochwarehouseHomepage()
+        {
+            Assert.Multiple(() =>
+            {
+                Assert.IsTrue(HomePage.HomePageImageFrame.Displayed,
+                    "The homepage (main image frame) was not displayed.");
+                Assert.IsTrue(HomePage.TestimonialHeading.Displayed,
+                    "The homepage testimonial subheading was not displayed");
+                Assert.IsTrue(HomePage.CollectionsSubHeading.Displayed,
+                        "The homepage collections subheading was not displayed");
+            });
         }
     }
 }

@@ -15,7 +15,7 @@ namespace PoochWareHouse_Automation.Pages.PageElements
         public static IWebElement AllProductsLink => Driver._webdriver.FindElement(By.XPath("//*[@id=\"SiteNav\"]/li[4]/a/span"));
         public static IWebElement Search => Driver._webdriver.FindElement(By.XPath("//*[@id=\"shopify-section-header\"]/div[2]/header/div/div[2]/div/button[1]/svg"));
         public static IWebElement Login => Driver._webdriver.FindElement(By.XPath("//*[@id=\"shopify-section-header\"]/div[2]/header/div/div[2]/div/a[1]/svg"));
-        public static IWebElement Basket => Driver._webdriver.FindElement(By.XPath("//*[@id=\"shopify-section-header\"]/div[2]/header/div/div[2]/div/a[2]/svg"));
+        public static IWebElement YourCart => Driver._webdriver.FindElement(By.XPath("//*[@id=\"shopify-section-header\"]/div[2]/header/div/div[2]/div/a[2]/svg"));
         public static IWebElement CollectionsSubMenuBedsBlankets => Driver._webdriver.FindElement(By.XPath("//*[@id=\"SiteNavLabel-collections\"]/ul/li[1]/a/span"));
         public static IWebElement CollectionsSubMenuBowlsFood => Driver._webdriver.FindElement(By.XPath("//*[@id=\"SiteNavLabel-collections\"]/ul/li[2]/a/span"));
         public static IWebElement CollectionsSubMenuGrooming => Driver._webdriver.FindElement(By.XPath("//*[@id=\"SiteNavLabel-collections\"]/ul/li[3]/a/span"));

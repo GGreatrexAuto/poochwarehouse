@@ -91,6 +91,8 @@ namespace PoochWareHouse_Automation.Tests
         public void ThenThePoochwarehouseHomepageWillBeDisplayed()
         {
             Assert.IsTrue(HomePage.HomePageImageFrame.Displayed, "The homepage (main image frame) was not displayed.");
+            Assert.IsTrue(HomePage.TestimonialHeading.Displayed, "The homepage testimonial subheading was not displayed");
+            Assert.IsTrue(HomePage.CollectionsSubHeading.Displayed, "The homepage collections subheading was not displayed");
         }
 
         [Then(@"an error will be displayed")]

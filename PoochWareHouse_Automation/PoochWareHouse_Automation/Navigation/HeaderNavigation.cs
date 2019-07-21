@@ -88,5 +88,15 @@ namespace PoochWareHouse_Automation.Navigation
         {
             HeaderMenu.PoochWareHouseLogo.Click();
         }
+
+        public void ToLoginForm()
+        {
+            HeaderMenu.Login.Click();
+        }
+
+        public void ToYourCart()
+        {
+            HeaderMenu.YourCart.Click();
+        }
     }
 }

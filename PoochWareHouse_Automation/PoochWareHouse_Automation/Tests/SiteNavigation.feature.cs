@@ -159,23 +159,25 @@ this.ScenarioInitialize(scenarioInfo);
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Confirm non-collections links in the header frame navigate to the correcrt produc" +
-            "ts page")]
+        [NUnit.Framework.DescriptionAttribute("Confirm non-collections links in the header frame navigate to the correct product" +
+            "s page")]
         [NUnit.Framework.TestCaseAttribute("On Sale", "Sale Items", null)]
         [NUnit.Framework.TestCaseAttribute("All Products", "Products", null)]
-        public virtual void ConfirmNon_CollectionsLinksInTheHeaderFrameNavigateToTheCorrecrtProductsPage(string headerLink, string heading, string[] exampleTags)
+        [NUnit.Framework.TestCaseAttribute("Login", "Login", null)]
+        [NUnit.Framework.TestCaseAttribute("Your Cart", "Your Cart", null)]
+        public virtual void ConfirmNon_CollectionsLinksInTheHeaderFrameNavigateToTheCorrectProductsPage(string headerLink, string heading, string[] exampleTags)
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Confirm non-collections links in the header frame navigate to the correcrt produc" +
-                    "ts page", null, exampleTags);
-#line 60
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Confirm non-collections links in the header frame navigate to the correct product" +
+                    "s page", null, exampleTags);
+#line 59
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 61
+#line 60
  testRunner.Given("I have accessed the PoochwareHouse website homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 62
+#line 61
  testRunner.When(string.Format("I click the \'{0}\' header option", headerLink), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 63
- testRunner.Then(string.Format("the \'{0}\' products page wil load", heading), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 62
+ testRunner.Then(string.Format("the \'{0}\' products page will load", heading), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }
