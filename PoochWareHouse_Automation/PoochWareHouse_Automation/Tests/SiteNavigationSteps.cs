@@ -36,8 +36,90 @@ namespace PoochWareHouse_Automation.Tests
         [Given(@"I have accessed the PoochwareHouse website homepage")]
         public void GivenIHaveAccessedThePoochwareHouseWebsite()
         {
-            _site.InitialiseChromeDriver(Config.PoochwarehouseHomePage);
+            _site.InitialiseChromeDriver(Config.PoochWarehouseHomePage);
         }
+
+        [Given(@"I access the poochwarehouse '(.*)' page")]
+        public void GivenIAccessThePoochwarehousePage(string webPage)
+        {
+            switch (webPage)
+            {
+                   case "sale-items":
+                       _site.InitialiseChromeDriver(Config.SaleItemsUrl);
+                    break;
+                case "all-products":
+                    _site.InitialiseChromeDriver(Config.AllProductsUrl);
+                    break;
+                case "beds-blankets":
+                    _site.InitialiseChromeDriver(Config.BedsBlanketsUrl);
+                    break;
+                   case "bowls-food":
+                       _site.InitialiseChromeDriver(Config.BowlsFoodUrl);
+                    break;
+                case "health-grooming":
+                    _site.InitialiseChromeDriver(Config.HealthGroomingUrl);
+                    break;
+                case "collars-leads":
+                    _site.InitialiseChromeDriver(Config.CollarsLeadsUrl);
+                    break;
+                case "health-care":
+                    _site.InitialiseChromeDriver(Config.HealthCareUrl);
+                    break;
+                case "training":
+                    _site.InitialiseChromeDriver(Config.TrainingUrl);
+                    break;
+                case "small-dogs":
+                    _site.InitialiseChromeDriver(Config.SmallDogsUrl);
+                    break;
+                case "large-dogs":
+                    _site.InitialiseChromeDriver(Config.LargeDogsUrl);
+                    break;
+                case "toys-games":
+                    _site.InitialiseChromeDriver(Config.ToysGamesUrl);
+                    break;
+                case "on-the-go":
+                    _site.InitialiseChromeDriver(Config.OnTheGoUrl);
+                    break;
+                case "summer-collection":
+                    _site.InitialiseChromeDriver(Config.SummerCollectionUrl);
+                    break;
+                case "winter-collection":
+                    _site.InitialiseChromeDriver(Config.WinterCollectionUrl);
+                    break;
+                case "login":
+                    _site.InitialiseChromeDriver(Config.LoginUrl);
+                    break;
+                case "your-cart":
+                    _site.InitialiseChromeDriver(Config.YourCartUrl);
+                    break;
+                case "about-us":
+                    _site.InitialiseChromeDriver(Config.AboutUsUrl);
+                    break;
+                case "faq":
+                    _site.InitialiseChromeDriver(Config.FaqUrl);
+                    break;
+                case "delivery-shipping":
+                    _site.InitialiseChromeDriver(Config.DeliveryShippingUrl);
+                    break;
+                case "returns-policy":
+                    _site.InitialiseChromeDriver(Config.ReturnsPolicyUrl);
+                    break;
+                case "privacy-policy":
+                    _site.InitialiseChromeDriver(Config.PrivacyPolicyUrl);
+                    break;
+                case "terms-of-use":
+                    _site.InitialiseChromeDriver(Config.TermsOfUseUrl);
+                    break;
+                case "contact-us":
+                    _site.InitialiseChromeDriver(Config.ContactUsUrl);
+                    break;
+                default:
+                    Assert.Inconclusive($"webpage [{webPage}] passed into method was not recognised, is there a typo?");
+                    break;
+            }
+    }
+
+            
 
         [Given(@"click the collections drop down option in the page header")]
         public void GivenClickTheCollectionsDropDownOptionInThePageHeader()
@@ -72,7 +154,7 @@ namespace PoochWareHouse_Automation.Tests
                     _footerNavigation.ToContactUs();
                     break;
                 default:
-                    Console.WriteLine($"linkName [{linkName}] passed into method was not recognised, is there a typo?");
+                    Assert.Inconclusive($"linkName [{linkName}] passed into method was not recognised, is there a typo?");
                     break;
             }
         }
@@ -119,8 +201,7 @@ namespace PoochWareHouse_Automation.Tests
                     _homepageNavigation.ToCollectionsWinterTime();
                     break;
                 default:
-                    Console.WriteLine(
-                        $"collectionsLink [{collectionsLink}] passed into method was not recognised, is there a typo?");
+                    Assert.Inconclusive($"collectionsLink [{collectionsLink}] passed into method was not recognised, is there a typo?");
                     break;
             }
         }
@@ -191,7 +272,7 @@ namespace PoochWareHouse_Automation.Tests
                     _headerNavigation.ToYourCart();
                     break;
                 default:
-                    Console.WriteLine($"headerOption [{headerOption}] passed into method was not recognised, is there a typo?");
+                    Assert.Inconclusive($"headerOption [{headerOption}] passed into method was not recognised, is there a typo?");
                     break;
             }
         }
@@ -199,7 +280,18 @@ namespace PoochWareHouse_Automation.Tests
         [When(@"I click the '(.*)' option")]
         public void WhenIClickTheOption(string homePageNavigationType)
         {
-            ScenarioContext.Current.Pending();
+            switch (homePageNavigationType)
+            {
+                case "Homepage header":
+                    _headerNavigation.ToHomePage();
+                    break;
+                case "PoochWarehouse logo":
+                    _headerNavigation.ToHomePageViaLogo();
+                    break;
+                default:
+                    Assert.Inconclusive($"homePageNavigationType [{homePageNavigationType}] passed into method was not recognised, is there a typo?");
+                    break;
+            }
         }
 
 
@@ -215,8 +307,19 @@ namespace PoochWareHouse_Automation.Tests
         }
 
         [Then(@"the '(.*)' products collection page will load")]
-        [Then(@"the '(.*)' products page will load")]
         public void ThenTheProductsCollectionPageWillLoad(string expectedHeading)
+        {
+            Assert.IsTrue(ProductsPagesGenericItems.ProductsGenericPageHeading.Displayed, "The expected page heading was not displayed.");
+
+            var actualHeading = ProductsPagesGenericItems.ProductsGenericPageHeading.Text;
+
+            var actualHeadingManipulated = actualHeading.Substring(13);
+            Assert.AreEqual(expectedHeading, actualHeadingManipulated,
+                $"The expected page heading [{expectedHeading}] was not displayed, the actual heading was [{actualHeadingManipulated}].");
+        }
+
+        [Then(@"the '(.*)' products page will load")]
+        public void ThenTheProductsPageWillLoad(string expectedHeading)
         {
             var actualHeading = string.Empty;
             
@@ -242,8 +345,7 @@ namespace PoochWareHouse_Automation.Tests
             }
             else
             {
-                Console.WriteLine(
-                    $"expectedHeading [{expectedHeading}] passed into method was not recognised, is there a typo?");
+                Assert.Inconclusive($"expectedHeading [{expectedHeading}] passed into method was not recognised, is there a typo?");
             }
 
             var actualHeadingManipulated = actualHeading.Substring(13);

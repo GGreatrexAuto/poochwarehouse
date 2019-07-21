@@ -12,7 +12,7 @@ namespace PoochWareHouse_Automation.Tests
         private readonly ComingSoon _comingSoon = new ComingSoon();
         private readonly ContactPasswordChallenge _contactPasswordChallenge = new ContactPasswordChallenge();
         private readonly ComingSoonLogonPage _comingSoonLogonPage = new ComingSoonLogonPage();
-        private readonly string _preReleaseUrl = Config.PoochwarehousePreReleasePage;
+        private readonly string _preReleaseUrl = Config.PoochWarehousePreReleasePage;
 
         [Given(@"I access the Poochwarehouse.co.uk website")]
         [Given(@"poochwarehouse is not yet live")]

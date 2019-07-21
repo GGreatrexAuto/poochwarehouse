@@ -76,3 +76,50 @@ Scenario Outline: Confirm collections drop down in header frame navigates to the
 	Then the user will be navigated to the poochwarehouse homepage
 
 	Examples: 
+	| webpage           | homepageNavigationType |
+	| sale-items        | Homepage header        |
+	| all-products      | Homepage header        |
+	| beds-blankets     | Homepage header        |
+	| bowls-food        | Homepage header        |
+	| health-grooming   | Homepage header        |
+	| collars-leads     | Homepage header        |
+	| health-care       | Homepage header        |
+	| training          | Homepage header        |
+	| small-dogs        | Homepage header        |
+	| large-dogs        | Homepage header        |
+	| toys-games        | Homepage header        |
+	| on-the-go         | Homepage header        |
+	| summer-collection | Homepage header        |
+	| winter-collection | Homepage header        |
+	| login             | Homepage header        |
+	| your-cart         | Homepage header        |
+	| about-us          | Homepage header        |
+	| faq               | Homepage header        |
+	| delivery-shipping | Homepage header        |
+	| returns-policy    | Homepage header        |
+	| privacy-policy    | Homepage header        |
+	| terms-of-use      | Homepage header        |
+	| contact-us        | Homepage header        |
+	| sale-items        | PoochWarehouse logo    |
+	| all-products      | PoochWarehouse logo    |
+	| beds-blankets     | PoochWarehouse logo    |
+	| bowls-food        | PoochWarehouse logo    |
+	| health-grooming   | PoochWarehouse logo    |
+	| collars-leads     | PoochWarehouse logo    |
+	| health-care       | PoochWarehouse logo    |
+	| training          | PoochWarehouse logo    |
+	| small-dogs        | PoochWarehouse logo    |
+	| large-dogs        | PoochWarehouse logo    |
+	| toys-games        | PoochWarehouse logo    |
+	| on-the-go         | PoochWarehouse logo    |
+	| summer-collection | PoochWarehouse logo    |
+	| winter-collection | PoochWarehouse logo    |
+	| login             | PoochWarehouse logo    |
+	| your-cart         | PoochWarehouse logo    |
+	| about-us          | PoochWarehouse logo    |
+	| faq               | PoochWarehouse logo    |
+	| delivery-shipping | PoochWarehouse logo    |
+	| returns-policy    | PoochWarehouse logo    |
+	| privacy-policy    | PoochWarehouse logo    |
+	| terms-of-use      | PoochWarehouse logo    |
+	| contact-us        | PoochWarehouse logo    |
