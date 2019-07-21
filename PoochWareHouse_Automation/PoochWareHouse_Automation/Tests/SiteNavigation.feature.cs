@@ -167,14 +167,14 @@ this.ScenarioInitialize(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Confirm non-collections links in the header frame navigate to the correcrt produc" +
                     "ts page", null, exampleTags);
-#line 59
+#line 60
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 60
- testRunner.Given("I have accessed the PoochwareHouse website homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 61
- testRunner.When(string.Format("I click the \'{0}\' header option", headerLink), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.Given("I have accessed the PoochwareHouse website homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 62
+ testRunner.When(string.Format("I click the \'{0}\' header option", headerLink), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 63
  testRunner.Then(string.Format("the \'{0}\' products page wil load", heading), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

@@ -56,7 +56,6 @@ Scenario Outline: Confirm collections drop down in header frame navigates to the
 	| Summer Time         | Summer Time        |
 	| Winter Time         | Winter Time        |
 
-	@WIP
 	Scenario Outline: Confirm non-collections links in the header frame navigate to the correcrt products page
 	Given I have accessed the PoochwareHouse website homepage
 	When I click the '<headerLink>' header option

@@ -193,7 +193,7 @@ namespace PoochWareHouse_Automation.Tests
         [Then(@"the '(.*)' informational page will load")]
         public void ThenTheInformationalPageWillLoad(string expectedHeading)
         {
-            Assert.IsTrue(InformationalPagesGenericItems.GenericPageHeading.Displayed);
+            Assert.IsTrue(InformationalPagesGenericItems.GenericPageHeading.Displayed, "The expected page heading was not displayed.");
 
             var actualHeading = InformationalPagesGenericItems.GenericPageHeading.Text;
 
@@ -205,23 +205,23 @@ namespace PoochWareHouse_Automation.Tests
         [Then(@"the '(.*)' products page wil load")]
         public void ThenTheProductsCollectionPageWillLoad(string expectedHeading)
         {
-            Assert.IsTrue(ProductsPagesGenericItems.ProductsGenericPageHeading.Displayed);
-
             var actualHeading = string.Empty;
-
+            
             if (expectedHeading == "Products")
             {
-                actualHeading = ProductsPagesGenericItems.ProductsGenericPageHeadingNoImage.Text;
+                Assert.IsTrue(AllProducts.ProductsPageHeading.Displayed, "The expected page heading was not displayed.");
+                actualHeading = AllProducts.ProductsPageHeading.Text;
             }
             else
             {
+                Assert.IsTrue(ProductsPagesGenericItems.ProductsGenericPageHeading.Displayed, "The expected page heading was not displayed.");
                 actualHeading = ProductsPagesGenericItems.ProductsGenericPageHeading.Text;
+                
             }
-            
-            var actualHeadingManiplulated = actualHeading.Substring(13);
 
-            Assert.AreEqual(expectedHeading, actualHeadingManiplulated, 
-                $"The expected page heading [{expectedHeading}] was not displayed, the actual heading was [{actualHeadingManiplulated}].");
+            var actualHeadingManipulated = actualHeading.Substring(13);
+            Assert.AreEqual(expectedHeading, actualHeadingManipulated,
+                $"The expected page heading [{expectedHeading}] was not displayed, the actual heading was [{actualHeadingManipulated}].");
         }
     }
 }
