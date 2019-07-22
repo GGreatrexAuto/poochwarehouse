@@ -326,11 +326,7 @@ namespace PoochWareHouse_Automation.Tests
             }
             else if (expectedHeading == "Sale Items")
             {
-                Assert.IsTrue(ProductsPagesGenericItems.ProductsGenericPageHeading.Displayed, TestErrorHelper.ExpectedPageHeadingNotDisplayed());
-                actualHeading = ProductsPagesGenericItems.ProductsGenericPageHeading.Text;
-                var actualHeadingManipulated = actualHeading.Substring(13);
-                Assert.AreEqual(expectedHeading, actualHeadingManipulated,
-                    TestErrorHelper.ExpectedActualageHeadingsDoNotMatch(expectedHeading, actualHeadingManipulated));
+                ThenTheProductsCollectionPageWillLoad(expectedHeading));
             }
             else if(expectedHeading == "Login")
             {
