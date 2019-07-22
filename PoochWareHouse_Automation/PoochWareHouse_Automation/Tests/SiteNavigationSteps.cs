@@ -5,7 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using NUnit.Framework;
+using NUnit.Framework.Internal;
 using OpenQA.Selenium.Support.UI;
+using PoochWareHouse_Automation.Helpers;
 using PoochWareHouse_Automation.Navigation;
 using PoochWareHouse_Automation.Pages;
 using PoochWareHouse_Automation.Pages.Collections;
@@ -114,7 +116,7 @@ namespace PoochWareHouse_Automation.Tests
                     _site.InitialiseChromeDriver(Config.ContactUsUrl);
                     break;
                 default:
-                    Assert.Inconclusive($"webpage [{webPage}] passed into method was not recognised, is there a typo?");
+                    Assert.Inconclusive(TestErrorHelper.CaseValueNotRecognised(webPage));
                     break;
             }
     }
@@ -154,7 +156,7 @@ namespace PoochWareHouse_Automation.Tests
                     _footerNavigation.ToContactUs();
                     break;
                 default:
-                    Assert.Inconclusive($"linkName [{linkName}] passed into method was not recognised, is there a typo?");
+                    Assert.Inconclusive(TestErrorHelper.CaseValueNotRecognised(linkName));
                     break;
             }
         }
@@ -201,7 +203,7 @@ namespace PoochWareHouse_Automation.Tests
                     _homepageNavigation.ToCollectionsWinterTime();
                     break;
                 default:
-                    Assert.Inconclusive($"collectionsLink [{collectionsLink}] passed into method was not recognised, is there a typo?");
+                    Assert.Inconclusive(TestErrorHelper.CaseValueNotRecognised(collectionsLink));
                     break;
             }
         }
@@ -249,7 +251,7 @@ namespace PoochWareHouse_Automation.Tests
                     break;
                 default:
                     Console.WriteLine(
-                        $"collectionsDropDown [{collectionsDropDown}] passed into method was not recognised, is there a typo?");
+                        TestErrorHelper.CaseValueNotRecognised(collectionsDropDown));
                     break;
             }
         }
@@ -272,7 +274,7 @@ namespace PoochWareHouse_Automation.Tests
                     _headerNavigation.ToYourCart();
                     break;
                 default:
-                    Assert.Inconclusive($"headerOption [{headerOption}] passed into method was not recognised, is there a typo?");
+                    Assert.Inconclusive(TestErrorHelper.CaseValueNotRecognised(headerOption));
                     break;
             }
         }
@@ -289,7 +291,7 @@ namespace PoochWareHouse_Automation.Tests
                     _headerNavigation.ToHomePageViaLogo();
                     break;
                 default:
-                    Assert.Inconclusive($"homePageNavigationType [{homePageNavigationType}] passed into method was not recognised, is there a typo?");
+                    Assert.Inconclusive(TestErrorHelper.CaseValueNotRecognised(homePageNavigationType));
                     break;
             }
         }

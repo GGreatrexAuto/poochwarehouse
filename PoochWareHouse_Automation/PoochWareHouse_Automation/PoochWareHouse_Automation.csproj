@@ -79,6 +79,7 @@
     <Compile Include="Config.cs" />
     <Compile Include="Driver.cs" />
     <Compile Include="EntryPoint.cs" />
+    <Compile Include="Helpers\TestErrorHelper.cs" />
     <Compile Include="Hooks.cs" />
     <Compile Include="Navigation\FooterNavigation.cs" />
     <Compile Include="Navigation\HeaderNavigation.cs" />

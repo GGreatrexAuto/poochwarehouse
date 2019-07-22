@@ -10,7 +10,7 @@ namespace PoochWareHouse_Automation.Pages.PageElements
     {
         public static IWebElement PoochWareHouseLogo =>
             Driver._webdriver.FindElement(
-                By.XPath("//*[@id=\"shopify-section-header\"]/div[2]/header/div/div[1]/div/a");
+                By.XPath("//*[@id=\"shopify-section-header\"]/div[2]/header/div/div[1]/div/a"));
         public static IWebElement HomeLink => Driver._webdriver.FindElement(By.XPath("//*[@id=\"SiteNav\"]/li[1]/a/span"));
         public static IWebElement OnSaleLink => Driver._webdriver.FindElement(By.XPath("//*[@id=\"SiteNav\"]/li[2]/a/span"));
         public static IWebElement CollectionsDropDownLink => Driver._webdriver.FindElement(By.XPath("//*[@id=\"SiteNav\"]/li[3]/button/span"));
