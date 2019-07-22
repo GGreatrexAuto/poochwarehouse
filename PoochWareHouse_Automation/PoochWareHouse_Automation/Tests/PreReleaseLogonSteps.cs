@@ -1,4 +1,5 @@
 ﻿using NUnit.Framework;
+using PoochWareHouse_Automation.Configuration;
 using PoochWareHouse_Automation.Pages;
 using TechTalk.SpecFlow;
 
@@ -12,7 +13,7 @@ namespace PoochWareHouse_Automation.Tests
         private readonly ComingSoon _comingSoon = new ComingSoon();
         private readonly ContactPasswordChallenge _contactPasswordChallenge = new ContactPasswordChallenge();
         private readonly ComingSoonLogonPage _comingSoonLogonPage = new ComingSoonLogonPage();
-        private readonly string _preReleaseUrl = Config.PoochWarehousePreReleasePage;
+        private readonly string _preReleaseUrl = Urls.PoochWarehousePreReleasePage;
 
         [Given(@"I access the Poochwarehouse.co.uk website")]
         [Given(@"poochwarehouse is not yet live")]

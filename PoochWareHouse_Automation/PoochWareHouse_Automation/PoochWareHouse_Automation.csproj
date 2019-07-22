@@ -76,7 +76,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Config.cs" />
+    <Compile Include="Configuration\Config.cs" />
+    <Compile Include="Configuration\Urls.cs" />
     <Compile Include="Driver.cs" />
     <Compile Include="EntryPoint.cs" />
     <Compile Include="Helpers\TestErrorHelper.cs" />

@@ -2,16 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
-namespace PoochWareHouse_Automation
+namespace PoochWareHouse_Automation.Configuration
 {
-    public static class Config
+    public static class Urls
     {
-        
-        public static int GlobalTimeOut = 5;
-        public static string PreReleasePassword = "p00ch";
-        public static string ValidContactEmail = "test@hotmail.com";
-        public static string EmailInvalidDomain = "g@g.com";
         public static string PoochWarehouseHomePage = "https://poochwarehouse.co.uk/";
         public static string PoochWarehousePreReleasePage = "https://poochwarehouse.co.uk/password";
         public static string SaleItemsUrl = "https://poochwarehouse.co.uk/collections/sale-items";

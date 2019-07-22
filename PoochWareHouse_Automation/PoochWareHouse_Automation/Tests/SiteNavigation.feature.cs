@@ -169,14 +169,14 @@ this.ScenarioInitialize(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Confirm non-collections links in the header frame navigate to the correct product" +
                     "s page", null, exampleTags);
-#line 60
+#line 59
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 61
+#line 60
  testRunner.Given("I have accessed the PoochwareHouse website homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 62
+#line 61
  testRunner.When(string.Format("I click the \'{0}\' header option", headerLink), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 63
+#line 62
  testRunner.Then(string.Format("the \'{0}\' products page will load", heading), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -185,7 +185,6 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Confirm homepage button or poochwarehouse image will navigate the user back to th" +
             "e poochwarehouse homepage")]
-        [NUnit.Framework.CategoryAttribute("WIP")]
         [NUnit.Framework.TestCaseAttribute("sale-items", "Homepage header", null)]
         [NUnit.Framework.TestCaseAttribute("all-products", "Homepage header", null)]
         [NUnit.Framework.TestCaseAttribute("beds-blankets", "Homepage header", null)]
@@ -209,47 +208,18 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.TestCaseAttribute("privacy-policy", "Homepage header", null)]
         [NUnit.Framework.TestCaseAttribute("terms-of-use", "Homepage header", null)]
         [NUnit.Framework.TestCaseAttribute("contact-us", "Homepage header", null)]
-        [NUnit.Framework.TestCaseAttribute("sale-items", "PoochWarehouse logo", null)]
-        [NUnit.Framework.TestCaseAttribute("all-products", "PoochWarehouse logo", null)]
-        [NUnit.Framework.TestCaseAttribute("beds-blankets", "PoochWarehouse logo", null)]
-        [NUnit.Framework.TestCaseAttribute("bowls-food", "PoochWarehouse logo", null)]
-        [NUnit.Framework.TestCaseAttribute("health-grooming", "PoochWarehouse logo", null)]
-        [NUnit.Framework.TestCaseAttribute("collars-leads", "PoochWarehouse logo", null)]
-        [NUnit.Framework.TestCaseAttribute("health-care", "PoochWarehouse logo", null)]
-        [NUnit.Framework.TestCaseAttribute("training", "PoochWarehouse logo", null)]
-        [NUnit.Framework.TestCaseAttribute("small-dogs", "PoochWarehouse logo", null)]
-        [NUnit.Framework.TestCaseAttribute("large-dogs", "PoochWarehouse logo", null)]
-        [NUnit.Framework.TestCaseAttribute("toys-games", "PoochWarehouse logo", null)]
-        [NUnit.Framework.TestCaseAttribute("on-the-go", "PoochWarehouse logo", null)]
-        [NUnit.Framework.TestCaseAttribute("summer-collection", "PoochWarehouse logo", null)]
-        [NUnit.Framework.TestCaseAttribute("winter-collection", "PoochWarehouse logo", null)]
-        [NUnit.Framework.TestCaseAttribute("login", "PoochWarehouse logo", null)]
-        [NUnit.Framework.TestCaseAttribute("your-cart", "PoochWarehouse logo", null)]
-        [NUnit.Framework.TestCaseAttribute("about-us", "PoochWarehouse logo", null)]
-        [NUnit.Framework.TestCaseAttribute("faq", "PoochWarehouse logo", null)]
-        [NUnit.Framework.TestCaseAttribute("delivery-shipping", "PoochWarehouse logo", null)]
-        [NUnit.Framework.TestCaseAttribute("returns-policy", "PoochWarehouse logo", null)]
-        [NUnit.Framework.TestCaseAttribute("privacy-policy", "PoochWarehouse logo", null)]
-        [NUnit.Framework.TestCaseAttribute("terms-of-use", "PoochWarehouse logo", null)]
-        [NUnit.Framework.TestCaseAttribute("contact-us", "PoochWarehouse logo", null)]
         public virtual void ConfirmHomepageButtonOrPoochwarehouseImageWillNavigateTheUserBackToThePoochwarehouseHomepage(string webpage, string homepageNavigationType, string[] exampleTags)
         {
-            string[] @__tags = new string[] {
-                    "WIP"};
-            if ((exampleTags != null))
-            {
-                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
-            }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Confirm homepage button or poochwarehouse image will navigate the user back to th" +
-                    "e poochwarehouse homepage", null, @__tags);
-#line 73
+                    "e poochwarehouse homepage", null, exampleTags);
+#line 72
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 74
+#line 73
  testRunner.Given(string.Format("I access the poochwarehouse \'{0}\' page", webpage), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 75
+#line 74
  testRunner.When(string.Format("I click the \'{0}\' option", homepageNavigationType), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 76
+#line 75
  testRunner.Then("the user will be navigated to the poochwarehouse homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

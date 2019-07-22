@@ -56,7 +56,6 @@ Scenario Outline: Confirm collections drop down in header frame navigates to the
 	| Summer Time         | Summer Time        |
 	| Winter Time         | Winter Time        |
 
-	#@WIP
 	Scenario Outline: Confirm non-collections links in the header frame navigate to the correct products page
 	Given I have accessed the PoochwareHouse website homepage
 	When I click the '<headerLink>' header option
@@ -69,7 +68,6 @@ Scenario Outline: Confirm collections drop down in header frame navigates to the
 	| Login        | Login      |
 	| Your Cart    | Your cart  |
 	
-	@WIP
 	Scenario Outline: Confirm homepage button or poochwarehouse image will navigate the user back to the poochwarehouse homepage
 	Given I access the poochwarehouse '<webpage>' page
 	When I click the '<homepageNavigationType>' option
@@ -100,26 +98,26 @@ Scenario Outline: Confirm collections drop down in header frame navigates to the
 	| privacy-policy    | Homepage header        |
 	| terms-of-use      | Homepage header        |
 	| contact-us        | Homepage header        |
-	| sale-items        | PoochWarehouse logo    |
-	| all-products      | PoochWarehouse logo    |
-	| beds-blankets     | PoochWarehouse logo    |
-	| bowls-food        | PoochWarehouse logo    |
-	| health-grooming   | PoochWarehouse logo    |
-	| collars-leads     | PoochWarehouse logo    |
-	| health-care       | PoochWarehouse logo    |
-	| training          | PoochWarehouse logo    |
-	| small-dogs        | PoochWarehouse logo    |
-	| large-dogs        | PoochWarehouse logo    |
-	| toys-games        | PoochWarehouse logo    |
-	| on-the-go         | PoochWarehouse logo    |
-	| summer-collection | PoochWarehouse logo    |
-	| winter-collection | PoochWarehouse logo    |
-	| login             | PoochWarehouse logo    |
-	| your-cart         | PoochWarehouse logo    |
-	| about-us          | PoochWarehouse logo    |
-	| faq               | PoochWarehouse logo    |
-	| delivery-shipping | PoochWarehouse logo    |
-	| returns-policy    | PoochWarehouse logo    |
-	| privacy-policy    | PoochWarehouse logo    |
-	| terms-of-use      | PoochWarehouse logo    |
-	| contact-us        | PoochWarehouse logo    |
+	#| sale-items        | PoochWarehouse logo    |
+	#| all-products      | PoochWarehouse logo    |
+	#| beds-blankets     | PoochWarehouse logo    |
+	#| bowls-food        | PoochWarehouse logo    |
+	#| health-grooming   | PoochWarehouse logo    |
+	#| collars-leads     | PoochWarehouse logo    |
+	#| health-care       | PoochWarehouse logo    |
+	#| training          | PoochWarehouse logo    |
+	#| small-dogs        | PoochWarehouse logo    |
+	#| large-dogs        | PoochWarehouse logo    |
+	#| toys-games        | PoochWarehouse logo    |
+	#| on-the-go         | PoochWarehouse logo    |
+	#| summer-collection | PoochWarehouse logo    |
+	#| winter-collection | PoochWarehouse logo    |
+	#| login             | PoochWarehouse logo    |
+	#| your-cart         | PoochWarehouse logo    |
+	#| about-us          | PoochWarehouse logo    |
+	#| faq               | PoochWarehouse logo    |
+	#| delivery-shipping | PoochWarehouse logo    |
+	#| returns-policy    | PoochWarehouse logo    |
+	#| privacy-policy    | PoochWarehouse logo    |
+	#| terms-of-use      | PoochWarehouse logo    |
+	#| contact-us        | PoochWarehouse logo    |

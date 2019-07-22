@@ -24,5 +24,11 @@ namespace PoochWareHouse_Automation
             Driver.WaitForUpTo(Config.GlobalTimeOut);
             Driver._webdriver.Manage().Window.Maximize();
         }
+
+        public string GetWebPageUrl()
+        {
+            var currentPageUrl = Driver._webdriver.Url;
+            return currentPageUrl;
+        }
     }
 }
