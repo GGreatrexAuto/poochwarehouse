@@ -165,6 +165,7 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.TestCaseAttribute("All Products", "Products", null)]
         [NUnit.Framework.TestCaseAttribute("Login", "Login", null)]
         [NUnit.Framework.TestCaseAttribute("Your Cart", "Your cart", null)]
+        [NUnit.Framework.TestCaseAttribute("News", "News", null)]
         public virtual void ConfirmNon_CollectionsLinksInTheHeaderFrameNavigateToTheCorrectProductsPage(string headerLink, string heading, string[] exampleTags)
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Confirm non-collections links in the header frame navigate to the correct product" +
@@ -208,6 +209,7 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.TestCaseAttribute("privacy-policy", "Homepage header", null)]
         [NUnit.Framework.TestCaseAttribute("terms-of-use", "Homepage header", null)]
         [NUnit.Framework.TestCaseAttribute("contact-us", "Homepage header", null)]
+        [NUnit.Framework.TestCaseAttribute("news", "Homepage header", null)]
         public virtual void ConfirmHomepageButtonOrPoochwarehouseImageWillNavigateTheUserBackToThePoochwarehouseHomepage(string webpage, string homepageNavigationType, string[] exampleTags)
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Confirm homepage button or poochwarehouse image will navigate the user back to th" +

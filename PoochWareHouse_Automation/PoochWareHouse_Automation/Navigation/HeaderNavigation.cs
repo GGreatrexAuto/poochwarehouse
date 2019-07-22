@@ -98,5 +98,10 @@ namespace PoochWareHouse_Automation.Navigation
         {
             HeaderMenu.YourCart.Click();
         }
+
+        public void ToNews()
+        {
+            HeaderMenu.News.Click();
+        }
     }
 }

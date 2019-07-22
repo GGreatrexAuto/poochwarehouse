@@ -67,6 +67,7 @@ Scenario Outline: Confirm collections drop down in header frame navigates to the
 	| All Products | Products   |
 	| Login        | Login      |
 	| Your Cart    | Your cart  |
+	| News         | News       |
 	
 	Scenario Outline: Confirm homepage button or poochwarehouse image will navigate the user back to the poochwarehouse homepage
 	Given I access the poochwarehouse '<webpage>' page
@@ -98,6 +99,7 @@ Scenario Outline: Confirm collections drop down in header frame navigates to the
 	| privacy-policy    | Homepage header        |
 	| terms-of-use      | Homepage header        |
 	| contact-us        | Homepage header        |
+	| news              | Homepage header        |
 	#| sale-items        | PoochWarehouse logo    |
 	#| all-products      | PoochWarehouse logo    |
 	#| beds-blankets     | PoochWarehouse logo    |

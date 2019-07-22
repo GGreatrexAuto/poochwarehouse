@@ -101,6 +101,7 @@
     <Compile Include="Pages\InformationalPages\ReturnsPolicy.cs" />
     <Compile Include="Pages\InformationalPages\TermsOfUse.cs" />
     <Compile Include="Pages\LoginForm.cs" />
+    <Compile Include="Pages\News.cs" />
     <Compile Include="Pages\OnSale.cs" />
     <Compile Include="Pages\PageElements\QuickLinksFooter.cs" />
     <Compile Include="Pages\PageElements\HeaderMenu.cs" />

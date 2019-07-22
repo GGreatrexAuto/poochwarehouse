@@ -33,5 +33,6 @@ namespace PoochWareHouse_Automation.Configuration
         public static string PrivacyPolicyUrl = "https://poochwarehouse.co.uk/pages/privacy-policy";
         public static string TermsOfUseUrl = "https://poochwarehouse.co.uk/pages/terms-of-use";
         public static string ContactUsUrl = "https://poochwarehouse.co.uk/pages/contact-us";
+        public static string NewsUrl = "https://poochwarehouse.co.uk/blogs/news";
     }
 }

@@ -109,6 +109,9 @@ namespace PoochWareHouse_Automation.Tests
                 case "contact-us":
                     _site.InitialiseChromeDriver(Urls.ContactUsUrl);
                     break;
+                   case "news":
+                       _site.InitialiseChromeDriver(Urls.NewsUrl);
+                       break;
                 default:
                     Assert.Inconclusive(TestErrorHelper.CaseValueNotRecognised(webPage));
                     break;
@@ -265,6 +268,9 @@ namespace PoochWareHouse_Automation.Tests
                 case "Your Cart":
                     _headerNavigation.ToYourCart();
                     break;
+                case "News":
+                    _headerNavigation.ToNews();
+                    break;
                 default:
                     Assert.Inconclusive(TestErrorHelper.CaseValueNotRecognised(headerOption));
                     break;
@@ -339,6 +345,12 @@ namespace PoochWareHouse_Automation.Tests
             {
                 Assert.IsTrue(YourCart.YourCartPageHeading.Displayed, TestErrorHelper.ExpectedPageHeadingNotDisplayed());
                 actualHeading = YourCart.YourCartPageHeading.Text;
+                Assert.AreEqual(expectedHeading, actualHeading, TestErrorHelper.ExpectedActualageHeadingsDoNotMatch(expectedHeading, actualHeading));
+            }
+            else if (expectedHeading == "News")
+            {
+                Assert.IsTrue(News.NewsPageHeading.Displayed, TestErrorHelper.ExpectedPageHeadingNotDisplayed());
+                actualHeading = News.NewsPageHeading.Text;
                 Assert.AreEqual(expectedHeading, actualHeading, TestErrorHelper.ExpectedActualageHeadingsDoNotMatch(expectedHeading, actualHeading));
             }
             else
