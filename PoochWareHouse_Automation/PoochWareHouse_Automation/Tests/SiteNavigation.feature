@@ -56,7 +56,7 @@ Scenario Outline: Confirm collections drop down in header frame navigates to the
 	| Summer Time         | Summer Time        |
 	| Winter Time         | Winter Time        |
 
-	@WIP
+	#@WIP
 	Scenario Outline: Confirm non-collections links in the header frame navigate to the correct products page
 	Given I have accessed the PoochwareHouse website homepage
 	When I click the '<headerLink>' header option
@@ -67,7 +67,7 @@ Scenario Outline: Confirm collections drop down in header frame navigates to the
 	| On Sale      | Sale Items |
 	| All Products | Products   |
 	| Login        | Login      |
-	| Your Cart    | Your Cart  |
+	| Your Cart    | Your cart  |
 	
 	@WIP
 	Scenario Outline: Confirm homepage button or poochwarehouse image will navigate the user back to the poochwarehouse homepage

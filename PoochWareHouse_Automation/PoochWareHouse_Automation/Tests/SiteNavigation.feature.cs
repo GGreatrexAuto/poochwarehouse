@@ -164,7 +164,7 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.TestCaseAttribute("On Sale", "Sale Items", null)]
         [NUnit.Framework.TestCaseAttribute("All Products", "Products", null)]
         [NUnit.Framework.TestCaseAttribute("Login", "Login", null)]
-        [NUnit.Framework.TestCaseAttribute("Your Cart", "Your Cart", null)]
+        [NUnit.Framework.TestCaseAttribute("Your Cart", "Your cart", null)]
         public virtual void ConfirmNon_CollectionsLinksInTheHeaderFrameNavigateToTheCorrectProductsPage(string headerLink, string heading, string[] exampleTags)
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Confirm non-collections links in the header frame navigate to the correct product" +
@@ -185,6 +185,7 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Confirm homepage button or poochwarehouse image will navigate the user back to th" +
             "e poochwarehouse homepage")]
+        [NUnit.Framework.CategoryAttribute("WIP")]
         [NUnit.Framework.TestCaseAttribute("sale-items", "Homepage header", null)]
         [NUnit.Framework.TestCaseAttribute("all-products", "Homepage header", null)]
         [NUnit.Framework.TestCaseAttribute("beds-blankets", "Homepage header", null)]
@@ -233,8 +234,14 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.TestCaseAttribute("contact-us", "PoochWarehouse logo", null)]
         public virtual void ConfirmHomepageButtonOrPoochwarehouseImageWillNavigateTheUserBackToThePoochwarehouseHomepage(string webpage, string homepageNavigationType, string[] exampleTags)
         {
+            string[] @__tags = new string[] {
+                    "WIP"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Confirm homepage button or poochwarehouse image will navigate the user back to th" +
-                    "e poochwarehouse homepage", null, exampleTags);
+                    "e poochwarehouse homepage", null, @__tags);
 #line 73
  this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();

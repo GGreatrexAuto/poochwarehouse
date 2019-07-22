@@ -327,30 +327,34 @@ namespace PoochWareHouse_Automation.Tests
             {
                 Assert.IsTrue(AllProducts.ProductsPageHeading.Displayed, "The expected page heading was not displayed.");
                 actualHeading = AllProducts.ProductsPageHeading.Text;
+                var actualHeadingManipulated = actualHeading.Substring(13);
+                Assert.AreEqual(expectedHeading, actualHeadingManipulated,
+                    $"The expected page heading [{expectedHeading}] was not displayed, the actual heading was [{actualHeadingManipulated}].");
             }
             else if (expectedHeading == "Sale Items")
             {
                 Assert.IsTrue(ProductsPagesGenericItems.ProductsGenericPageHeading.Displayed, "The expected page heading was not displayed.");
                 actualHeading = ProductsPagesGenericItems.ProductsGenericPageHeading.Text;
+                var actualHeadingManipulated = actualHeading.Substring(13);
+                Assert.AreEqual(expectedHeading, actualHeadingManipulated,
+                    $"The expected page heading [{expectedHeading}] was not displayed, the actual heading was [{actualHeadingManipulated}].");
             }
             else if(expectedHeading == "Login")
             {
                 Assert.IsTrue(LoginForm.LoginPageheader.Displayed, "The expected page heading was not displayed.");
                 actualHeading = LoginForm.LoginPageheader.Text;
+                Assert.AreEqual(expectedHeading, actualHeading, $"The expected page heading [{expectedHeading}] was not displayed, the actual heading was [{actualHeading}].");
             }
-            else if(expectedHeading == "Your Cart")
+            else if(expectedHeading == "Your cart")
             {
                 Assert.IsTrue(YourCart.YourCartPageHeading.Displayed, "The expected page heading was not displayed.");
                 actualHeading = YourCart.YourCartPageHeading.Text;
+                Assert.AreEqual(expectedHeading, actualHeading, $"The expected page heading [{expectedHeading}] was not displayed, the actual heading was [{actualHeading}].");
             }
             else
             {
                 Assert.Inconclusive($"expectedHeading [{expectedHeading}] passed into method was not recognised, is there a typo?");
-            }
-
-            var actualHeadingManipulated = actualHeading.Substring(13);
-            Assert.AreEqual(expectedHeading, actualHeadingManipulated,
-                $"The expected page heading [{expectedHeading}] was not displayed, the actual heading was [{actualHeadingManipulated}].");
+            }            
         }
 
         [Then(@"the user will be navigated to the poochwarehouse homepage")]

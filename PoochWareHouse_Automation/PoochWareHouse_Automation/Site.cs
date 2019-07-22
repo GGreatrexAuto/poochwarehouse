@@ -14,6 +14,7 @@ namespace PoochWareHouse_Automation
             Driver._webdriver = new ChromeDriver();
             Driver._webdriver.Navigate().GoToUrl(url);
             Driver.WaitForUpTo(Config.GlobalTimeOut);
+            Driver._webdriver.Manage().Window.Maximize();
         }
 
         public void InitialiseFirefoxDriver(string url)
@@ -21,6 +22,7 @@ namespace PoochWareHouse_Automation
             Driver._webdriver = new FirefoxDriver();
             Driver._webdriver.Navigate().GoToUrl(url);
             Driver.WaitForUpTo(Config.GlobalTimeOut);
+            Driver._webdriver.Manage().Window.Maximize();
         }
     }
 }
