@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using NUnit.Framework;
-using NUnit.Framework.Internal;
-using OpenQA.Selenium.Support.UI;
 using PoochWareHouse_Automation.Helpers;
 using PoochWareHouse_Automation.Navigation;
 using PoochWareHouse_Automation.Pages;
@@ -120,8 +113,6 @@ namespace PoochWareHouse_Automation.Tests
                     break;
             }
     }
-
-            
 
         [Given(@"click the collections drop down option in the page header")]
         public void GivenClickTheCollectionsDropDownOptionInThePageHeader()
@@ -300,24 +291,24 @@ namespace PoochWareHouse_Automation.Tests
         [Then(@"the '(.*)' informational page will load")]
         public void ThenTheInformationalPageWillLoad(string expectedHeading)
         {
-            Assert.IsTrue(InformationalPagesGenericItems.GenericPageHeading.Displayed, "The expected page heading was not displayed.");
+            Assert.IsTrue(InformationalPagesGenericItems.GenericPageHeading.Displayed, TestErrorHelper.ExpectedPageHeadingNotDisplayed());
 
             var actualHeading = InformationalPagesGenericItems.GenericPageHeading.Text;
 
             Assert.AreEqual(expectedHeading, actualHeading, 
-                $"The expected page heading [{expectedHeading}] was not displayed, the actual heading was [{actualHeading}].");
+                TestErrorHelper.ExpectedActualageHeadingsDoNotMatch(expectedHeading, actualHeading));
         }
 
         [Then(@"the '(.*)' products collection page will load")]
         public void ThenTheProductsCollectionPageWillLoad(string expectedHeading)
         {
-            Assert.IsTrue(ProductsPagesGenericItems.ProductsGenericPageHeading.Displayed, "The expected page heading was not displayed.");
+            Assert.IsTrue(ProductsPagesGenericItems.ProductsGenericPageHeading.Displayed, TestErrorHelper.ExpectedPageHeadingNotDisplayed());
 
             var actualHeading = ProductsPagesGenericItems.ProductsGenericPageHeading.Text;
 
             var actualHeadingManipulated = actualHeading.Substring(13);
             Assert.AreEqual(expectedHeading, actualHeadingManipulated,
-                $"The expected page heading [{expectedHeading}] was not displayed, the actual heading was [{actualHeadingManipulated}].");
+                TestErrorHelper.ExpectedActualageHeadingsDoNotMatch(expectedHeading, actualHeadingManipulated));
         }
 
         [Then(@"the '(.*)' products page will load")]
@@ -327,35 +318,35 @@ namespace PoochWareHouse_Automation.Tests
             
             if (expectedHeading == "Products")
             {
-                Assert.IsTrue(AllProducts.ProductsPageHeading.Displayed, "The expected page heading was not displayed.");
+                Assert.IsTrue(AllProducts.ProductsPageHeading.Displayed, TestErrorHelper.ExpectedPageHeadingNotDisplayed());
                 actualHeading = AllProducts.ProductsPageHeading.Text;
                 var actualHeadingManipulated = actualHeading.Substring(13);
                 Assert.AreEqual(expectedHeading, actualHeadingManipulated,
-                    $"The expected page heading [{expectedHeading}] was not displayed, the actual heading was [{actualHeadingManipulated}].");
+                    TestErrorHelper.ExpectedActualageHeadingsDoNotMatch(expectedHeading, actualHeadingManipulated));
             }
             else if (expectedHeading == "Sale Items")
             {
-                Assert.IsTrue(ProductsPagesGenericItems.ProductsGenericPageHeading.Displayed, "The expected page heading was not displayed.");
+                Assert.IsTrue(ProductsPagesGenericItems.ProductsGenericPageHeading.Displayed, TestErrorHelper.ExpectedPageHeadingNotDisplayed());
                 actualHeading = ProductsPagesGenericItems.ProductsGenericPageHeading.Text;
                 var actualHeadingManipulated = actualHeading.Substring(13);
                 Assert.AreEqual(expectedHeading, actualHeadingManipulated,
-                    $"The expected page heading [{expectedHeading}] was not displayed, the actual heading was [{actualHeadingManipulated}].");
+                    TestErrorHelper.ExpectedActualageHeadingsDoNotMatch(expectedHeading, actualHeadingManipulated));
             }
             else if(expectedHeading == "Login")
             {
-                Assert.IsTrue(LoginForm.LoginPageheader.Displayed, "The expected page heading was not displayed.");
+                Assert.IsTrue(LoginForm.LoginPageheader.Displayed, TestErrorHelper.ExpectedPageHeadingNotDisplayed());
                 actualHeading = LoginForm.LoginPageheader.Text;
-                Assert.AreEqual(expectedHeading, actualHeading, $"The expected page heading [{expectedHeading}] was not displayed, the actual heading was [{actualHeading}].");
+                Assert.AreEqual(expectedHeading, actualHeading, TestErrorHelper.ExpectedActualageHeadingsDoNotMatch(expectedHeading, actualHeading));
             }
             else if(expectedHeading == "Your cart")
             {
-                Assert.IsTrue(YourCart.YourCartPageHeading.Displayed, "The expected page heading was not displayed.");
+                Assert.IsTrue(YourCart.YourCartPageHeading.Displayed, TestErrorHelper.ExpectedPageHeadingNotDisplayed());
                 actualHeading = YourCart.YourCartPageHeading.Text;
-                Assert.AreEqual(expectedHeading, actualHeading, $"The expected page heading [{expectedHeading}] was not displayed, the actual heading was [{actualHeading}].");
+                Assert.AreEqual(expectedHeading, actualHeading, TestErrorHelper.ExpectedActualageHeadingsDoNotMatch(expectedHeading, actualHeading));
             }
             else
             {
-                Assert.Inconclusive($"expectedHeading [{expectedHeading}] passed into method was not recognised, is there a typo?");
+                Assert.Inconclusive(TestErrorHelper.CaseValueNotRecognised(expectedHeading));
             }            
         }
 
