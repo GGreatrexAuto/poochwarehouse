@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Threading;
 using NUnit.Framework;
+using OpenQA.Selenium.Support.UI;
 using PoochWareHouse_Automation.Configuration;
 using PoochWareHouse_Automation.Helpers;
 using PoochWareHouse_Automation.Navigation;
@@ -34,6 +36,15 @@ namespace PoochWareHouse_Automation.Tests
         {
             _site.InitialiseChromeDriver(Urls.PoochWarehouseHomePage);
         }
+
+        [Given(@"I clear the cookies overlay")]
+        public void GivenIClearTheCookiesOverlay()
+        {
+            CookieOverlay.AcceptCookieButton.Click();
+
+            Thread.Sleep(1250);
+        }
+
 
         [Given(@"I access the poochwarehouse '(.*)' page")]
         public void GivenIAccessThePoochwarehousePage(string webPage)

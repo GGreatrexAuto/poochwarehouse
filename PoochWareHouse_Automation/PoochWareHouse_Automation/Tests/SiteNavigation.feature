@@ -2,6 +2,7 @@
 
 Scenario Outline: Confirm footer quick links navigate to the correct information page.
 	Given I have accessed the PoochwareHouse website homepage
+		And I clear the cookies overlay
 	When I click the '<pageLink>' in the website footer
 	Then the '<heading>' informational page will load
 	
@@ -17,6 +18,7 @@ Scenario Outline: Confirm footer quick links navigate to the correct information
 
 Scenario Outline: Confirm collections section links navigate to the correct products page
 	Given I have accessed the PoochwareHouse website homepage
+		And I clear the cookies overlay
 	When I click the '<collectionLink>' in the collections frame
 	Then the '<heading>' products collection page will load
 
