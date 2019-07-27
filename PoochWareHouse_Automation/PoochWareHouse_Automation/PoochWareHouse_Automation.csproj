@@ -113,16 +113,18 @@
     <Compile Include="Pages\YourCart.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.cs" />
+    <Compile Include="Tests\Navigation\AllProductsSteps.cs" />
     <Compile Include="Tests\PreReleaseLogonSteps.cs" />
-    <Compile Include="Tests\SiteNavigationSteps.cs" />
+    <Compile Include="Tests\Navigation\SiteNavigationSteps.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
+    <None Include="Tests\Navigation\AllProducts.feature" />
     <None Include="Tests\PreReleaseLogon.feature">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Tests\SiteNavigation.feature" />
+    <None Include="Tests\Navigation\SiteNavigation.feature" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />

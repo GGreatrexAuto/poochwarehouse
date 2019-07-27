@@ -54,7 +54,7 @@ namespace PoochWareHouse_Automation.Tests.Navigation
                        _site.InitialiseChromeDriver(Urls.SaleItemsUrl);
                     break;
                 case "all-products":
-                    _site.InitialiseChromeDriver(Urls.AllProductsUrl);
+                    _site.InitialiseChromeDriver(Urls.AllProductsUrlPgOne);
                     break;
                 case "beds-blankets":
                     _site.InitialiseChromeDriver(Urls.BedsBlanketsUrl);

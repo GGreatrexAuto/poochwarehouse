@@ -19,6 +19,12 @@ namespace PoochWareHouse_Automation
             Assert.Ignore("The site is now live and this test no longer applies.");
         }
 
+        [BeforeScenario("WIP")]
+        public void TestWorkInProgress()
+        {
+            Assert.Ignore("The test is currently incomplete and should not be run.");
+        }
+
         [BeforeScenario]
         public void BeforeScenario()
         {

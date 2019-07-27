@@ -11,7 +11,9 @@ namespace PoochWareHouse_Automation.Configuration
         public static string PoochWarehouseHomePage = "https://poochwarehouse.co.uk/";
         public static string PoochWarehousePreReleasePage = "https://poochwarehouse.co.uk/password";
         public static string SaleItemsUrl = "https://poochwarehouse.co.uk/collections/sale-items";
-        public static string AllProductsUrl = "https://poochwarehouse.co.uk/collections/all";
+        public static string AllProductsUrlPgOne = "https://poochwarehouse.co.uk/collections/all";
+        public static string AllProductsUrlPgTwo = "https://poochwarehouse.co.uk/collections/all?page=2";
+        public static string AllProductsUrlPgThree = "https://poochwarehouse.co.uk/collections/all?page=3";
         public static string BedsBlanketsUrl = "https://poochwarehouse.co.uk/collections/beds-blankets";
         public static string BowlsFoodUrl = "https://poochwarehouse.co.uk/collections/bowls-food";
         public static string HealthGroomingUrl = "https://poochwarehouse.co.uk/collections/health-grooming";
