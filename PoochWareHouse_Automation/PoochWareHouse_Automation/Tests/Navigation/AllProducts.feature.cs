@@ -72,14 +72,21 @@ namespace PoochWareHouse_Automation.Tests.Navigation
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("The next page and previous page buttons will navigate to the user to the appropri" +
             "ate all products page")]
+        [NUnit.Framework.CategoryAttribute("WIP")]
         [NUnit.Framework.TestCaseAttribute("1", "next", "2", null)]
         [NUnit.Framework.TestCaseAttribute("2", "next", "3", null)]
         [NUnit.Framework.TestCaseAttribute("2", "previous", "1", null)]
         [NUnit.Framework.TestCaseAttribute("3", "previous", "2", null)]
         public virtual void TheNextPageAndPreviousPageButtonsWillNavigateToTheUserToTheAppropriateAllProductsPage(string pageNumber, string navigationButton, string expectedPageNumber, string[] exampleTags)
         {
+            string[] @__tags = new string[] {
+                    "WIP"};
+            if ((exampleTags != null))
+            {
+                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
+            }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("The next page and previous page buttons will navigate to the user to the appropri" +
-                    "ate all products page", null, exampleTags);
+                    "ate all products page", null, @__tags);
 #line 4
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -98,27 +105,22 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("The next and previous buttons will be disabled if there is no page to navigate to" +
             "")]
-        [NUnit.Framework.CategoryAttribute("WIP")]
         [NUnit.Framework.TestCaseAttribute("1", "previous", null)]
         [NUnit.Framework.TestCaseAttribute("3", "next", null)]
         public virtual void TheNextAndPreviousButtonsWillBeDisabledIfThereIsNoPageToNavigateTo(string pageNumber, string navigationButton, string[] exampleTags)
         {
-            string[] @__tags = new string[] {
-                    "WIP"};
-            if ((exampleTags != null))
-            {
-                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
-            }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("The next and previous buttons will be disabled if there is no page to navigate to" +
-                    "", null, @__tags);
+                    "", null, exampleTags);
 #line 18
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 19
  testRunner.Given(string.Format("I access the all products page number \'{0}\'", pageNumber), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 20
- testRunner.When("the page navigation buttons are displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+  testRunner.And("I clear the cookie overlay", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 21
+ testRunner.When("the page navigation buttons are displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 22
  testRunner.Then(string.Format("the \'{0}\' button will be disabled", navigationButton), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

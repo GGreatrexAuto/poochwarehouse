@@ -1,6 +1,5 @@
 ﻿Feature: All Products
 
-@WIP	
 Scenario Outline: The next page and previous page buttons will navigate to the user to the appropriate all products page
 	Given I access the all products page number '<pageNumber>'
 		And I clear the cookie overlay
@@ -14,7 +13,6 @@ Examples:
 | 2          | previous         | 1                  |
 | 3          | previous         | 2                  |
 
-@WIP
 Scenario Outline: The next and previous buttons will be disabled if there is no page to navigate to
 	Given I access the all products page number '<pageNumber>'
 		And I clear the cookie overlay

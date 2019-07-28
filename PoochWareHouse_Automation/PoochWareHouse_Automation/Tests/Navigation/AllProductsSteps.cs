@@ -73,6 +73,12 @@ namespace PoochWareHouse_Automation.Tests.Navigation
             }
         }
 
+        [When(@"the page navigation buttons are displayed")]
+        public void WhenThePageNavigationButtonsAreDisplayed()
+        {
+            //does nothing.
+        }
+
         [Then(@"the expected page number (.*) will be displayed")]
         public void ThenTheExpectedPageNumberWillBeDisplayed(string expectedPageNumber)
         {
@@ -80,6 +86,23 @@ namespace PoochWareHouse_Automation.Tests.Navigation
             var actualPageNumber = actualValue.Substring(5, 1);
 
             Assert.AreEqual(expectedPageNumber, actualPageNumber, $"The expected page number [{expectedPageNumber}] did not match the actual page number [{actualPageNumber}]");                          
+        }
+
+        [Then(@"the '(.*)' button will be disabled")]
+        public void ThenTheButtonWillBeDisabled(string navigationButton)
+        {
+            switch (navigationButton)
+            {
+                case "previous":
+                    Assert.IsFalse(AllProducts.PreviousPageButtonDisabled.Enabled, "The previous button should have been disabled.");
+                    break;
+                case "next":
+                    Assert.IsFalse(AllProducts.NextPageButtonDisabled.Enabled, "The next button should have been disabled.");
+                    break;
+                default:
+                    Assert.Inconclusive(TestErrorHelper.CaseValueNotRecognised(navigationButton));
+                    break;
+            }
         }
     }
 }
