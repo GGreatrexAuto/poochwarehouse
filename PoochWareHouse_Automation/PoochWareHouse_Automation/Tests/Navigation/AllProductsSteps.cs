@@ -43,12 +43,9 @@ namespace PoochWareHouse_Automation.Tests.Navigation
         [Given(@"I clear the cookie overlay")]
         public void GivenIClearTheCookieOverlay()
         {
-            CookieOverlay.AcceptCookieButton.Click();
-
-            Thread.Sleep(1250);
+            CookieOverlayActions.ClearCookieOverlay();
         }
-
-
+        
         [When(@"I click the '(.*)' button")]
         public void WhenIClickTheButton(string navigationButton)
         {

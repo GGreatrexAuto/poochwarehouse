@@ -76,7 +76,7 @@ namespace PoochWareHouse_Automation.Tests.Navigation
         [NUnit.Framework.TestCaseAttribute("privacy policy", "homepage link one", "Home Page", null)]
         [NUnit.Framework.TestCaseAttribute("privacy policy", "homepage link two", "Home Page", null)]
         [NUnit.Framework.TestCaseAttribute("returns policy", "contact us link", "Contact Us", null)]
-        public virtual void SelectingHyperlinksWithinTheInformationalPageWillNavigateUsersToTheCorrectLocation(string informationalPage, string hyperlink, string expectedPage, string[] exampleTags)
+        public virtual void SelectingHyperlinksWithinTheInformationalPageWillNavigateUsersToTheCorrectLocation(string informationalPage, string hyperLink, string expectedPage, string[] exampleTags)
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Selecting hyperlinks within the informational page will navigate users to the cor" +
                     "rect location", null, exampleTags);
@@ -86,10 +86,12 @@ this.ScenarioInitialize(scenarioInfo);
 #line 5
  testRunner.Given(string.Format("I access the \'{0}\' page", informationalPage), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 6
- testRunner.And("the \'<hyperLink>\' link is present", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("I clear the cookie notice", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 7
-  testRunner.When("I click the \'<hyperLink>\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And(string.Format("the \'{0}\' link is present", hyperLink), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 8
+  testRunner.When(string.Format("I click the \'{0}\'", hyperLink), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 9
  testRunner.Then(string.Format("the \'{0}\' page will be loaded", expectedPage), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

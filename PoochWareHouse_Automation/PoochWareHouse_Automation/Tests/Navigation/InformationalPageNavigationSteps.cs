@@ -37,6 +37,12 @@ namespace PoochWareHouse_Automation.Tests.Navigation
             }           
         }
 
+        [Given(@"I clear the cookie notice")]
+        public void GivenIClearTheCookieNotice()
+        {
+            CookieOverlayActions.ClearCookieOverlay();
+        }
+
         [Given(@"the '(.*)' link is present")]
         public void GivenTheLinkIsPresent(string hyperLink)
         {

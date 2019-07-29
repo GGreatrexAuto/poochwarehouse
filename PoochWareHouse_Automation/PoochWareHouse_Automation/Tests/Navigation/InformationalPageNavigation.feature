@@ -3,12 +3,13 @@
 #@WIP
 Scenario Outline: Selecting hyperlinks within the informational page will navigate users to the correct location
 	Given I access the '<informationalPage>' page
+	And I clear the cookie notice
 	And the '<hyperLink>' link is present
 		When I click the '<hyperLink>'
 	Then the '<expectedPage>' page will be loaded
 
 	Examples:
-	| informationalPage | hyperlink                 | expectedPage   |
+	| informationalPage | hyperLink                 | expectedPage   |
 	| faq               | return policy link        | Returns Policy |
 	| privacy policy    | homepage link one         | Home Page      |
 	| privacy policy    | homepage link two         | Home Page      |
