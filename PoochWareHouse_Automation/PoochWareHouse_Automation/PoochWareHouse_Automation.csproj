@@ -86,9 +86,12 @@
     <Compile Include="Helpers\TestErrorHelper.cs" />
     <Compile Include="Hooks.cs" />
     <Compile Include="Navigation\AllProductsNavigation.cs" />
+    <Compile Include="Navigation\FaqNavigation.cs" />
     <Compile Include="Navigation\FooterNavigation.cs" />
     <Compile Include="Navigation\HeaderNavigation.cs" />
     <Compile Include="Navigation\HomePageNavigation.cs" />
+    <Compile Include="Navigation\PrivacyPolicyNavigation.cs" />
+    <Compile Include="Navigation\ReturnsPolicyNavigation.cs" />
     <Compile Include="Pages\AllProducts.cs" />
     <Compile Include="Pages\Collections\ProductsPagesGenericItems.cs" />
     <Compile Include="Pages\Collections\CollectionsStaticText.cs" />

@@ -7,20 +7,21 @@ using OpenQA.Selenium;
 
 namespace PoochWareHouse_Automation.Pages.InformationalPages
 {
-    public class PrivacyPolicy
+    public static class PrivacyPolicy
     {
-        public IWebElement PoochWarehouseHyperlinkOne => Driver._webdriver.FindElement(By.XPath("//*[@id=\"MainContent\"]/div/div/div/div[2]/p[2]/a"));
+        public static IWebElement PoochWarehouseHyperlinkOne => Driver._webdriver.FindElement(By.XPath("//*[@id=\"MainContent\"]/div/div/div/div[2]/p[2]/a"));
 
-        public IWebElement PoochWarehouseHyperlinkTwo => Driver._webdriver.FindElement(By.XPath("//*[@id=\"MainContent\"]/div/div/div/div[2]/p[3]/a"));
+        public static IWebElement PoochWarehouseHyperlinkTwo => Driver._webdriver.FindElement(By.XPath("//*[@id=\"MainContent\"]/div/div/div/div[2]/p[3]/a"));
 
-        //allAboutCookiesLink
+        public static IWebElement AllAboutCookiesLink =>
+            Driver._webdriver.FindElement(By.XPath("//*[@id=\"MainContent\"]/div/div/div/div[2]/ul[1]/li[1]/a"));
 
-        //spotifyLegalLink
+        public static IWebElement ShopifyLegalLink => Driver._webdriver.FindElement(By.XPath("//*[@id=\"MainContent\"]/div/div/div/div[2]/p[12]/a"));
 
-        //googlePrivacy
+        public static IWebElement GooglePrivacy => Driver._webdriver.FindElement(By.XPath("//*[@id=\"MainContent\"]/div/div/div/div[2]/p[13]/a[1]"));
 
-        //googleOptOut
+        public static IWebElement GoogleOptOut => Driver._webdriver.FindElement(By.XPath("//*[@id=\"MainContent\"]/div/div/div/div[2]/p[13]/a[2]"));
 
-        //facebookAdvertising
+        public static IWebElement FacebookAdvertising => Driver._webdriver.FindElement(By.XPath("//*[@id=\"MainContent\"]/div/div/div/div[2]/ul[3]/li/a"));
     }
 }

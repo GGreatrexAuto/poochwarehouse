@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PoochWareHouse_Automation.Pages.InformationalPages
 {
-    class AboutUs
+    public static class AboutUs
     {
     }
 }

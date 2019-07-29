@@ -72,31 +72,24 @@ namespace PoochWareHouse_Automation.Tests.Navigation
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("The next page and previous page buttons will navigate to the user to the appropri" +
             "ate all products page")]
-        [NUnit.Framework.CategoryAttribute("WIP")]
         [NUnit.Framework.TestCaseAttribute("1", "next", "2", null)]
         [NUnit.Framework.TestCaseAttribute("2", "next", "3", null)]
         [NUnit.Framework.TestCaseAttribute("2", "previous", "1", null)]
         [NUnit.Framework.TestCaseAttribute("3", "previous", "2", null)]
         public virtual void TheNextPageAndPreviousPageButtonsWillNavigateToTheUserToTheAppropriateAllProductsPage(string pageNumber, string navigationButton, string expectedPageNumber, string[] exampleTags)
         {
-            string[] @__tags = new string[] {
-                    "WIP"};
-            if ((exampleTags != null))
-            {
-                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
-            }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("The next page and previous page buttons will navigate to the user to the appropri" +
-                    "ate all products page", null, @__tags);
-#line 4
+                    "ate all products page", null, exampleTags);
+#line 3
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 5
+#line 4
  testRunner.Given(string.Format("I access the all products page number \'{0}\'", pageNumber), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 6
+#line 5
   testRunner.And("I clear the cookie overlay", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 7
+#line 6
  testRunner.When(string.Format("I click the \'{0}\' button", navigationButton), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 8
+#line 7
  testRunner.Then(string.Format("the expected page number {0} will be displayed", expectedPageNumber), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
@@ -111,16 +104,16 @@ this.ScenarioInitialize(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("The next and previous buttons will be disabled if there is no page to navigate to" +
                     "", null, exampleTags);
-#line 18
+#line 16
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 19
+#line 17
  testRunner.Given(string.Format("I access the all products page number \'{0}\'", pageNumber), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 20
+#line 18
   testRunner.And("I clear the cookie overlay", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 21
+#line 19
  testRunner.When("the page navigation buttons are displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 22
+#line 20
  testRunner.Then(string.Format("the \'{0}\' button will be disabled", navigationButton), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

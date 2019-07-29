@@ -7,9 +7,8 @@ using OpenQA.Selenium;
 
 namespace PoochWareHouse_Automation.Pages.InformationalPages
 {
-    public class DeliveryAndShipping
+    public static class DeliveryAndShipping
     {
-        public IWebElement DeliveryShippingPageHeading =>
-            Driver._webdriver.FindElement(By.XPath("//*[@id=\"MainContent\"]/div/div/div/div[1]/h1"));
+
     }
 }
