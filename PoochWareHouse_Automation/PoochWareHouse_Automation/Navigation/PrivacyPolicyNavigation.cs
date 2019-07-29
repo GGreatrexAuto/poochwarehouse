@@ -1,50 +1,42 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using PoochWareHouse_Automation.Pages.InformationalPages;
+﻿using PoochWareHouse_Automation.Pages.InformationalPages;
 
 namespace PoochWareHouse_Automation.Navigation
 {
-    public class PrivacyPolicyNavigation
+    public static class PrivacyPolicyNavigation
     {
-        public void PoochWarehouseHomePageLinkOne()
+        public static void PoochWarehouseHomePageLinkOne()
         {
             PrivacyPolicy.PoochWarehouseHyperlinkOne.Click();   
         }
 
-        public void PoochWarehouseHomePageLinkTwo()
+        public static void PoochWarehouseHomePageLinkTwo()
         {
             PrivacyPolicy.PoochWarehouseHyperlinkTwo.Click();
         }
 
-        public void AllAboutCookiesLink()
+        public static void AllAboutCookiesLink()
         {
             PrivacyPolicy.AllAboutCookiesLink.Click();
         }
 
-        public void ShopifyLegalLink()
+        public static void ShopifyLegalLink()
         {
             PrivacyPolicy.ShopifyLegalLink.Click();
         }
 
-        public void GooglePrivacyLink()
+        public static void GooglePrivacyLink()
         {
             PrivacyPolicy.GooglePrivacy.Click();
         }
 
-        public void GoogleOptOutLink()
+        public static void GoogleOptOutLink()
         {
             PrivacyPolicy.GoogleOptOut.Click();
         }
 
-        public void FacebookAdvertisingLink()
+        public static void FacebookAdvertisingLink()
         {
             PrivacyPolicy.FacebookAdvertising.Click();
         }
-
-
-
     }
 }

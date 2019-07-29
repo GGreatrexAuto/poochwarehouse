@@ -1,50 +1,40 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using PoochWareHouse_Automation.Pages.PageElements;
+﻿using PoochWareHouse_Automation.Pages.PageElements;
 
 namespace PoochWareHouse_Automation.Navigation
 {
-    public class FooterNavigation
+    public static class FooterNavigation
     {
-        public FooterNavigation()
-        {
-        
-        }
-
-        public void ToFaq()
+        public static void ToFaq()
         {
             QuickLinksFooter.FAQLink.Click();   
         }
 
-        public void ToAboutUs()
+        public static void ToAboutUs()
         {
             QuickLinksFooter.AboutUsLink.Click();
         }
 
-        public void ToDeliveryAndShipping()
+        public static void ToDeliveryAndShipping()
         {
             QuickLinksFooter.DeliveryAndShippingLink.Click();
         }
 
-        public void ToReturnsPolicy()
+        public static void ToReturnsPolicy()
         {
             QuickLinksFooter.ReturnsPolicyLink.Click();
         }
 
-        public void ToPrivacyPolicy()
+        public static void ToPrivacyPolicy()
         {
             QuickLinksFooter.PrivacyPolicyLink.Click();
         }
 
-        public void ToTermsOfUse()
+        public static void ToTermsOfUse()
         {
             QuickLinksFooter.TermsOfUseLink.Click();
         }
 
-        public void ToContactUs()
+        public static void ToContactUs()
         {
             QuickLinksFooter.ContactUsLink.Click();
         }

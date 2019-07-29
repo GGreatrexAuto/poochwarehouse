@@ -1,105 +1,100 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using PoochWareHouse_Automation.Pages.PageElements;
+﻿using PoochWareHouse_Automation.Pages.PageElements;
 
 namespace PoochWareHouse_Automation.Navigation
 {
-    public class HeaderNavigation
+    public static class HeaderNavigation
     {
-        public void ToBedsBlankets()
+        public static void ToBedsBlankets()
         {
             HeaderMenu.CollectionsSubMenuBedsBlankets.Click();
         }
 
-        public void ToBowlsFood()
+        public static void ToBowlsFood()
         {
             HeaderMenu.CollectionsSubMenuBowlsFood.Click();
         }
 
-        public void ToGrooming()
+        public static void ToGrooming()
         {
             HeaderMenu.CollectionsSubMenuGrooming.Click();
         }
 
-        public void ToCollarsLeads()
+        public static void ToCollarsLeads()
         {
             HeaderMenu.CollectionsSubMenuCollarsLeads.Click();
         }
 
-        public void ToHealthCare()
+        public static void ToHealthCare()
         {
             HeaderMenu.CollectionsSubMenuHealthCare.Click();
         }
 
-        public void ToTraining()
+        public static void ToTraining()
         {
             HeaderMenu.CollectionsSubMenuTraining.Click();
         }
 
-        public void ToSmallDogsPuppy()
+        public static void ToSmallDogsPuppy()
         {
             HeaderMenu.CollectionsSubMenuSmallDogsPuppy.Click();
         }
 
-        public void ToLargeDogs()
+        public static void ToLargeDogs()
         {
             HeaderMenu.CollectionsSubMenuLargeDogs.Click();
         }
 
-        public void ToToysGames()
+        public static void ToToysGames()
         {
             HeaderMenu.CollectionsSubMenuToysGames.Click();
         }
 
-        public void ToOnTheGo()
+        public static void ToOnTheGo()
         {
             HeaderMenu.CollectionsSubMenuOnTheGo.Click();
         }
 
-        public void ToSummerTime()
+        public static void ToSummerTime()
         {
             HeaderMenu.CollectionsSubMenuSummerTime.Click();
         }
 
-        public void ToWinterTime()
+        public static void ToWinterTime()
         {
             HeaderMenu.CollectionsSubMenuWinterTime.Click();
         }
 
-        public void ToSaleItems()
+        public static void ToSaleItems()
         {
             HeaderMenu.OnSaleLink.Click();
         }
 
-        public void ToAllProducts()
+        public static void ToAllProducts()
         {
             HeaderMenu.AllProductsLink.Click();
         }
 
-        public void ToHomePage()
+        public static void ToHomePage()
         {
             HeaderMenu.HomeLink.Click();
         }
 
-        public void ToHomePageViaLogo()
+        public static void ToHomePageViaLogo()
         {
             HeaderMenu.PoochWareHouseLogo.Click();
         }
 
-        public void ToLoginForm()
+        public static void ToLoginForm()
         {
             HeaderMenu.Login.Click();
         }
 
-        public void ToYourCart()
+        public static void ToYourCart()
         {
             HeaderMenu.YourCart.Click();
         }
 
-        public void ToNews()
+        public static void ToNews()
         {
             HeaderMenu.News.Click();
         }

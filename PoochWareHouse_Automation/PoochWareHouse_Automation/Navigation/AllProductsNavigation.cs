@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using OpenQA.Selenium;
-using PoochWareHouse_Automation.Pages;
+﻿using PoochWareHouse_Automation.Pages;
 
 namespace PoochWareHouse_Automation.Navigation
 {

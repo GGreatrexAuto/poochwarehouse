@@ -1,75 +1,65 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using PoochWareHouse_Automation.Pages;
+﻿using PoochWareHouse_Automation.Pages;
 
 namespace PoochWareHouse_Automation.Navigation
 {
-    public class HomePageNavigation
+    public static class HomePageNavigation
     {
-        public HomePageNavigation()
-        {
-        
-        }
-
-        public void ToCollectionsBedsBlankets()
+        public static void ToCollectionsBedsBlankets()
         {
             HomePage.CollectionsBedsBlankets.Click();
         }
 
-        public void ToCollectionsBowlsFood()
+        public static void ToCollectionsBowlsFood()
         {
             HomePage.CollectionsBowlsFood.Click();
         }
 
-        public void ToCollectionsGrooming()
+        public static void ToCollectionsGrooming()
         {
             HomePage.CollectionsGrooming.Click();
         }
 
-        public void ToCollectionsCollarsLeads()
+        public static void ToCollectionsCollarsLeads()
         {
             HomePage.CollectionsCollarsLeads.Click();
         }
 
-        public void ToCollectionsHealthCare()
+        public static void ToCollectionsHealthCare()
         {
             HomePage.CollectionsHealthCare.Click();
         }
 
-        public void ToCollectionsTraining()
+        public static void ToCollectionsTraining()
         {
             HomePage.CollectionsTraining.Click();
         }
 
-        public void ToCollectionsSmallDogsPuppies()
+        public static void ToCollectionsSmallDogsPuppies()
         {
             HomePage.CollectionsSmallDogsPuppies.Click();
         }
 
-        public void ToCollectionsLargeDogs()
+        public static void ToCollectionsLargeDogs()
         {
             HomePage.CollectionsLargeDogs.Click();
         }
 
-        public void ToCollectionsToysGames()
+        public static void ToCollectionsToysGames()
         {
             HomePage.CollectionsToysGames.Click();
         }
 
-        public void ToCollectionsOnTheGo()
+        public static void ToCollectionsOnTheGo()
         {
             HomePage.CollectionsOnTheGo.Click();
         }
 
-        public void ToCollectionsSummerTime()
+        public static void ToCollectionsSummerTime()
         {
             HomePage.CollectionsSummerTime.Click();
         }
 
-        public void ToCollectionsWinterTime()
+        public static void ToCollectionsWinterTime()
         {
             HomePage.CollectionsWinterTime.Click();
         }

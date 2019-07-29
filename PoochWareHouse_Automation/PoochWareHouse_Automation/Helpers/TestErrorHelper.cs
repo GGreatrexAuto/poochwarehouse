@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace PoochWareHouse_Automation.Helpers
+﻿namespace PoochWareHouse_Automation.Helpers
 {
     public static class TestErrorHelper
     {
@@ -14,9 +8,9 @@ namespace PoochWareHouse_Automation.Helpers
             return error;
         }
 
-        public static string ExpectedPageHeadingNotDisplayed()
+        public static string ExpectedItemNotDisplayed(string itemType,string expectedValue)
         {
-            var error = "The expected page heading was not displayed.";
+            var error = $"The expected page {itemType} [{expectedValue}] was not displayed.";
             return error;
         }
 

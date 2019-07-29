@@ -18,16 +18,10 @@ namespace PoochWareHouse_Automation.Tests.Navigation
     public sealed class SiteNavigationSteps
     {
         private readonly Site _site;
-        private readonly FooterNavigation _footerNavigation;
-        private readonly HomePageNavigation _homepageNavigation;
-        private readonly HeaderNavigation _headerNavigation;
 
         public SiteNavigationSteps()
         {
             _site = new Site();
-            _footerNavigation = new FooterNavigation();
-            _homepageNavigation = new HomePageNavigation();
-            _headerNavigation = new HeaderNavigation();
         }
 
         [Given(@"I have accessed the PoochwareHouse website homepage")]
@@ -140,25 +134,25 @@ namespace PoochWareHouse_Automation.Tests.Navigation
             switch (linkName)
             {
                 case "About Us":
-                    _footerNavigation.ToAboutUs();
+                    FooterNavigation.ToAboutUs();
                     break;
                 case "FAQ":
-                    _footerNavigation.ToFaq();
+                    FooterNavigation.ToFaq();
                     break;
                 case "Delivery & Shipping":
-                    _footerNavigation.ToDeliveryAndShipping();
+                    FooterNavigation.ToDeliveryAndShipping();
                     break;
                 case "Returns Policy":
-                    _footerNavigation.ToReturnsPolicy();
+                    FooterNavigation.ToReturnsPolicy();
                     break;
                 case "Privacy Policy":
-                    _footerNavigation.ToPrivacyPolicy();
+                    FooterNavigation.ToPrivacyPolicy();
                     break;
                 case "Terms Of Use":
-                    _footerNavigation.ToTermsOfUse();
+                    FooterNavigation.ToTermsOfUse();
                     break;
                 case "Contact Us":
-                    _footerNavigation.ToContactUs();
+                    FooterNavigation.ToContactUs();
                     break;
                 default:
                     Assert.Inconclusive(TestErrorHelper.CaseValueNotRecognised(linkName));
@@ -172,40 +166,40 @@ namespace PoochWareHouse_Automation.Tests.Navigation
             switch (collectionsLink)
             {
                 case "Beds & Blankets":
-                    _homepageNavigation.ToCollectionsBedsBlankets();
+                    HomePageNavigation.ToCollectionsBedsBlankets();
                     break;
                 case "Bowls & Food":
-                    _homepageNavigation.ToCollectionsBowlsFood();
+                    HomePageNavigation.ToCollectionsBowlsFood();
                     break;
                 case "Grooming":
-                    _homepageNavigation.ToCollectionsGrooming();
+                    HomePageNavigation.ToCollectionsGrooming();
                     break;
                 case "Collars & Leads":
-                    _homepageNavigation.ToCollectionsCollarsLeads();
+                    HomePageNavigation.ToCollectionsCollarsLeads();
                     break;
                 case "Health Care":
-                    _homepageNavigation.ToCollectionsHealthCare();
+                    HomePageNavigation.ToCollectionsHealthCare();
                     break;
                 case "Training":
-                    _homepageNavigation.ToCollectionsTraining();
+                    HomePageNavigation.ToCollectionsTraining();
                     break;
                 case "Small Dogs & Puppy":
-                    _homepageNavigation.ToCollectionsSmallDogsPuppies();
+                    HomePageNavigation.ToCollectionsSmallDogsPuppies();
                     break;
                 case "Large Dogs":
-                    _homepageNavigation.ToCollectionsLargeDogs();
+                    HomePageNavigation.ToCollectionsLargeDogs();
                     break;
                 case "Toys & Games":
-                    _homepageNavigation.ToCollectionsToysGames();
+                    HomePageNavigation.ToCollectionsToysGames();
                     break;
                 case "On the go":
-                    _homepageNavigation.ToCollectionsOnTheGo();
+                    HomePageNavigation.ToCollectionsOnTheGo();
                     break;
                 case "Summer Time":
-                    _homepageNavigation.ToCollectionsSummerTime();
+                    HomePageNavigation.ToCollectionsSummerTime();
                     break;
                 case "Winter Time":
-                    _homepageNavigation.ToCollectionsWinterTime();
+                    HomePageNavigation.ToCollectionsWinterTime();
                     break;
                 default:
                     Assert.Inconclusive(TestErrorHelper.CaseValueNotRecognised(collectionsLink));
@@ -219,40 +213,40 @@ namespace PoochWareHouse_Automation.Tests.Navigation
             switch (collectionsDropDown)
             {
                 case "Beds & Blankets":
-                    _headerNavigation.ToBedsBlankets();
+                    HeaderNavigation.ToBedsBlankets();
                     break;
                 case "Bowls & Food":
-                    _headerNavigation.ToBowlsFood();
+                    HeaderNavigation.ToBowlsFood();
                     break;
                 case "Grooming":
-                    _headerNavigation.ToGrooming();
+                    HeaderNavigation.ToGrooming();
                     break;
                 case "Collars & Leads":
-                    _headerNavigation.ToCollarsLeads();
+                    HeaderNavigation.ToCollarsLeads();
                     break;
                 case "Health Care":
-                    _headerNavigation.ToHealthCare();
+                    HeaderNavigation.ToHealthCare();
                     break;
                 case "Training":
-                    _headerNavigation.ToTraining();
+                    HeaderNavigation.ToTraining();
                     break;
                 case "Small Dogs & Puppy":
-                    _headerNavigation.ToSmallDogsPuppy();
+                    HeaderNavigation.ToSmallDogsPuppy();
                     break;
                 case "Large Dogs":
-                    _headerNavigation.ToLargeDogs();
+                    HeaderNavigation.ToLargeDogs();
                     break;
                 case "Toys & Games":
-                    _headerNavigation.ToToysGames();
+                    HeaderNavigation.ToToysGames();
                     break;
                 case "On the go":
-                    _headerNavigation.ToOnTheGo();
+                    HeaderNavigation.ToOnTheGo();
                     break;
                 case "Summer Time":
-                    _headerNavigation.ToSummerTime();
+                    HeaderNavigation.ToSummerTime();
                     break;
                 case "Winter Time":
-                    _headerNavigation.ToWinterTime();
+                    HeaderNavigation.ToWinterTime();
                     break;
                 default:
                     Console.WriteLine(
@@ -267,19 +261,19 @@ namespace PoochWareHouse_Automation.Tests.Navigation
             switch (headerOption)
             {
                 case "On Sale":
-                    _headerNavigation.ToSaleItems();
+                    HeaderNavigation.ToSaleItems();
                     break;
                 case "All Products":
-                    _headerNavigation.ToAllProducts();
+                    HeaderNavigation.ToAllProducts();
                     break;
                 case "Login":
-                    _headerNavigation.ToLoginForm();
+                    HeaderNavigation.ToLoginForm();
                     break;
                 case "Your Cart":
-                    _headerNavigation.ToYourCart();
+                    HeaderNavigation.ToYourCart();
                     break;
                 case "News":
-                    _headerNavigation.ToNews();
+                    HeaderNavigation.ToNews();
                     break;
                 default:
                     Assert.Inconclusive(TestErrorHelper.CaseValueNotRecognised(headerOption));
@@ -293,10 +287,10 @@ namespace PoochWareHouse_Automation.Tests.Navigation
             switch (homePageNavigationType)
             {
                 case "Homepage header":
-                    _headerNavigation.ToHomePage();
+                    HeaderNavigation.ToHomePage();
                     break;
                 case "PoochWarehouse logo":
-                    _headerNavigation.ToHomePageViaLogo();
+                    HeaderNavigation.ToHomePageViaLogo();
                     break;
                 default:
                     Assert.Inconclusive(TestErrorHelper.CaseValueNotRecognised(homePageNavigationType));
@@ -308,7 +302,9 @@ namespace PoochWareHouse_Automation.Tests.Navigation
         [Then(@"the '(.*)' informational page will load")]
         public void ThenTheInformationalPageWillLoad(string expectedHeading)
         {
-            Assert.IsTrue(InformationalPagesGenericItems.GenericPageHeading.Displayed, TestErrorHelper.ExpectedPageHeadingNotDisplayed());
+            var itemType = "page heading";
+
+            Assert.IsTrue(InformationalPagesGenericItems.GenericPageHeading.Displayed, TestErrorHelper.ExpectedItemNotDisplayed(itemType, expectedHeading));
 
             var actualHeading = InformationalPagesGenericItems.GenericPageHeading.Text;
 
@@ -319,7 +315,9 @@ namespace PoochWareHouse_Automation.Tests.Navigation
         [Then(@"the '(.*)' products collection page will load")]
         public void ThenTheProductsCollectionPageWillLoad(string expectedHeading)
         {
-            Assert.IsTrue(ProductsPagesGenericItems.ProductsGenericPageHeading.Displayed, TestErrorHelper.ExpectedPageHeadingNotDisplayed());
+            var itemType = "page heading";
+
+            Assert.IsTrue(ProductsPagesGenericItems.ProductsGenericPageHeading.Displayed, TestErrorHelper.ExpectedItemNotDisplayed(itemType, expectedHeading));
 
             var actualHeading = ProductsPagesGenericItems.ProductsGenericPageHeading.Text;
 
@@ -331,11 +329,13 @@ namespace PoochWareHouse_Automation.Tests.Navigation
         [Then(@"the '(.*)' products page will load")]
         public void ThenTheProductsPageWillLoad(string expectedHeading)
         {
+            var itemType = "page heading";
+
             var actualHeading = string.Empty;
             
             if (expectedHeading == "Products")
             {
-                Assert.IsTrue(AllProducts.ProductsPageHeading.Displayed, TestErrorHelper.ExpectedPageHeadingNotDisplayed());
+                Assert.IsTrue(AllProducts.ProductsPageHeading.Displayed, TestErrorHelper.ExpectedItemNotDisplayed(itemType, expectedHeading));
                 actualHeading = AllProducts.ProductsPageHeading.Text;
                 var actualHeadingManipulated = actualHeading.Substring(13);
                 Assert.AreEqual(expectedHeading, actualHeadingManipulated,
@@ -347,19 +347,19 @@ namespace PoochWareHouse_Automation.Tests.Navigation
             }
             else if(expectedHeading == "Login")
             {
-                Assert.IsTrue(LoginForm.LoginPageheader.Displayed, TestErrorHelper.ExpectedPageHeadingNotDisplayed());
+                Assert.IsTrue(LoginForm.LoginPageheader.Displayed, TestErrorHelper.ExpectedItemNotDisplayed(itemType, expectedHeading));
                 actualHeading = LoginForm.LoginPageheader.Text;
                 Assert.AreEqual(expectedHeading, actualHeading, TestErrorHelper.ExpectedActualageHeadingsDoNotMatch(expectedHeading, actualHeading));
             }
             else if(expectedHeading == "Your cart")
             {
-                Assert.IsTrue(YourCart.YourCartPageHeading.Displayed, TestErrorHelper.ExpectedPageHeadingNotDisplayed());
+                Assert.IsTrue(YourCart.YourCartPageHeading.Displayed, TestErrorHelper.ExpectedItemNotDisplayed(itemType, expectedHeading));
                 actualHeading = YourCart.YourCartPageHeading.Text;
                 Assert.AreEqual(expectedHeading, actualHeading, TestErrorHelper.ExpectedActualageHeadingsDoNotMatch(expectedHeading, actualHeading));
             }
             else if (expectedHeading == "News")
             {
-                Assert.IsTrue(News.NewsPageHeading.Displayed, TestErrorHelper.ExpectedPageHeadingNotDisplayed());
+                Assert.IsTrue(News.NewsPageHeading.Displayed, TestErrorHelper.ExpectedItemNotDisplayed(itemType, expectedHeading));
                 actualHeading = News.NewsPageHeading.Text;
                 Assert.AreEqual(expectedHeading, actualHeading, TestErrorHelper.ExpectedActualageHeadingsDoNotMatch(expectedHeading, actualHeading));
             }

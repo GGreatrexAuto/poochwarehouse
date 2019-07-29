@@ -8,7 +8,13 @@ Scenario Outline: Selecting hyperlinks within the informational page will naviga
 	Then the '<expectedPage>' page will be loaded
 
 	Examples:
-	| informationalPage | hyperlink | expectedPage |
-	| faq               |           |              |
-	| privacy policy    |           |              |
-	| returns policy    |           |              |
+	| informationalPage | hyperlink                 | expectedPage   |
+	| faq               | return policy link        | Returns Policy |
+	| privacy policy    | homepage link one         | Home Page      |
+	| privacy policy    | homepage link two         | Home Page      |
+	| privacy policy    | all about cookies link    |                |
+	| privacy policy    | shopify link              |                |
+	| privacy policy    | google privacy link       |                |
+	| privacy policy    | google opt out link       |                |
+	| privacy policy    | facebook advertising link |                |
+	| returns policy    | contact us link           | Contact Us     |

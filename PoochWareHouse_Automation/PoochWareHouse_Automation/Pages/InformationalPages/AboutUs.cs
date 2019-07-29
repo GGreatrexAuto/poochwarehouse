@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace PoochWareHouse_Automation.Pages.InformationalPages
+﻿namespace PoochWareHouse_Automation.Pages.InformationalPages
 {
     public static class AboutUs
     {
