@@ -77,6 +77,61 @@ namespace PoochWareHouse_Automation.Tests.Navigation
             }
         }
 
+        [When(@"I click the '(.*)'")]
+        public void WhenIClickThe(string hyperLink)
+        {
+            switch (hyperLink)
+            {
+                case "return policy link":
+                    Faq.ReturnPolicyLink.Click();
+                    break;
+                case "homepage link one":
+                    PrivacyPolicy.PoochWarehouseHyperlinkOne.Click();
+                    break;
+                case "homepage link two":
+                    PrivacyPolicy.PoochWarehouseHyperlinkTwo.Click();
+                    break;
+                case "all about cookies link":
+                    PrivacyPolicy.AllAboutCookiesLink.Click();
+                    break;
+                case "shopify link":
+                    PrivacyPolicy.ShopifyLegalLink.Click();
+                    break;
+                case "google privacy link":
+                    PrivacyPolicy.GooglePrivacy.Click();
+                    break;
+                case "google opt out link":
+                    PrivacyPolicy.GoogleOptOut.Click();
+                    break;
+                case "facebook advertising link":
+                    PrivacyPolicy.FacebookAdvertising.Click();
+                    break;
+                case "contact us link":
+                    ReturnsPolicy.ContactUsLink.Click();
+                    break;
+                default:
+                    Assert.Inconclusive(TestErrorHelper.CaseValueNotRecognised(hyperLink));
+                    break;
+            }
+        }
+
+        [Then(@"the '(.*)' page will be loaded")]
+        public void ThenThePageWillBeLoaded(string expectedPage)
+        {
+            var itemType = "page heading";
+
+            if (expectedPage == "Returns Policy" || expectedPage == "Contact Us")
+            {
+                InformationalPageAssertions.ConfirmInformationalPageHasBeenLoaded(itemType, expectedPage);
+            }
+
+            else if (expectedPage == "Home Page")
+            {
+                HomepageAssertions.ConfirmHomePageHasBeenLoaded();
+            }
+        }
+
+
 
     }
 }

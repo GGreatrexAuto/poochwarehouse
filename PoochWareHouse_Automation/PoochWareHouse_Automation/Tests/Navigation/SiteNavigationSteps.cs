@@ -6,7 +6,6 @@ using PoochWareHouse_Automation.Helpers;
 using PoochWareHouse_Automation.Navigation;
 using PoochWareHouse_Automation.Pages;
 using PoochWareHouse_Automation.Pages.Collections;
-using PoochWareHouse_Automation.Pages.InformationalPages;
 using PoochWareHouse_Automation.Pages.PageElements;
 using TechTalk.SpecFlow;
 
@@ -297,19 +296,13 @@ namespace PoochWareHouse_Automation.Tests.Navigation
                     break;
             }
         }
-
-
+        
         [Then(@"the '(.*)' informational page will load")]
         public void ThenTheInformationalPageWillLoad(string expectedHeading)
         {
             var itemType = "page heading";
 
-            Assert.IsTrue(InformationalPagesGenericItems.GenericPageHeading.Displayed, TestErrorHelper.ExpectedItemNotDisplayed(itemType, expectedHeading));
-
-            var actualHeading = InformationalPagesGenericItems.GenericPageHeading.Text;
-
-            Assert.AreEqual(expectedHeading, actualHeading, 
-                TestErrorHelper.ExpectedActualageHeadingsDoNotMatch(expectedHeading, actualHeading));
+            InformationalPageAssertions.ConfirmInformationalPageHasBeenLoaded(itemType, expectedHeading);
         }
 
         [Then(@"the '(.*)' products collection page will load")]
@@ -372,15 +365,7 @@ namespace PoochWareHouse_Automation.Tests.Navigation
         [Then(@"the user will be navigated to the poochwarehouse homepage")]
         public void ThenTheUserWillBeNavigatedToThePoochwarehouseHomepage()
         {
-            Assert.Multiple(() =>
-            {
-                Assert.IsTrue(HomePage.HomePageImageFrame.Displayed,
-                    "The homepage (main image frame) was not displayed.");
-                Assert.IsTrue(HomePage.TestimonialHeading.Displayed,
-                    "The homepage testimonial subheading was not displayed");
-                Assert.IsTrue(HomePage.CollectionsSubHeading.Displayed,
-                        "The homepage collections subheading was not displayed");
-            });
+            HomepageAssertions.ConfirmHomePageHasBeenLoaded();
         }
     }
 }

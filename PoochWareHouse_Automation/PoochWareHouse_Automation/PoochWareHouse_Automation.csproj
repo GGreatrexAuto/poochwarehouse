@@ -83,6 +83,8 @@
     <Compile Include="Configuration\Urls.cs" />
     <Compile Include="Driver.cs" />
     <Compile Include="EntryPoint.cs" />
+    <Compile Include="Helpers\HomepageAssertions.cs" />
+    <Compile Include="Helpers\InformationalPageAssertions.cs" />
     <Compile Include="Helpers\TestErrorHelper.cs" />
     <Compile Include="Hooks.cs" />
     <Compile Include="Navigation\AllProductsNavigation.cs" />
