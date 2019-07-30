@@ -111,6 +111,7 @@
     <Compile Include="Pages\InformationalPages\ReturnsPolicy.cs" />
     <Compile Include="Pages\InformationalPages\TermsOfUse.cs" />
     <Compile Include="Pages\LoginForm.cs" />
+    <Compile Include="Pages\News\NewsArticlePoochCarSafety.cs" />
     <Compile Include="Pages\News\NewsArticleSummerIsHere.cs" />
     <Compile Include="Pages\News\News.cs" />
     <Compile Include="Pages\News\NewsArticlesGenericItems.cs" />
