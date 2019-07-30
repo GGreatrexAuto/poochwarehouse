@@ -30,5 +30,11 @@
         public static string TermsOfUseUrl = "https://poochwarehouse.co.uk/pages/terms-of-use";
         public static string ContactUsUrl = "https://poochwarehouse.co.uk/pages/contact-us";
         public static string NewsUrl = "https://poochwarehouse.co.uk/blogs/news";
+
+        public static string ExternalAllAboutCookies = "https://www.allaboutcookies.org/";
+        public static string ExternalShopify = "https://www.shopify.com/legal/privacy";
+        public static string ExternalGoogleOptOut = "https://tools.google.com/dlpage/gaoptout";
+        public static string ExternalGooglePrivacy = "https://policies.google.com/privacy?hl=en";
+        public static string ExternalFacebookAdvertising = "https://www.facebook.com/policy.php";
     }
 }
