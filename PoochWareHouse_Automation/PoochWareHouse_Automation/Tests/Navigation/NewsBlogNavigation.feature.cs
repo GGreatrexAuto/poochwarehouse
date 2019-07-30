@@ -72,25 +72,49 @@ namespace PoochWareHouse_Automation.Tests.Navigation
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Accessing the new article links will navigate the user to the correct news articl" +
             "e")]
-        [NUnit.Framework.TestCaseAttribute("Summer Is Here", "image", "Summer Is Here!", null)]
-        [NUnit.Framework.TestCaseAttribute("Summer Is Here", "button", "Summer Is Here!", null)]
-        [NUnit.Framework.TestCaseAttribute("Pooch Car Safety", "image", "Pooch Car Safety", null)]
-        [NUnit.Framework.TestCaseAttribute("Pooch Car Safety", "button", "Pooch Car Safety", null)]
-        public virtual void AccessingTheNewArticleLinksWillNavigateTheUserToTheCorrectNewsArticle(string article, string linkType, string expectedArticle, string[] exampleTags)
+        [NUnit.Framework.TestCaseAttribute("News & Blog", "Summer Is Here", "image", "Summer Is Here!", null)]
+        [NUnit.Framework.TestCaseAttribute("News & Blog", "Summer Is Here", "button", "Summer Is Here!", null)]
+        [NUnit.Framework.TestCaseAttribute("News & Blog", "Pooch Car Safety", "image", "Pooch Car Safety", null)]
+        [NUnit.Framework.TestCaseAttribute("News & Blog", "Pooch Car Safety", "button", "Pooch Car Safety", null)]
+        public virtual void AccessingTheNewArticleLinksWillNavigateTheUserToTheCorrectNewsArticle(string pageName, string article, string linkType, string expectedArticle, string[] exampleTags)
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Accessing the new article links will navigate the user to the correct news articl" +
                     "e", null, exampleTags);
-#line 4
+#line 3
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
+#line 4
+ testRunner.Given(string.Format("I access the \'{0}\' article page", pageName), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 5
- testRunner.Given("I access the news and blog page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 6
   testRunner.And("dismiss the cookies overlay", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 7
+#line 6
  testRunner.When(string.Format("I select the \'{0}\' article via the \'{1}\' link", article, linkType), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 8
+#line 7
  testRunner.Then(string.Format("correct article \'{0}\' will be displayed", expectedArticle), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Accessing the buttons and links in the news article pages will navigate the user " +
+            "to the correct page")]
+        [NUnit.Framework.TestCaseAttribute("Summer Is Here", "Back To News Button", "News", null)]
+        [NUnit.Framework.TestCaseAttribute("Pooch Car Safety", "Back To News Button", "News", null)]
+        public virtual void AccessingTheButtonsAndLinksInTheNewsArticlePagesWillNavigateTheUserToTheCorrectPage(string article, string hyperLink, string expectedPage, string[] exampleTags)
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Accessing the buttons and links in the news article pages will navigate the user " +
+                    "to the correct page", null, exampleTags);
+#line 17
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 18
+ testRunner.Given(string.Format("the news \'{0}\' is loaded", article), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 19
+  testRunner.And("dismiss the cookies overlay", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 20
+ testRunner.When(string.Format("I select the \'{0}\'", hyperLink), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 21
+ testRunner.Then(string.Format("the \'{0}\' will be displayed", expectedPage), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

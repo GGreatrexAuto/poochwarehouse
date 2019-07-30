@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using NUnit.Framework;
+using NUnit.Framework.Internal;
 using PoochWareHouse_Automation.Configuration;
 using PoochWareHouse_Automation.Helpers;
 using PoochWareHouse_Automation.Navigation;
@@ -23,10 +24,29 @@ namespace PoochWareHouse_Automation.Tests.Navigation
             _site = new Site();
         }
 
-        [Given(@"I access the news and blog page")]
-        public void GivenIAccessTheNewsAndBlogPage()
+        [Given(@"I access the '(.*)' article page")]
+        [Given(@"the news '(.*)' is loaded")]
+        public void GivenIAccessTheArticlePage(string pageName)
         {
-            _site.InitialiseChromeDriver(Urls.NewsUrl);
+            string url = null;
+
+            switch (pageName)
+            {
+                case "News & Blog":
+                    url = Urls.NewsUrl;
+                    break;
+                case "Summer Is Here":
+                    url = Urls.NewsArticleSummerUrl;
+                    break;
+                case "Pooch Car Safety":
+                    url = Urls.NewsArticlePoochTravel;
+                    break;
+                default:
+                    Assert.Inconclusive(TestErrorHelper.CaseValueNotRecognised(pageName));
+                    break;
+            }
+            
+            _site.InitialiseChromeDriver(url);
         }
 
         [Given(@"dismiss the cookies overlay")]
@@ -62,6 +82,18 @@ namespace PoochWareHouse_Automation.Tests.Navigation
             }
         }
 
+        [When(@"I select the '(.*)'")]
+        public void WhenISelectThe(string hyperLink)
+        {
+            switch (hyperLink)
+            {
+                case "Back To News Button":
+                    NewsArticleGenericNavigation.BackToNewsButton();
+                    break;
+            }
+        }
+
+
         [Then(@"correct article '(.*)' will be displayed")]
         public void ThenCorrectArticleWillBeDisplayed(string expectedArticle)
         {
@@ -73,5 +105,16 @@ namespace PoochWareHouse_Automation.Tests.Navigation
 
             Assert.AreEqual(expectedArticle, actualPageHeading, TestErrorHelper.ExpectedActualPageHeadingsDoNotMatch(expectedArticle, actualPageHeading));
         }
+
+        [Then(@"the '(.*)' will be displayed")]
+        public void ThenTheWillBeDisplayed(string expectedPage)
+        {
+            if (expectedPage == "News")
+            {
+                var actualHeading = News.NewsPageHeading.Text;
+                Assert.AreEqual(expectedPage, actualHeading, TestErrorHelper.ExpectedActualPageHeadingsDoNotMatch(expectedPage, actualHeading));
+            }
+        }
+
     }
 }

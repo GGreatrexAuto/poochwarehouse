@@ -93,6 +93,7 @@
     <Compile Include="Navigation\FooterNavigation.cs" />
     <Compile Include="Navigation\HeaderNavigation.cs" />
     <Compile Include="Navigation\HomePageNavigation.cs" />
+    <Compile Include="Navigation\NewsArticleGenericNavigation.cs" />
     <Compile Include="Navigation\NewsBlogNavigation.cs" />
     <Compile Include="Navigation\PrivacyPolicyNavigation.cs" />
     <Compile Include="Navigation\ReturnsPolicyNavigation.cs" />
