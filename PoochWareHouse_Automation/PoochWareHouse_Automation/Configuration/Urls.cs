@@ -30,6 +30,8 @@
         public static string TermsOfUseUrl = "https://poochwarehouse.co.uk/pages/terms-of-use";
         public static string ContactUsUrl = "https://poochwarehouse.co.uk/pages/contact-us";
         public static string NewsUrl = "https://poochwarehouse.co.uk/blogs/news";
+        public static string NewsArticleSummerUrl = "https://poochwarehouse.co.uk/blogs/news/summer-is-finally-here";
+        public static string NewsArticlePoochTravel = "https://poochwarehouse.co.uk/blogs/news/pooch-car-safety";
 
         public static string ExternalAllAboutCookies = "https://www.allaboutcookies.org/";
         public static string ExternalShopify = "https://www.shopify.com/legal/privacy";

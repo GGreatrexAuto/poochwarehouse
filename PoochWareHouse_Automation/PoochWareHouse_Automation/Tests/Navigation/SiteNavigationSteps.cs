@@ -1,11 +1,11 @@
 ﻿using System;
-using System.Threading;
 using NUnit.Framework;
 using PoochWareHouse_Automation.Configuration;
 using PoochWareHouse_Automation.Helpers;
 using PoochWareHouse_Automation.Navigation;
 using PoochWareHouse_Automation.Pages;
 using PoochWareHouse_Automation.Pages.Collections;
+using PoochWareHouse_Automation.Pages.News;
 using PoochWareHouse_Automation.Pages.PageElements;
 using TechTalk.SpecFlow;
 
