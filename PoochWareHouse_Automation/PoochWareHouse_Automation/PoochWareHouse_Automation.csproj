@@ -93,6 +93,7 @@
     <Compile Include="Navigation\FooterNavigation.cs" />
     <Compile Include="Navigation\HeaderNavigation.cs" />
     <Compile Include="Navigation\HomePageNavigation.cs" />
+    <Compile Include="Navigation\NewsBlogNavigation.cs" />
     <Compile Include="Navigation\PrivacyPolicyNavigation.cs" />
     <Compile Include="Navigation\ReturnsPolicyNavigation.cs" />
     <Compile Include="Pages\AllProducts.cs" />
@@ -124,6 +125,7 @@
     <Compile Include="Site.cs" />
     <Compile Include="Tests\Navigation\AllProductsSteps.cs" />
     <Compile Include="Tests\Navigation\InformationalPageNavigationSteps.cs" />
+    <Compile Include="Tests\Navigation\NewsBlogNavigationSteps.cs" />
     <Compile Include="Tests\PreReleaseLogonSteps.cs" />
     <Compile Include="Tests\Navigation\SiteNavigationSteps.cs" />
   </ItemGroup>
@@ -132,6 +134,7 @@
     <None Include="packages.config" />
     <None Include="Tests\Navigation\AllProducts.feature" />
     <None Include="Tests\Navigation\InformationalPageNavigation.feature" />
+    <None Include="Tests\Navigation\NewsBlogNavigation.feature" />
     <None Include="Tests\PreReleaseLogon.feature">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

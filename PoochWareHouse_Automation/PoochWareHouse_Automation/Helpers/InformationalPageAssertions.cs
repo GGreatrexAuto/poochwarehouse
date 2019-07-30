@@ -18,7 +18,7 @@ namespace PoochWareHouse_Automation.Helpers
             var actualHeading = InformationalPagesGenericItems.GenericPageHeading.Text;
 
             Assert.AreEqual(expectedItem, actualHeading,
-                TestErrorHelper.ExpectedActualageHeadingsDoNotMatch(expectedItem, actualHeading));
+                TestErrorHelper.ExpectedActualPageHeadingsDoNotMatch(expectedItem, actualHeading));
         }
 
         public static void ConfirmInformationalPageHyperLinksToExternalSitesAreCorrect(string expectedUrl)

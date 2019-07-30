@@ -314,7 +314,7 @@ namespace PoochWareHouse_Automation.Tests.Navigation
 
             var actualHeadingManipulated = actualHeading.Substring(13);
             Assert.AreEqual(expectedHeading, actualHeadingManipulated,
-                TestErrorHelper.ExpectedActualageHeadingsDoNotMatch(expectedHeading, actualHeadingManipulated));
+                TestErrorHelper.ExpectedActualPageHeadingsDoNotMatch(expectedHeading, actualHeadingManipulated));
         }
 
         [Then(@"the '(.*)' products page will load")]
@@ -330,7 +330,7 @@ namespace PoochWareHouse_Automation.Tests.Navigation
                 actualHeading = AllProducts.ProductsPageHeading.Text;
                 var actualHeadingManipulated = actualHeading.Substring(13);
                 Assert.AreEqual(expectedHeading, actualHeadingManipulated,
-                    TestErrorHelper.ExpectedActualageHeadingsDoNotMatch(expectedHeading, actualHeadingManipulated));
+                    TestErrorHelper.ExpectedActualPageHeadingsDoNotMatch(expectedHeading, actualHeadingManipulated));
             }
             else if (expectedHeading == "Sale Items")
             {
@@ -340,19 +340,19 @@ namespace PoochWareHouse_Automation.Tests.Navigation
             {
                 Assert.IsTrue(LoginForm.LoginPageheader.Displayed, TestErrorHelper.ExpectedItemNotDisplayed(itemType, expectedHeading));
                 actualHeading = LoginForm.LoginPageheader.Text;
-                Assert.AreEqual(expectedHeading, actualHeading, TestErrorHelper.ExpectedActualageHeadingsDoNotMatch(expectedHeading, actualHeading));
+                Assert.AreEqual(expectedHeading, actualHeading, TestErrorHelper.ExpectedActualPageHeadingsDoNotMatch(expectedHeading, actualHeading));
             }
             else if(expectedHeading == "Your cart")
             {
                 Assert.IsTrue(YourCart.YourCartPageHeading.Displayed, TestErrorHelper.ExpectedItemNotDisplayed(itemType, expectedHeading));
                 actualHeading = YourCart.YourCartPageHeading.Text;
-                Assert.AreEqual(expectedHeading, actualHeading, TestErrorHelper.ExpectedActualageHeadingsDoNotMatch(expectedHeading, actualHeading));
+                Assert.AreEqual(expectedHeading, actualHeading, TestErrorHelper.ExpectedActualPageHeadingsDoNotMatch(expectedHeading, actualHeading));
             }
             else if (expectedHeading == "News")
             {
                 Assert.IsTrue(News.NewsPageHeading.Displayed, TestErrorHelper.ExpectedItemNotDisplayed(itemType, expectedHeading));
                 actualHeading = News.NewsPageHeading.Text;
-                Assert.AreEqual(expectedHeading, actualHeading, TestErrorHelper.ExpectedActualageHeadingsDoNotMatch(expectedHeading, actualHeading));
+                Assert.AreEqual(expectedHeading, actualHeading, TestErrorHelper.ExpectedActualPageHeadingsDoNotMatch(expectedHeading, actualHeading));
             }
             else
             {

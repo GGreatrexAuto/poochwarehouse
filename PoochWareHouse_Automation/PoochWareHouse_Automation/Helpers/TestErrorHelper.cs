@@ -14,7 +14,7 @@
             return error;
         }
 
-        public static string ExpectedActualageHeadingsDoNotMatch(string expectedHeading, string actualHeading)
+        public static string ExpectedActualPageHeadingsDoNotMatch(string expectedHeading, string actualHeading)
         {
             var error =
                 $"The expected page heading [{expectedHeading}] was not displayed, the actual heading was [{actualHeading}].";
