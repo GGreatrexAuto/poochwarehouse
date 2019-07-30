@@ -3,6 +3,7 @@ using NUnit.Framework;
 using PoochWareHouse_Automation.Configuration;
 using PoochWareHouse_Automation.Helpers;
 using PoochWareHouse_Automation.Navigation;
+using PoochWareHouse_Automation.Navigation.InformationalPages;
 using PoochWareHouse_Automation.Pages;
 using PoochWareHouse_Automation.Pages.Collections;
 using PoochWareHouse_Automation.Pages.News;
@@ -308,13 +309,7 @@ namespace PoochWareHouse_Automation.Tests.Navigation
         {
             var itemType = "page heading";
 
-            Assert.IsTrue(ProductsPagesGenericItems.ProductsGenericPageHeading.Displayed, TestErrorHelper.ExpectedItemNotDisplayed(itemType, expectedHeading));
-
-            var actualHeading = ProductsPagesGenericItems.ProductsGenericPageHeading.Text;
-
-            var actualHeadingManipulated = actualHeading.Substring(13);
-            Assert.AreEqual(expectedHeading, actualHeadingManipulated,
-                TestErrorHelper.ExpectedActualPageHeadingsDoNotMatch(expectedHeading, actualHeadingManipulated));
+            ProductsPagesGenericAssertions.ConfirmProductCollectionPageHasBeenLoaded(itemType, expectedHeading);
         }
 
         [Then(@"the '(.*)' products page will load")]

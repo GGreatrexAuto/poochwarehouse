@@ -1,6 +1,6 @@
 ﻿using PoochWareHouse_Automation.Pages.InformationalPages;
 
-namespace PoochWareHouse_Automation.Navigation
+namespace PoochWareHouse_Automation.Navigation.InformationalPages
 {
     public static class PrivacyPolicyNavigation
     {

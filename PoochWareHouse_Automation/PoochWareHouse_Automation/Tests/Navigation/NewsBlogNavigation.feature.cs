@@ -100,6 +100,7 @@ this.ScenarioInitialize(scenarioInfo);
             "to the correct page")]
         [NUnit.Framework.TestCaseAttribute("Summer Is Here", "Back To News Button", "News", null)]
         [NUnit.Framework.TestCaseAttribute("Pooch Car Safety", "Back To News Button", "News", null)]
+        [NUnit.Framework.TestCaseAttribute("Summer Is Here", "Summer Collection Image", "Summer Time", null)]
         public virtual void AccessingTheButtonsAndLinksInTheNewsArticlePagesWillNavigateTheUserToTheCorrectPage(string article, string hyperLink, string expectedPage, string[] exampleTags)
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Accessing the buttons and links in the news article pages will navigate the user " +

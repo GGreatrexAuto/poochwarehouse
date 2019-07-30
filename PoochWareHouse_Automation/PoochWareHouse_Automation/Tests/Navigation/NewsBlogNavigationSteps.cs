@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using NUnit.Framework;
-using NUnit.Framework.Internal;
+﻿using NUnit.Framework;
 using PoochWareHouse_Automation.Configuration;
 using PoochWareHouse_Automation.Helpers;
 using PoochWareHouse_Automation.Navigation;
+using PoochWareHouse_Automation.Navigation.News;
 using PoochWareHouse_Automation.Pages.News;
 using TechTalk.SpecFlow;
 
@@ -127,10 +122,17 @@ namespace PoochWareHouse_Automation.Tests.Navigation
         [Then(@"the '(.*)' will be displayed")]
         public void ThenTheWillBeDisplayed(string expectedPage)
         {
+            string itemType = "page";
+
             if (expectedPage == "News")
             {
                 var actualHeading = News.NewsPageHeading.Text;
                 Assert.AreEqual(expectedPage, actualHeading, TestErrorHelper.ExpectedActualPageHeadingsDoNotMatch(expectedPage, actualHeading));
+            }
+
+            if (expectedPage == "Summer Time")
+            {
+                ProductsPagesGenericAssertions.ConfirmProductCollectionPageHasBeenLoaded(itemType, expectedPage);
             }
         }
 

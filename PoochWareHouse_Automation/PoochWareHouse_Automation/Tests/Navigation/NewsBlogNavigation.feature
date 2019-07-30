@@ -21,10 +21,10 @@ Scenario Outline: Accessing the buttons and links in the news article pages will
 	Then the '<expectedPage>' will be displayed
 
 	Examples: 
-	| article          | hyperLink           | expectedPage            |
-	| Summer Is Here   | Back To News Button | News                    |
-	| Pooch Car Safety | Back To News Button | News                    |
-	 #                | Summer Is Here      | Summer Collection Image | Summer Collection Products |
+	| article          | hyperLink               | expectedPage |
+	| Summer Is Here   | Back To News Button     | News         |
+	| Pooch Car Safety | Back To News Button     | News         |
+	| Summer Is Here   | Summer Collection Image | Summer Time  |
 	 #                | Summer Is Here      | Travel Flask            | Travel flask product |
 	 #                | Summer Is Here      | Summer Cooling Vest     | Summer Cooling Vest Product |
 	 #                | Summer Is Here      | Summer Cooling Scarf    | Summer Cooling Scarf Product |
