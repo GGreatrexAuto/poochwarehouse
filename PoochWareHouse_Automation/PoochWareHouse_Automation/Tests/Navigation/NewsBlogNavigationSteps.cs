@@ -90,6 +90,24 @@ namespace PoochWareHouse_Automation.Tests.Navigation
                 case "Back To News Button":
                     NewsArticleGenericNavigation.BackToNewsButton();
                     break;
+                case "Summer Collection Image":
+                    NewsArticleSummerHereNavigation.ClickSummerCollectionImage();
+                    break;
+                case "Travel Flask":
+                    NewsArticleSummerHereNavigation.ClickTravelFlaskLink();
+                    break;
+                case "Summer Cooling Vest":
+                    NewsArticleSummerHereNavigation.ClickSummerCoolingVestLink();
+                    break;
+                case "Summer Cooling Scarf":
+                    NewsArticleSummerHereNavigation.ClickSummerCoolingScarfLink();
+                    break;
+                case "Thick Fur Grooming Comb":
+                    NewsArticleSummerHereNavigation.ClickThickFurGroomingCombLink();
+                    break;
+                default:
+                    Assert.Inconclusive(TestErrorHelper.CaseValueNotRecognised(hyperLink));
+                    break;
             }
         }
 
