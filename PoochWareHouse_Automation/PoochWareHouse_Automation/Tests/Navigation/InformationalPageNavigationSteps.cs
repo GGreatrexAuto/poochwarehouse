@@ -126,18 +126,42 @@ namespace PoochWareHouse_Automation.Tests.Navigation
         {
             var itemType = "page heading";
 
-            if (expectedPage == "Returns Policy" || expectedPage == "Contact Us")
+            if (expectedPage == "Returns Policy" || expectedPage == "Contact Us" || expectedPage == "Home Page")
             {
-                InformationalPageAssertions.ConfirmInformationalPageHasBeenLoaded(itemType, expectedPage);
-            }
+                if (expectedPage == "Returns Policy" || expectedPage == "Contact Us")
+                {
+                    InformationalPageAssertions.ConfirmInformationalPageHasBeenLoaded(itemType, expectedPage);
+                }
 
-            else if (expectedPage == "Home Page")
+                else if (expectedPage == "Home Page")
+                {
+                    HomepageAssertions.ConfirmHomePageHasBeenLoaded();
+                }
+            }
+            else
             {
-                HomepageAssertions.ConfirmHomePageHasBeenLoaded();
+                switch (expectedPage)
+                {
+                    case "All About Cookies":
+                        InformationalPageAssertions.ConfirmInformationalPageHyperLinksToExternalSitesAreCorrect(Urls.ExternalAllAboutCookies);
+                        break;
+                    case "Shopify Privacy":
+                        InformationalPageAssertions.ConfirmInformationalPageHyperLinksToExternalSitesAreCorrect(Urls.ExternalShopify);
+                        break;
+                    case "Google Privacy":
+                        InformationalPageAssertions.ConfirmInformationalPageHyperLinksToExternalSitesAreCorrect(Urls.ExternalGooglePrivacy);
+                        break;
+                    case "Google Opt Out":
+                        InformationalPageAssertions.ConfirmInformationalPageHyperLinksToExternalSitesAreCorrect(Urls.ExternalGoogleOptOut);
+                        break;
+                    case "Facebook Data Policy":
+                        InformationalPageAssertions.ConfirmInformationalPageHyperLinksToExternalSitesAreCorrect(Urls.ExternalFacebookAdvertising);
+                        break;
+                    default:
+                        Assert.Inconclusive(TestErrorHelper.CaseValueNotRecognised(expectedPage));
+                        break;
+                }
             }
         }
-
-
-
     }
 }

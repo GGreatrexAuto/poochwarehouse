@@ -12,7 +12,8 @@ namespace PoochWareHouse_Automation.Helpers
     {
         public static void ConfirmInformationalPageHasBeenLoaded(string itemType, string expectedItem)
         {
-            Assert.IsTrue(InformationalPagesGenericItems.GenericPageHeading.Displayed, TestErrorHelper.ExpectedItemNotDisplayed(itemType, expectedItem));
+            Assert.IsTrue(InformationalPagesGenericItems.GenericPageHeading.Displayed,
+                TestErrorHelper.ExpectedItemNotDisplayed(itemType, expectedItem));
 
             var actualHeading = InformationalPagesGenericItems.GenericPageHeading.Text;
 
@@ -20,6 +21,11 @@ namespace PoochWareHouse_Automation.Helpers
                 TestErrorHelper.ExpectedActualageHeadingsDoNotMatch(expectedItem, actualHeading));
         }
 
+        public static void ConfirmInformationalPageHyperLinksToExternalSitesAreCorrect(string expectedUrl)
+        {
+            var actualUrl = Driver._webdriver.Url;
 
+            Assert.AreEqual(expectedUrl, actualUrl, TestErrorHelper.ExpectedExternalUrlDoNotMatch(expectedUrl, actualUrl));
+        }
     }
 }

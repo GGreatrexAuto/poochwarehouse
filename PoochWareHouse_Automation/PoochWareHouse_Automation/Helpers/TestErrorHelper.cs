@@ -20,5 +20,11 @@
                 $"The expected page heading [{expectedHeading}] was not displayed, the actual heading was [{actualHeading}].";
             return error;
         }
+
+        public static string ExpectedExternalUrlDoNotMatch(string expectedUrl, string actualUrl)
+        {
+            var error = $"The expected external url [{expectedUrl}], did not match the [{actualUrl}]";
+            return error;
+        }
     }
 }
