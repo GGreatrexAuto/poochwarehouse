@@ -132,9 +132,10 @@ namespace PoochWareHouse_Automation.Tests.Navigation
 
             if (expectedPage == "Summer Time")
             {
+                var handle = Driver._webdriver.WindowHandles;
+                Driver._webdriver.SwitchTo().Window(handle[1]);
                 ProductsPagesGenericAssertions.ConfirmProductCollectionPageHasBeenLoaded(itemType, expectedPage);
             }
         }
-
     }
 }

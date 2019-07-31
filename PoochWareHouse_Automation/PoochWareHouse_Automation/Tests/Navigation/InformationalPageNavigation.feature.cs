@@ -85,18 +85,18 @@ namespace PoochWareHouse_Automation.Tests.Navigation
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Selecting hyperlinks within the informational page will navigate users to the cor" +
                     "rect location", null, exampleTags);
-#line 4
+#line 3
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 5
+#line 4
  testRunner.Given(string.Format("I access the \'{0}\' page", informationalPage), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line 6
+#line 5
  testRunner.And("I clear the cookie notice", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 7
+#line 6
  testRunner.And(string.Format("the \'{0}\' link is present", hyperLink), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
-#line 8
+#line 7
   testRunner.When(string.Format("I click the \'{0}\'", hyperLink), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 9
+#line 8
  testRunner.Then(string.Format("the \'{0}\' page will be loaded", expectedPage), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

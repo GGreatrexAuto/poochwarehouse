@@ -1,6 +1,5 @@
 ﻿Feature: Informational Page Navigation
 	
-#@WIP
 Scenario Outline: Selecting hyperlinks within the informational page will navigate users to the correct location
 	Given I access the '<informationalPage>' page
 	And I clear the cookie notice
