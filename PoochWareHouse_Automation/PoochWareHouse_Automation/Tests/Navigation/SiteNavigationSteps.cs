@@ -2,6 +2,7 @@
 using NUnit.Framework;
 using PoochWareHouse_Automation.Configuration;
 using PoochWareHouse_Automation.Helpers;
+using PoochWareHouse_Automation.Helpers.Assertions;
 using PoochWareHouse_Automation.Navigation;
 using PoochWareHouse_Automation.Navigation.InformationalPages;
 using PoochWareHouse_Automation.Pages;
@@ -309,7 +310,7 @@ namespace PoochWareHouse_Automation.Tests.Navigation
         {
             var itemType = "page heading";
 
-            ProductsPagesGenericAssertions.ConfirmProductCollectionPageHasBeenLoaded(itemType, expectedHeading);
+            ProductsCollectionPagesGenericAssertions.ConfirmProductCollectionPageHasBeenLoaded(itemType, expectedHeading);
         }
 
         [Then(@"the '(.*)' products page will load")]

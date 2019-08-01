@@ -70,16 +70,16 @@ namespace PoochWareHouse_Automation.Tests.Navigation
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Accessing the new article links will navigate the user to the correct news articl" +
-            "e")]
+        [NUnit.Framework.DescriptionAttribute("Accessing the news article links will navigate the user to the correct news artic" +
+            "le")]
         [NUnit.Framework.TestCaseAttribute("News & Blog", "Summer Is Here", "image", "Summer Is Here!", null)]
         [NUnit.Framework.TestCaseAttribute("News & Blog", "Summer Is Here", "button", "Summer Is Here!", null)]
         [NUnit.Framework.TestCaseAttribute("News & Blog", "Pooch Car Safety", "image", "Pooch Car Safety", null)]
         [NUnit.Framework.TestCaseAttribute("News & Blog", "Pooch Car Safety", "button", "Pooch Car Safety", null)]
-        public virtual void AccessingTheNewArticleLinksWillNavigateTheUserToTheCorrectNewsArticle(string pageName, string article, string linkType, string expectedArticle, string[] exampleTags)
+        public virtual void AccessingTheNewsArticleLinksWillNavigateTheUserToTheCorrectNewsArticle(string pageName, string article, string linkType, string expectedArticle, string[] exampleTags)
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Accessing the new article links will navigate the user to the correct news articl" +
-                    "e", null, exampleTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Accessing the news article links will navigate the user to the correct news artic" +
+                    "le", null, exampleTags);
 #line 3
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -101,6 +101,10 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.TestCaseAttribute("Summer Is Here", "Back To News Button", "News", null)]
         [NUnit.Framework.TestCaseAttribute("Pooch Car Safety", "Back To News Button", "News", null)]
         [NUnit.Framework.TestCaseAttribute("Summer Is Here", "Summer Collection Image", "Summer Time", null)]
+        [NUnit.Framework.TestCaseAttribute("Summer Is Here", "Travel Flask", "Water & Food Flask with Collapsible Travel Bowl", null)]
+        [NUnit.Framework.TestCaseAttribute("Summer Is Here", "Summer Cooling Vest", "Summer Cooling Vest", null)]
+        [NUnit.Framework.TestCaseAttribute("Summer Is Here", "Summer Cooling Scarf", "Summer Cooling Scarf", null)]
+        [NUnit.Framework.TestCaseAttribute("Summer Is Here", "Thick Fur Grooming Comb", "Thick Fur Grooming Comb", null)]
         public virtual void AccessingTheButtonsAndLinksInTheNewsArticlePagesWillNavigateTheUserToTheCorrectPage(string article, string hyperLink, string expectedPage, string[] exampleTags)
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Accessing the buttons and links in the news article pages will navigate the user " +

@@ -1,6 +1,7 @@
 ﻿using NUnit.Framework;
 using PoochWareHouse_Automation.Configuration;
 using PoochWareHouse_Automation.Helpers;
+using PoochWareHouse_Automation.Helpers.Assertions;
 using PoochWareHouse_Automation.Pages.InformationalPages;
 using TechTalk.SpecFlow;
 

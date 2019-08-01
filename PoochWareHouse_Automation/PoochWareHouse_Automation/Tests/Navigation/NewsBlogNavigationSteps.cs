@@ -1,6 +1,7 @@
 ﻿using NUnit.Framework;
 using PoochWareHouse_Automation.Configuration;
 using PoochWareHouse_Automation.Helpers;
+using PoochWareHouse_Automation.Helpers.Assertions;
 using PoochWareHouse_Automation.Navigation;
 using PoochWareHouse_Automation.Navigation.News;
 using PoochWareHouse_Automation.Pages.News;
@@ -132,9 +133,14 @@ namespace PoochWareHouse_Automation.Tests.Navigation
 
             if (expectedPage == "Summer Time")
             {
-                var handle = Driver._webdriver.WindowHandles;
-                Driver._webdriver.SwitchTo().Window(handle[1]);
-                ProductsPagesGenericAssertions.ConfirmProductCollectionPageHasBeenLoaded(itemType, expectedPage);
+                BrowserHelper.SwitchFocusToAnotherTab(1);
+                ProductsCollectionPagesGenericAssertions.ConfirmProductCollectionPageHasBeenLoaded(itemType, expectedPage);
+            }
+
+            if (expectedPage == "Water & Food Flask with Collapsible Travel Bowl" || expectedPage == "Summer Cooling Vest" || expectedPage == "Summer Cooling Scarf" || expectedPage == "Thick Fur Grooming Comb")
+            {
+                BrowserHelper.SwitchFocusToAnotherTab(1);
+                ProductDetailsGenericAssertions.ConfirmProductDetailsPageHasBeenLoaded(itemType, expectedPage);
             }
         }
     }

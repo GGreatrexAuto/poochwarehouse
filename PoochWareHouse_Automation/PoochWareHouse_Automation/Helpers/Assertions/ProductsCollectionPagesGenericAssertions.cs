@@ -1,9 +1,9 @@
 ﻿using NUnit.Framework;
 using PoochWareHouse_Automation.Pages.Collections;
 
-namespace PoochWareHouse_Automation.Helpers
+namespace PoochWareHouse_Automation.Helpers.Assertions
 {
-    public static class ProductsPagesGenericAssertions
+    public static class ProductsCollectionPagesGenericAssertions
     {
         public static void ConfirmProductCollectionPageHasBeenLoaded(string itemType, string expectedHeading)
         {
