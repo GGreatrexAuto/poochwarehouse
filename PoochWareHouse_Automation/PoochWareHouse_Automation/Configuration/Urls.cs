@@ -32,7 +32,7 @@
         public static string NewsUrl = "https://poochwarehouse.co.uk/blogs/news";
         public static string NewsArticleSummerUrl = "https://poochwarehouse.co.uk/blogs/news/summer-is-finally-here";
         public static string NewsArticlePoochTravel = "https://poochwarehouse.co.uk/blogs/news/pooch-car-safety";
-
+        public static string NewsArticleWhyHarness = "https://poochwarehouse.co.uk/blogs/news/why-use-a-harness";
         public static string ExternalAllAboutCookies = "https://www.allaboutcookies.org/";
         public static string ExternalShopify = "https://www.shopify.com/legal/privacy";
         public static string ExternalGoogleOptOut = "https://tools.google.com/dlpage/gaoptout";

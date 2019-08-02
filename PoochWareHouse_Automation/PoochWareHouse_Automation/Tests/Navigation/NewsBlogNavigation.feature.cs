@@ -76,6 +76,8 @@ namespace PoochWareHouse_Automation.Tests.Navigation
         [NUnit.Framework.TestCaseAttribute("News & Blog", "Summer Is Here", "button", "Summer Is Here!", null)]
         [NUnit.Framework.TestCaseAttribute("News & Blog", "Pooch Car Safety", "image", "Pooch Car Safety", null)]
         [NUnit.Framework.TestCaseAttribute("News & Blog", "Pooch Car Safety", "button", "Pooch Car Safety", null)]
+        [NUnit.Framework.TestCaseAttribute("News & Blog", "Why Use a Harness?", "image", "Why Use a Harness?", null)]
+        [NUnit.Framework.TestCaseAttribute("News & Blog", "Why Use a Harness?", "button", "Why Use a Harness?", null)]
         public virtual void AccessingTheNewsArticleLinksWillNavigateTheUserToTheCorrectNewsArticle(string pageName, string article, string linkType, string expectedArticle, string[] exampleTags)
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Accessing the news article links will navigate the user to the correct news artic" +
@@ -109,16 +111,16 @@ this.ScenarioInitialize(scenarioInfo);
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Accessing the buttons and links in the news article pages will navigate the user " +
                     "to the correct page", null, exampleTags);
-#line 17
+#line 18
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
-#line 18
- testRunner.Given(string.Format("the news \'{0}\' is loaded", article), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 19
-  testRunner.And("dismiss the cookies overlay", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Given(string.Format("the news \'{0}\' is loaded", article), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 20
- testRunner.When(string.Format("I select the \'{0}\'", hyperLink), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+  testRunner.And("dismiss the cookies overlay", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 21
+ testRunner.When(string.Format("I select the \'{0}\'", hyperLink), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 22
  testRunner.Then(string.Format("the \'{0}\' will be displayed", expectedPage), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();

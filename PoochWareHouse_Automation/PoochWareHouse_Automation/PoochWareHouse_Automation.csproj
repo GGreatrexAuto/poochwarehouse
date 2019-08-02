@@ -121,6 +121,7 @@
     <Compile Include="Pages\News\NewsArticleSummerIsHere.cs" />
     <Compile Include="Pages\News\News.cs" />
     <Compile Include="Pages\News\NewsArticlesGenericItems.cs" />
+    <Compile Include="Pages\News\NewsArticleWhyHarness.cs" />
     <Compile Include="Pages\OnSale.cs" />
     <Compile Include="Pages\PageElements\CookieOverlay.cs" />
     <Compile Include="Pages\PageElements\QuickLinksFooter.cs" />

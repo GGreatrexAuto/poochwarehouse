@@ -21,5 +21,15 @@
         {
             Pages.News.News.PoochCarSafetyImage.Click();
         }
+
+        public static void WhyHarnessArticleButton()
+        {
+            Pages.News.News.WhyHarnessReadMoreButton.Click();
+        }
+
+        public static void WhyHarnessArticleImage()
+        {
+            Pages.News.News.WhyHarnessImage.Click();
+        }
     }
 }

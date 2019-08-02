@@ -10,13 +10,17 @@ namespace PoochWareHouse_Automation.Pages.News
             Driver._webdriver.FindElement(By.XPath("//*[@id=\"ArticleImageWrapper-8912175155\"]/div"));
 
         public static IWebElement SummerIsHereReadMoreButton =>
-            Driver._webdriver.FindElement(By.XPath("//*[@id=\"shopify-section-blog-template\"]/div[2]/ul/li[1]/div/ul/li/a"));
+            Driver._webdriver.FindElement(By.XPath("//*[@id=\"shopify-section-blog-template\"]/div[2]/ul/li[2]/div/ul/li/a"));
 
         public static IWebElement PoochCarSafetyImage =>
             Driver._webdriver.FindElement(By.XPath("//*[@id=\"ArticleImageWrapper-8912273459\"]/div"));
 
         public static IWebElement PoochCarSafetyReadMoreButton =>
-            Driver._webdriver.FindElement(By.XPath("//*[@id=\"shopify-section-blog-template\"]/div[2]/ul/li[2]/div/ul/li/a"));
+            Driver._webdriver.FindElement(By.XPath("//*[@id=\"shopify-section-blog-template\"]/div[2]/ul/li[3]/div/ul/li/a"));
 
+        public static IWebElement WhyHarnessImage =>
+            Driver._webdriver.FindElement(By.XPath("//*[@id=\"ArticleImageWrapper-9201582131\"]/div"));
+
+        public static IWebElement WhyHarnessReadMoreButton => Driver._webdriver.FindElement(By.XPath("//*[@id=\"shopify-section-blog-template\"]/div[2]/ul/li[1]/div/ul/li/a"));
     }
 }

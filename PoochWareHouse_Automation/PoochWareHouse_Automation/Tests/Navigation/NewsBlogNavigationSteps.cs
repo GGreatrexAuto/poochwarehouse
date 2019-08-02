@@ -37,6 +37,9 @@ namespace PoochWareHouse_Automation.Tests.Navigation
                 case "Pooch Car Safety":
                     url = Urls.NewsArticlePoochTravel;
                     break;
+                case "Why Use a Harness?":
+                    url = Urls.NewsArticleWhyHarness;
+                    break;
                 default:
                     Assert.Inconclusive(TestErrorHelper.CaseValueNotRecognised(pageName));
                     break;
@@ -76,6 +79,17 @@ namespace PoochWareHouse_Automation.Tests.Navigation
                     NewsBlogNavigation.PoochCarSafetyArticleButton();
                 }
             }
+            else if (article == "Why Use A Harness?")
+            {
+                if (linkType == "image")
+                {
+                    NewsBlogNavigation.WhyHarnessArticleImage();
+                }
+                else if (linkType == "button")
+                {
+                    NewsBlogNavigation.WhyHarnessArticleButton();
+                }
+            }
         }
 
         [When(@"I select the '(.*)'")]
@@ -106,7 +120,6 @@ namespace PoochWareHouse_Automation.Tests.Navigation
                     break;
             }
         }
-
 
         [Then(@"correct article '(.*)' will be displayed")]
         public void ThenCorrectArticleWillBeDisplayed(string expectedArticle)
