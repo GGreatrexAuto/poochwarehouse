@@ -79,7 +79,7 @@ namespace PoochWareHouse_Automation.Tests.Navigation
                     NewsBlogNavigation.PoochCarSafetyArticleButton();
                 }
             }
-            else if (article == "Why Use A Harness?")
+            else if (article == "Why Use a Harness?")
             {
                 if (linkType == "image")
                 {
@@ -115,6 +115,15 @@ namespace PoochWareHouse_Automation.Tests.Navigation
                 case "Thick Fur Grooming Comb":
                     NewsArticleSummerHereNavigation.ClickThickFurGroomingCombLink();
                     break;
+                case "Harnesses":
+                    NewsArticleWhyHarnessesNavigation.SelectHarnessesLink();
+                    break;
+                case "Positive Reinforcement":
+                    NewsArticleWhyHarnessesNavigation.SelectPositiveReinforcementLink();
+                    break;
+                case "Harnesses Two":
+                    NewsArticleWhyHarnessesNavigation.SelectHarnessesLinkTwo();
+                    break;
                 default:
                     Assert.Inconclusive(TestErrorHelper.CaseValueNotRecognised(hyperLink));
                     break;
@@ -144,13 +153,19 @@ namespace PoochWareHouse_Automation.Tests.Navigation
                 Assert.AreEqual(expectedPage, actualHeading, TestErrorHelper.ExpectedActualPageHeadingsDoNotMatch(expectedPage, actualHeading));
             }
 
+            if (expectedPage == "Training")
+            {
+                BrowserHelper.SwitchFocusToAnotherTab(1);
+                ProductsCollectionPagesGenericAssertions.ConfirmProductCollectionPageHasBeenLoaded(itemType, expectedPage);
+            }
+
             if (expectedPage == "Summer Time")
             {
                 BrowserHelper.SwitchFocusToAnotherTab(1);
                 ProductsCollectionPagesGenericAssertions.ConfirmProductCollectionPageHasBeenLoaded(itemType, expectedPage);
             }
 
-            if (expectedPage == "Water & Food Flask with Collapsible Travel Bowl" || expectedPage == "Summer Cooling Vest" || expectedPage == "Summer Cooling Scarf" || expectedPage == "Thick Fur Grooming Comb")
+            if (expectedPage == "Water & Food Flask with Collapsible Travel Bowl" || expectedPage == "Summer Cooling Vest" || expectedPage == "Summer Cooling Scarf" || expectedPage == "Thick Fur Grooming Comb" || expectedPage == "Selection of Adjustable Non-Pull Dog Harness")
             {
                 BrowserHelper.SwitchFocusToAnotherTab(1);
                 ProductDetailsGenericAssertions.ConfirmProductDetailsPageHasBeenLoaded(itemType, expectedPage);

@@ -99,6 +99,7 @@
     <Compile Include="Navigation\HomePageNavigation.cs" />
     <Compile Include="Navigation\News\NewsArticleGenericNavigation.cs" />
     <Compile Include="Navigation\News\NewsArticleSummerHereNavigation.cs" />
+    <Compile Include="Navigation\News\NewsArticleWhyHarnessesNavigation.cs" />
     <Compile Include="Navigation\News\NewsBlogNavigation.cs" />
     <Compile Include="Navigation\InformationalPages\PrivacyPolicyNavigation.cs" />
     <Compile Include="Navigation\InformationalPages\ReturnsPolicyNavigation.cs" />

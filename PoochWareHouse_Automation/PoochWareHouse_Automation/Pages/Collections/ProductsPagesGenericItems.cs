@@ -6,7 +6,7 @@ namespace PoochWareHouse_Automation.Pages.Collections
     {
         public static IWebElement ProductsGenericPageHeading => Driver._webdriver.FindElement(
             By.XPath("//*[@id=\"shopify-section-collection-template\"]/div/header/div[1]/div[2]/h1/span"));
-
+        
         public static IWebElement ProductsGenericPageDescription =>
             Driver._webdriver.FindElement(
                 By.XPath("//*[@id=\"shopify-section-collection-template\"]/div/header/div[2]"));

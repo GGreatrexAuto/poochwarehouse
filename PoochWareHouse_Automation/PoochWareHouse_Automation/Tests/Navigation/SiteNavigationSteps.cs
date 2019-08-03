@@ -30,8 +30,8 @@ namespace PoochWareHouse_Automation.Tests.Navigation
         [Given(@"I have accessed the PoochwareHouse website homepage")]
         public void GivenIHaveAccessedThePoochwareHouseWebsite()
         {
-            _site.InitialiseChromeDriver(Urls.PoochWarehouseHomePage);
-            //_preReleaseLoginHelper.LoginToMainSite();
+            //_site.InitialiseChromeDriver(Urls.PoochWarehouseHomePage);
+            _preReleaseLoginHelper.LoginToMainSite();
         }
 
         [Given(@"I clear the cookies overlay")]

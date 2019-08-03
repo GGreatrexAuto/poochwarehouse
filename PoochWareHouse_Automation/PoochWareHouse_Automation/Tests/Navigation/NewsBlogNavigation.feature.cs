@@ -108,6 +108,9 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.TestCaseAttribute("Summer Is Here", "Summer Cooling Vest", "Summer Cooling Vest", null)]
         [NUnit.Framework.TestCaseAttribute("Summer Is Here", "Summer Cooling Scarf", "Summer Cooling Scarf", null)]
         [NUnit.Framework.TestCaseAttribute("Summer Is Here", "Thick Fur Grooming Comb", "Thick Fur Grooming Comb", null)]
+        [NUnit.Framework.TestCaseAttribute("Why Use a Harness?", "Harnesses", "Selection of Adjustable Non-Pull Dog Harness", null)]
+        [NUnit.Framework.TestCaseAttribute("Why Use a Harness?", "Positive Reinforcement", "Training", null)]
+        [NUnit.Framework.TestCaseAttribute("Why Use a Harness?", "Harnesses Two", "Selection of Adjustable Non-Pull Dog Harness", null)]
         public virtual void AccessingTheButtonsAndLinksInTheNewsArticlePagesWillNavigateTheUserToTheCorrectPage(string article, string hyperLink, string expectedPage, string[] exampleTags)
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Accessing the buttons and links in the news article pages will navigate the user " +

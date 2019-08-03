@@ -31,3 +31,6 @@ Scenario Outline: Accessing the buttons and links in the news article pages will
 	| Summer Is Here     | Summer Cooling Vest     | Summer Cooling Vest                             |
 	| Summer Is Here     | Summer Cooling Scarf    | Summer Cooling Scarf                            |
 	| Summer Is Here     | Thick Fur Grooming Comb | Thick Fur Grooming Comb                         |
+	| Why Use a Harness? | Harnesses               | Selection of Adjustable Non-Pull Dog Harness    |
+	| Why Use a Harness? | Positive Reinforcement  | Training                                        |
+	| Why Use a Harness? | Harnesses Two           | Selection of Adjustable Non-Pull Dog Harness    |
