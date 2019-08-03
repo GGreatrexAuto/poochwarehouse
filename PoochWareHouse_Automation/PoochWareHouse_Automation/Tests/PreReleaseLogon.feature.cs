@@ -20,7 +20,6 @@ namespace PoochWareHouse_Automation.Tests
     [NUnit.Framework.TestFixtureAttribute()]
     [NUnit.Framework.DescriptionAttribute("Pre Release Logon")]
     [NUnit.Framework.CategoryAttribute("ComingSoon")]
-    [NUnit.Framework.CategoryAttribute("deprecated")]
     public partial class PreReleaseLogonFeature
     {
         
@@ -36,8 +35,7 @@ namespace PoochWareHouse_Automation.Tests
             TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Pre Release Logon", "\tIn order to keep customers informed of poochwarehouse servies & products\r\n\tAs a " +
                     "visitor to the site before prerelease\r\n\tI want to be able to leave my email cont" +
                     "act address", ProgrammingLanguage.CSharp, new string[] {
-                        "ComingSoon",
-                        "deprecated"});
+                        "ComingSoon"});
             testRunner.OnFeatureStart(featureInfo);
         }
         

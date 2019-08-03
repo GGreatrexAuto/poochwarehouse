@@ -6,7 +6,6 @@ Feature: Pre Release Logon
 	As a visitor to the site before prerelease
 	I want to be able to leave my email contact address
 
-
 Scenario: Customer opts to be notified of the store when it comes online with a valid email address
 	Given I access the Poochwarehouse.co.uk website
 		But the store is not online for business
