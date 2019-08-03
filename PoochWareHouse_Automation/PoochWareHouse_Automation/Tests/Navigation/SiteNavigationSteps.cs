@@ -19,16 +19,19 @@ namespace PoochWareHouse_Automation.Tests.Navigation
     public sealed class SiteNavigationSteps
     {
         private readonly Site _site;
+        private readonly PreReleaseLoginHelper _preReleaseLoginHelper;
 
         public SiteNavigationSteps()
         {
             _site = new Site();
+            _preReleaseLoginHelper = new PreReleaseLoginHelper();
         }
 
         [Given(@"I have accessed the PoochwareHouse website homepage")]
         public void GivenIHaveAccessedThePoochwareHouseWebsite()
         {
             _site.InitialiseChromeDriver(Urls.PoochWarehouseHomePage);
+            //_preReleaseLoginHelper.LoginToMainSite();
         }
 
         [Given(@"I clear the cookies overlay")]

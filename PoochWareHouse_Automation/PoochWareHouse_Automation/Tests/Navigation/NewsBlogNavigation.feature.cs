@@ -102,6 +102,7 @@ this.ScenarioInitialize(scenarioInfo);
             "to the correct page")]
         [NUnit.Framework.TestCaseAttribute("Summer Is Here", "Back To News Button", "News", null)]
         [NUnit.Framework.TestCaseAttribute("Pooch Car Safety", "Back To News Button", "News", null)]
+        [NUnit.Framework.TestCaseAttribute("Why Use a Harness?", "Back To News Button", "News", null)]
         [NUnit.Framework.TestCaseAttribute("Summer Is Here", "Summer Collection Image", "Summer Time", null)]
         [NUnit.Framework.TestCaseAttribute("Summer Is Here", "Travel Flask", "Water & Food Flask with Collapsible Travel Bowl", null)]
         [NUnit.Framework.TestCaseAttribute("Summer Is Here", "Summer Cooling Vest", "Summer Cooling Vest", null)]
