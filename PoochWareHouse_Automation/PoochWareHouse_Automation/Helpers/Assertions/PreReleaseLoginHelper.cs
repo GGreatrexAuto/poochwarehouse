@@ -10,13 +10,15 @@ namespace PoochWareHouse_Automation.Helpers.Assertions
     public class PreReleaseLoginHelper
     {
         private PreReleaseLogonSteps _preReleaseLogonSteps;
+        private readonly Site _site;
 
         public PreReleaseLoginHelper()
         {
             _preReleaseLogonSteps = new PreReleaseLogonSteps();
+            _site = new Site();
         }
 
-        public void LoginToMainSite()
+        public void LoginToMainSiteWithNewDriver()
         {
             _preReleaseLogonSteps.GivenIOpenTheWebPage();
             _preReleaseLogonSteps.GivenTheCustomerSelectsTheEnterUsingPasswordButton();
@@ -24,5 +26,14 @@ namespace PoochWareHouse_Automation.Helpers.Assertions
             _preReleaseLogonSteps.WhenTheEnterButtonIsSelected();
             _preReleaseLogonSteps.ThenThePoochwarehouseHomepageWillBeDisplayed();
         }
+
+        public void LoginToMainSiteFromPreReleasePage()
+        {
+            _preReleaseLogonSteps.GivenTheCustomerSelectsTheEnterUsingPasswordButton();
+            _preReleaseLogonSteps.GivenTheCustomerEntersAValidPassword();
+            _preReleaseLogonSteps.WhenTheEnterButtonIsSelected();
+            _preReleaseLogonSteps.ThenThePoochwarehouseHomepageWillBeDisplayed();
+        }
+
     }
 }

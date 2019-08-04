@@ -20,7 +20,7 @@ namespace PoochWareHouse_Automation.Tests.Navigation
     {
         private readonly Site _site;
         private readonly PreReleaseLoginHelper _preReleaseLoginHelper;
-
+        
         public SiteNavigationSteps()
         {
             _site = new Site();
@@ -30,8 +30,21 @@ namespace PoochWareHouse_Automation.Tests.Navigation
         [Given(@"I have accessed the PoochwareHouse website homepage")]
         public void GivenIHaveAccessedThePoochwareHouseWebsite()
         {
-            //_site.InitialiseChromeDriver(Urls.PoochWarehouseHomePage);
-            _preReleaseLoginHelper.LoginToMainSite();
+            _site.InitialiseChromeDriver();
+            _site.NavigateAndMaximise(Urls.PoochWarehouseHomePage);
+
+            var currentUrl = _site.GetWebPageUrl();
+
+            if (currentUrl == Urls.PoochWarehousePreReleasePage)
+            {
+                _preReleaseLoginHelper.LoginToMainSiteFromPreReleasePage();
+            }
+            else
+            {
+                Console.WriteLine("PreRelease journey not required.");
+            }
+            
+            
         }
 
         [Given(@"I clear the cookies overlay")]
@@ -47,76 +60,76 @@ namespace PoochWareHouse_Automation.Tests.Navigation
             switch (webPage)
             {
                    case "sale-items":
-                       _site.InitialiseChromeDriver(Urls.SaleItemsUrl);
+                       _site.InitialiseChromeDriverNavigate(Urls.SaleItemsUrl);
                     break;
                 case "all-products":
-                    _site.InitialiseChromeDriver(Urls.AllProductsUrlPgOne);
+                    _site.InitialiseChromeDriverNavigate(Urls.AllProductsUrlPgOne);
                     break;
                 case "beds-blankets":
-                    _site.InitialiseChromeDriver(Urls.BedsBlanketsUrl);
+                    _site.InitialiseChromeDriverNavigate(Urls.BedsBlanketsUrl);
                     break;
                    case "bowls-food":
-                       _site.InitialiseChromeDriver(Urls.BowlsFoodUrl);
+                       _site.InitialiseChromeDriverNavigate(Urls.BowlsFoodUrl);
                     break;
                 case "health-grooming":
-                    _site.InitialiseChromeDriver(Urls.HealthGroomingUrl);
+                    _site.InitialiseChromeDriverNavigate(Urls.HealthGroomingUrl);
                     break;
                 case "collars-leads":
-                    _site.InitialiseChromeDriver(Urls.CollarsLeadsUrl);
+                    _site.InitialiseChromeDriverNavigate(Urls.CollarsLeadsUrl);
                     break;
                 case "health-care":
-                    _site.InitialiseChromeDriver(Urls.HealthCareUrl);
+                    _site.InitialiseChromeDriverNavigate(Urls.HealthCareUrl);
                     break;
                 case "training":
-                    _site.InitialiseChromeDriver(Urls.TrainingUrl);
+                    _site.InitialiseChromeDriverNavigate(Urls.TrainingUrl);
                     break;
                 case "small-dogs":
-                    _site.InitialiseChromeDriver(Urls.SmallDogsUrl);
+                    _site.InitialiseChromeDriverNavigate(Urls.SmallDogsUrl);
                     break;
                 case "large-dogs":
-                    _site.InitialiseChromeDriver(Urls.LargeDogsUrl);
+                    _site.InitialiseChromeDriverNavigate(Urls.LargeDogsUrl);
                     break;
                 case "toys-games":
-                    _site.InitialiseChromeDriver(Urls.ToysGamesUrl);
+                    _site.InitialiseChromeDriverNavigate(Urls.ToysGamesUrl);
                     break;
                 case "on-the-go":
-                    _site.InitialiseChromeDriver(Urls.OnTheGoUrl);
+                    _site.InitialiseChromeDriverNavigate(Urls.OnTheGoUrl);
                     break;
                 case "summer-collection":
-                    _site.InitialiseChromeDriver(Urls.SummerCollectionUrl);
+                    _site.InitialiseChromeDriverNavigate(Urls.SummerCollectionUrl);
                     break;
                 case "winter-collection":
-                    _site.InitialiseChromeDriver(Urls.WinterCollectionUrl);
+                    _site.InitialiseChromeDriverNavigate(Urls.WinterCollectionUrl);
                     break;
                 case "login":
-                    _site.InitialiseChromeDriver(Urls.LoginUrl);
+                    _site.InitialiseChromeDriverNavigate(Urls.LoginUrl);
                     break;
                 case "your-cart":
-                    _site.InitialiseChromeDriver(Urls.YourCartUrl);
+                    _site.InitialiseChromeDriverNavigate(Urls.YourCartUrl);
                     break;
                 case "about-us":
-                    _site.InitialiseChromeDriver(Urls.AboutUsUrl);
+                    _site.InitialiseChromeDriverNavigate(Urls.AboutUsUrl);
                     break;
                 case "faq":
-                    _site.InitialiseChromeDriver(Urls.FaqUrl);
+                    _site.InitialiseChromeDriverNavigate(Urls.FaqUrl);
                     break;
                 case "delivery-shipping":
-                    _site.InitialiseChromeDriver(Urls.DeliveryShippingUrl);
+                    _site.InitialiseChromeDriverNavigate(Urls.DeliveryShippingUrl);
                     break;
                 case "returns-policy":
-                    _site.InitialiseChromeDriver(Urls.ReturnsPolicyUrl);
+                    _site.InitialiseChromeDriverNavigate(Urls.ReturnsPolicyUrl);
                     break;
                 case "privacy-policy":
-                    _site.InitialiseChromeDriver(Urls.PrivacyPolicyUrl);
+                    _site.InitialiseChromeDriverNavigate(Urls.PrivacyPolicyUrl);
                     break;
                 case "terms-of-use":
-                    _site.InitialiseChromeDriver(Urls.TermsOfUseUrl);
+                    _site.InitialiseChromeDriverNavigate(Urls.TermsOfUseUrl);
                     break;
                 case "contact-us":
-                    _site.InitialiseChromeDriver(Urls.ContactUsUrl);
+                    _site.InitialiseChromeDriverNavigate(Urls.ContactUsUrl);
                     break;
                    case "news":
-                       _site.InitialiseChromeDriver(Urls.NewsUrl);
+                       _site.InitialiseChromeDriverNavigate(Urls.NewsUrl);
                        break;
                 default:
                     Assert.Inconclusive(TestErrorHelper.CaseValueNotRecognised(webPage));

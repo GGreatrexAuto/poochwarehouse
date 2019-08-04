@@ -24,13 +24,13 @@ namespace PoochWareHouse_Automation.Tests.Navigation
             switch (informationalPage)
             {
                 case "faq":
-                    _site.InitialiseChromeDriver(Urls.FaqUrl);
+                    _site.InitialiseChromeDriverNavigate(Urls.FaqUrl);
                     break;
                 case "privacy policy":
-                    _site.InitialiseChromeDriver(Urls.PrivacyPolicyUrl);
+                    _site.InitialiseChromeDriverNavigate(Urls.PrivacyPolicyUrl);
                     break;
                 case "returns policy":
-                    _site.InitialiseChromeDriver(Urls.ReturnsPolicyUrl);
+                    _site.InitialiseChromeDriverNavigate(Urls.ReturnsPolicyUrl);
                     break;
                 default:
                     Assert.Inconclusive(TestErrorHelper.CaseValueNotRecognised(informationalPage));

@@ -19,7 +19,7 @@ namespace PoochWareHouse_Automation.Tests
         [Given(@"poochwarehouse is not yet live")]
         public void GivenIOpenTheWebPage()
         {
-            _site.InitialiseChromeDriver(_preReleaseUrl);
+            _site.InitialiseChromeDriverNavigate(_preReleaseUrl);
         }
 
         [Given(@"the store is not online for business")]

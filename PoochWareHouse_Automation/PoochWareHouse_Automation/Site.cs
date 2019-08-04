@@ -5,7 +5,7 @@ namespace PoochWareHouse_Automation
 {
     public class Site
     {
-        public void InitialiseChromeDriver(string url)
+        public void InitialiseChromeDriverNavigate(string url)
         {
             Driver._webdriver = new ChromeDriver();
             Driver._webdriver.Navigate().GoToUrl(url);
@@ -16,6 +16,18 @@ namespace PoochWareHouse_Automation
         public void InitialiseFirefoxDriver(string url)
         {
             Driver._webdriver = new FirefoxDriver();
+            Driver._webdriver.Navigate().GoToUrl(url);
+            Driver.WaitForUpTo(Config.GlobalTimeOut);
+            Driver._webdriver.Manage().Window.Maximize();
+        }
+
+        public void InitialiseChromeDriver()
+        {
+            Driver._webdriver = new ChromeDriver();
+        }
+
+        public void NavigateAndMaximise(string url)
+        {
             Driver._webdriver.Navigate().GoToUrl(url);
             Driver.WaitForUpTo(Config.GlobalTimeOut);
             Driver._webdriver.Manage().Window.Maximize();

@@ -45,7 +45,7 @@ namespace PoochWareHouse_Automation.Tests.Navigation
                     break;
             }
             
-            _site.InitialiseChromeDriver(url);
+            _site.InitialiseChromeDriverNavigate(url);
         }
 
         [Given(@"dismiss the cookies overlay")]

@@ -26,13 +26,13 @@ namespace PoochWareHouse_Automation.Tests.Navigation
             switch (pageNumber)
             {
                 case 1:
-                    _site.InitialiseChromeDriver(Urls.AllProductsUrlPgOne);
+                    _site.InitialiseChromeDriverNavigate(Urls.AllProductsUrlPgOne);
                     break;
                 case 2:
-                    _site.InitialiseChromeDriver(Urls.AllProductsUrlPgTwo);
+                    _site.InitialiseChromeDriverNavigate(Urls.AllProductsUrlPgTwo);
                     break;
                 case 3:
-                    _site.InitialiseChromeDriver(Urls.AllProductsUrlPgThree);
+                    _site.InitialiseChromeDriverNavigate(Urls.AllProductsUrlPgThree);
                     break;
                 default:
                     Assert.Inconclusive(TestErrorHelper.CaseValueNotRecognised(pageNumber.ToString()));
