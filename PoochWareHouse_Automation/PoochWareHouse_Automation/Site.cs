@@ -38,5 +38,10 @@ namespace PoochWareHouse_Automation
             var currentPageUrl = Driver._webdriver.Url;
             return currentPageUrl;
         }
+
+        public void GoToUrl(string url)
+        {
+            Driver._webdriver.Navigate().GoToUrl(url);
+        }
     }
 }

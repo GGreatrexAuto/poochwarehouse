@@ -10,6 +10,7 @@ using PoochWareHouse_Automation.Pages.Collections;
 using PoochWareHouse_Automation.Pages.News;
 using PoochWareHouse_Automation.Pages.PageElements;
 using TechTalk.SpecFlow;
+using TechTalk.SpecFlow.Assist.ValueRetrievers;
 
 namespace PoochWareHouse_Automation.Tests.Navigation
 {
@@ -20,11 +21,14 @@ namespace PoochWareHouse_Automation.Tests.Navigation
     {
         private readonly Site _site;
         private readonly PreReleaseLoginHelper _preReleaseLoginHelper;
-        
+        private readonly UrlHelper _urlHelper;
+        private string _url;
+
         public SiteNavigationSteps()
         {
             _site = new Site();
             _preReleaseLoginHelper = new PreReleaseLoginHelper();
+            _urlHelper = new UrlHelper();
         }
 
         [Given(@"I have accessed the PoochwareHouse website homepage")]
@@ -43,8 +47,6 @@ namespace PoochWareHouse_Automation.Tests.Navigation
             {
                 Console.WriteLine("PreRelease journey not required.");
             }
-            
-            
         }
 
         [Given(@"I clear the cookies overlay")]
@@ -57,85 +59,30 @@ namespace PoochWareHouse_Automation.Tests.Navigation
         [Given(@"I access the poochwarehouse '(.*)' page")]
         public void GivenIAccessThePoochwarehousePage(string webPage)
         {
-            switch (webPage)
+
+            _site.InitialiseChromeDriver();
+
+            _url = _urlHelper.SetUrl(webPage);
+
+            _site.NavigateAndMaximise(_url);
+
+            var currentUrl = _site.GetWebPageUrl();
+
+            var preReleaseMode = _preReleaseLoginHelper.WebsiteInPreRelease(currentUrl);
+
+            if (preReleaseMode == true)
             {
-                   case "sale-items":
-                       _site.InitialiseChromeDriverNavigate(Urls.SaleItemsUrl);
-                    break;
-                case "all-products":
-                    _site.InitialiseChromeDriverNavigate(Urls.AllProductsUrlPgOne);
-                    break;
-                case "beds-blankets":
-                    _site.InitialiseChromeDriverNavigate(Urls.BedsBlanketsUrl);
-                    break;
-                   case "bowls-food":
-                       _site.InitialiseChromeDriverNavigate(Urls.BowlsFoodUrl);
-                    break;
-                case "health-grooming":
-                    _site.InitialiseChromeDriverNavigate(Urls.HealthGroomingUrl);
-                    break;
-                case "collars-leads":
-                    _site.InitialiseChromeDriverNavigate(Urls.CollarsLeadsUrl);
-                    break;
-                case "health-care":
-                    _site.InitialiseChromeDriverNavigate(Urls.HealthCareUrl);
-                    break;
-                case "training":
-                    _site.InitialiseChromeDriverNavigate(Urls.TrainingUrl);
-                    break;
-                case "small-dogs":
-                    _site.InitialiseChromeDriverNavigate(Urls.SmallDogsUrl);
-                    break;
-                case "large-dogs":
-                    _site.InitialiseChromeDriverNavigate(Urls.LargeDogsUrl);
-                    break;
-                case "toys-games":
-                    _site.InitialiseChromeDriverNavigate(Urls.ToysGamesUrl);
-                    break;
-                case "on-the-go":
-                    _site.InitialiseChromeDriverNavigate(Urls.OnTheGoUrl);
-                    break;
-                case "summer-collection":
-                    _site.InitialiseChromeDriverNavigate(Urls.SummerCollectionUrl);
-                    break;
-                case "winter-collection":
-                    _site.InitialiseChromeDriverNavigate(Urls.WinterCollectionUrl);
-                    break;
-                case "login":
-                    _site.InitialiseChromeDriverNavigate(Urls.LoginUrl);
-                    break;
-                case "your-cart":
-                    _site.InitialiseChromeDriverNavigate(Urls.YourCartUrl);
-                    break;
-                case "about-us":
-                    _site.InitialiseChromeDriverNavigate(Urls.AboutUsUrl);
-                    break;
-                case "faq":
-                    _site.InitialiseChromeDriverNavigate(Urls.FaqUrl);
-                    break;
-                case "delivery-shipping":
-                    _site.InitialiseChromeDriverNavigate(Urls.DeliveryShippingUrl);
-                    break;
-                case "returns-policy":
-                    _site.InitialiseChromeDriverNavigate(Urls.ReturnsPolicyUrl);
-                    break;
-                case "privacy-policy":
-                    _site.InitialiseChromeDriverNavigate(Urls.PrivacyPolicyUrl);
-                    break;
-                case "terms-of-use":
-                    _site.InitialiseChromeDriverNavigate(Urls.TermsOfUseUrl);
-                    break;
-                case "contact-us":
-                    _site.InitialiseChromeDriverNavigate(Urls.ContactUsUrl);
-                    break;
-                   case "news":
-                       _site.InitialiseChromeDriverNavigate(Urls.NewsUrl);
-                       break;
-                default:
-                    Assert.Inconclusive(TestErrorHelper.CaseValueNotRecognised(webPage));
-                    break;
+                _preReleaseLoginHelper.LoginToMainSiteFromPreReleasePage();
+                _site.GoToUrl(_url);
             }
-    }
+            else
+            {
+                Console.WriteLine("PreRelease journey not required.");
+            }
+        }
+        
+        
+
 
         [Given(@"click the collections drop down option in the page header")]
         public void GivenClickTheCollectionsDropDownOptionInThePageHeader()
