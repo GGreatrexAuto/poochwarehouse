@@ -1,10 +1,8 @@
-﻿using System.Threading;
-using NUnit.Framework;
-using PoochWareHouse_Automation.Configuration;
+﻿using NUnit.Framework;
 using PoochWareHouse_Automation.Helpers;
+using PoochWareHouse_Automation.Helpers.Assertions;
 using PoochWareHouse_Automation.Navigation;
 using PoochWareHouse_Automation.Pages;
-using PoochWareHouse_Automation.Pages.PageElements;
 using TechTalk.SpecFlow;
 
 namespace PoochWareHouse_Automation.Tests.Navigation
@@ -14,30 +12,30 @@ namespace PoochWareHouse_Automation.Tests.Navigation
     public sealed class AllProductsSteps
     {
         private readonly Site _site;
+        private readonly UrlHelper _urlHelper;
+        private readonly PreReleaseLoginHelper _preReleaseLoginHelper;
 
         public AllProductsSteps()
         {
             _site = new Site();
+            _urlHelper = new UrlHelper();
+            _preReleaseLoginHelper = new PreReleaseLoginHelper();
         }
 
         [Given(@"I access the all products page number '(.*)'")]
         public void GivenIAccessTheAllProductsPageNumber(int pageNumber)
         {
-            switch (pageNumber)
-            {
-                case 1:
-                    _site.InitialiseChromeDriverNavigate(Urls.AllProductsUrlPgOne);
-                    break;
-                case 2:
-                    _site.InitialiseChromeDriverNavigate(Urls.AllProductsUrlPgTwo);
-                    break;
-                case 3:
-                    _site.InitialiseChromeDriverNavigate(Urls.AllProductsUrlPgThree);
-                    break;
-                default:
-                    Assert.Inconclusive(TestErrorHelper.CaseValueNotRecognised(pageNumber.ToString()));
-                    break;
-            }
+            _site.InitialiseChromeDriver();
+
+            var url = _urlHelper.SetUrl(pageNumber.ToString());
+
+            _site.NavigateAndMaximise(url);
+
+            var currentUrl = _site.GetWebPageUrl();
+
+            var preReleaseMode = _preReleaseLoginHelper.IsWebsiteInPreReleaseMode(currentUrl);
+
+            _preReleaseLoginHelper.ByPassPreReleaseAndNavigateToPage(preReleaseMode, url);
         }
 
         [Given(@"I clear the cookie overlay")]

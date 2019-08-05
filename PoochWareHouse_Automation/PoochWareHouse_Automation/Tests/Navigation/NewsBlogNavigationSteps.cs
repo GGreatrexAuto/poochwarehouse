@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using System;
+using NUnit.Framework;
 using PoochWareHouse_Automation.Configuration;
 using PoochWareHouse_Automation.Helpers;
 using PoochWareHouse_Automation.Helpers.Assertions;
@@ -14,40 +15,34 @@ namespace PoochWareHouse_Automation.Tests.Navigation
     public sealed class NewsBlogNavigationSteps
     {
         private readonly Site _site;
+        private readonly UrlHelper _urlsHelper;
+        private readonly PreReleaseLoginHelper _preReleaseLoginHelper;
 
         public NewsBlogNavigationSteps()
         {
             _site = new Site();
+            _urlsHelper = new UrlHelper();
+            _preReleaseLoginHelper = new PreReleaseLoginHelper();
+
         }
 
         [Given(@"I access the '(.*)' article page")]
         [Given(@"the news '(.*)' is loaded")]
         public void GivenIAccessTheArticlePage(string pageName)
         {
-            string url = null;
+            _site.InitialiseChromeDriver();
 
-            switch (pageName)
-            {
-                case "News & Blog":
-                    url = Urls.NewsUrl;
-                    break;
-                case "Summer Is Here":
-                    url = Urls.NewsArticleSummerUrl;
-                    break;
-                case "Pooch Car Safety":
-                    url = Urls.NewsArticlePoochTravel;
-                    break;
-                case "Why Use a Harness?":
-                    url = Urls.NewsArticleWhyHarness;
-                    break;
-                default:
-                    Assert.Inconclusive(TestErrorHelper.CaseValueNotRecognised(pageName));
-                    break;
-            }
+            var url = _urlsHelper.SetUrl(pageName);
             
-            _site.InitialiseChromeDriverNavigate(url);
-        }
+            _site.NavigateAndMaximise(url);
 
+            var currentUrl = _site.GetWebPageUrl();
+
+            var preReleaseMode = _preReleaseLoginHelper.IsWebsiteInPreReleaseMode(currentUrl);
+
+            _preReleaseLoginHelper.ByPassPreReleaseAndNavigateToPage(preReleaseMode, url);
+        }
+        
         [Given(@"dismiss the cookies overlay")]
         public void GivenDismissTheCookiesOverlay()
         {

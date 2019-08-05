@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using PoochWareHouse_Automation.Configuration;
 
 namespace PoochWareHouse_Automation.Helpers.Assertions
@@ -85,8 +80,26 @@ namespace PoochWareHouse_Automation.Helpers.Assertions
                 case "contact-us":
                     url = Urls.ContactUsUrl;
                     break;
-                case "news":
+                case "News & Blog":
                     url = Urls.NewsUrl;
+                    break;
+                case "Summer Is Here":
+                    url = Urls.NewsArticleSummerUrl;
+                    break;
+                case "Pooch Car Safety":
+                    url = Urls.NewsArticlePoochTravel;
+                    break;
+                case "Why Use a Harness?":
+                    url = Urls.NewsArticleWhyHarness;
+                    break;
+                case "1":
+                    url = Urls.AllProductsUrlPgOne;
+                    break;
+                case "2":
+                    url = Urls.AllProductsUrlPgTwo;
+                    break;
+                case "3":
+                    url = Urls.AllProductsUrlPgThree;
                     break;
                 default:
                     Assert.Inconclusive(TestErrorHelper.CaseValueNotRecognised(webPage));

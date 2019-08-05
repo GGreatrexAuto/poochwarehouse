@@ -6,11 +6,9 @@ using PoochWareHouse_Automation.Helpers.Assertions;
 using PoochWareHouse_Automation.Navigation;
 using PoochWareHouse_Automation.Navigation.InformationalPages;
 using PoochWareHouse_Automation.Pages;
-using PoochWareHouse_Automation.Pages.Collections;
 using PoochWareHouse_Automation.Pages.News;
 using PoochWareHouse_Automation.Pages.PageElements;
 using TechTalk.SpecFlow;
-using TechTalk.SpecFlow.Assist.ValueRetrievers;
 
 namespace PoochWareHouse_Automation.Tests.Navigation
 {
@@ -55,11 +53,9 @@ namespace PoochWareHouse_Automation.Tests.Navigation
             CookieOverlayActions.ClearCookieOverlay();
         }
 
-
         [Given(@"I access the poochwarehouse '(.*)' page")]
         public void GivenIAccessThePoochwarehousePage(string webPage)
         {
-
             _site.InitialiseChromeDriver();
 
             _url = _urlHelper.SetUrl(webPage);
@@ -68,22 +64,11 @@ namespace PoochWareHouse_Automation.Tests.Navigation
 
             var currentUrl = _site.GetWebPageUrl();
 
-            var preReleaseMode = _preReleaseLoginHelper.WebsiteInPreRelease(currentUrl);
+            var preReleaseMode = _preReleaseLoginHelper.IsWebsiteInPreReleaseMode(currentUrl);
 
-            if (preReleaseMode == true)
-            {
-                _preReleaseLoginHelper.LoginToMainSiteFromPreReleasePage();
-                _site.GoToUrl(_url);
-            }
-            else
-            {
-                Console.WriteLine("PreRelease journey not required.");
-            }
+            _preReleaseLoginHelper.ByPassPreReleaseAndNavigateToPage(preReleaseMode, _url);
         }
         
-        
-
-
         [Given(@"click the collections drop down option in the page header")]
         public void GivenClickTheCollectionsDropDownOptionInThePageHeader()
         {

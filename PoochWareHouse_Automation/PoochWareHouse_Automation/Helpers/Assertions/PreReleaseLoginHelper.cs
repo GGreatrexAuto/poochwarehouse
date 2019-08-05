@@ -36,7 +36,7 @@ namespace PoochWareHouse_Automation.Helpers.Assertions
             _preReleaseLogonSteps.ThenThePoochwarehouseHomepageWillBeDisplayed();
         }
 
-        public bool WebsiteInPreRelease(string currentUrl)
+        public bool IsWebsiteInPreReleaseMode(string currentUrl)
         {
             bool isPreRelease;
 
@@ -50,5 +50,17 @@ namespace PoochWareHouse_Automation.Helpers.Assertions
             }
         }
 
+        public void ByPassPreReleaseAndNavigateToPage(bool preReleaseMode, string url)
+        {
+            if (preReleaseMode == true)
+            {
+                LoginToMainSiteFromPreReleasePage();
+                _site.GoToUrl(url);
+            }
+            else
+            {
+                Console.WriteLine("Website not in PreRelease mode, PreRelease journey is not required.");
+            }
+        }
     }
 }

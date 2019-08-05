@@ -101,7 +101,7 @@ Scenario Outline: Confirm collections drop down in header frame navigates to the
 	| privacy-policy    | Homepage header        |
 	| terms-of-use      | Homepage header        |
 	| contact-us        | Homepage header        |
-	| news              | Homepage header        |
+	| News & Blog       | Homepage header        |
 	| sale-items        | PoochWarehouse logo    |
 	| all-products      | PoochWarehouse logo    |
 	| beds-blankets     | PoochWarehouse logo    |

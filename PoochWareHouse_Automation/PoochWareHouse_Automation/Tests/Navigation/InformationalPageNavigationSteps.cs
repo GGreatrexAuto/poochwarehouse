@@ -12,30 +12,30 @@ namespace PoochWareHouse_Automation.Tests.Navigation
     public sealed class InformationalPageNavigationSteps
     {
         private readonly Site _site;
+        private readonly UrlHelper _urlHelper;
+        private readonly PreReleaseLoginHelper _preReleaseLoginHelper;
 
         public InformationalPageNavigationSteps()
         {
             _site = new Site();
+            _urlHelper = new UrlHelper();
+            _preReleaseLoginHelper = new PreReleaseLoginHelper();
         }
 
         [Given(@"I access the '(.*)' page")]
         public void GivenIAccessThePage(string informationalPage)
         {
-            switch (informationalPage)
-            {
-                case "faq":
-                    _site.InitialiseChromeDriverNavigate(Urls.FaqUrl);
-                    break;
-                case "privacy policy":
-                    _site.InitialiseChromeDriverNavigate(Urls.PrivacyPolicyUrl);
-                    break;
-                case "returns policy":
-                    _site.InitialiseChromeDriverNavigate(Urls.ReturnsPolicyUrl);
-                    break;
-                default:
-                    Assert.Inconclusive(TestErrorHelper.CaseValueNotRecognised(informationalPage));
-                    break;
-            }           
+            _site.InitialiseChromeDriver();
+
+            var url = _urlHelper.SetUrl(informationalPage);
+
+            _site.NavigateAndMaximise(url);
+
+            var currentUrl = _site.GetWebPageUrl();
+
+            var preReleaseMode = _preReleaseLoginHelper.IsWebsiteInPreReleaseMode(currentUrl);
+
+            _preReleaseLoginHelper.ByPassPreReleaseAndNavigateToPage(preReleaseMode, url);
         }
 
         [Given(@"I clear the cookie notice")]

@@ -73,14 +73,14 @@ namespace PoochWareHouse_Automation.Tests.Navigation
         [NUnit.Framework.DescriptionAttribute("Selecting hyperlinks within the informational page will navigate users to the cor" +
             "rect location")]
         [NUnit.Framework.TestCaseAttribute("faq", "return policy link", "Returns Policy", null)]
-        [NUnit.Framework.TestCaseAttribute("privacy policy", "homepage link one", "Home Page", null)]
-        [NUnit.Framework.TestCaseAttribute("privacy policy", "homepage link two", "Home Page", null)]
-        [NUnit.Framework.TestCaseAttribute("privacy policy", "all about cookies link", "All About Cookies", null)]
-        [NUnit.Framework.TestCaseAttribute("privacy policy", "shopify link", "Shopify Privacy", null)]
-        [NUnit.Framework.TestCaseAttribute("privacy policy", "google privacy link", "Google Privacy", null)]
-        [NUnit.Framework.TestCaseAttribute("privacy policy", "google opt out link", "Google Opt Out", null)]
-        [NUnit.Framework.TestCaseAttribute("privacy policy", "facebook advertising link", "Facebook Data Policy", null)]
-        [NUnit.Framework.TestCaseAttribute("returns policy", "contact us link", "Contact Us", null)]
+        [NUnit.Framework.TestCaseAttribute("privacy-policy", "homepage link one", "Home Page", null)]
+        [NUnit.Framework.TestCaseAttribute("privacy-policy", "homepage link two", "Home Page", null)]
+        [NUnit.Framework.TestCaseAttribute("privacy-policy", "all about cookies link", "All About Cookies", null)]
+        [NUnit.Framework.TestCaseAttribute("privacy-policy", "shopify link", "Shopify Privacy", null)]
+        [NUnit.Framework.TestCaseAttribute("privacy-policy", "google privacy link", "Google Privacy", null)]
+        [NUnit.Framework.TestCaseAttribute("privacy-policy", "google opt out link", "Google Opt Out", null)]
+        [NUnit.Framework.TestCaseAttribute("privacy-policy", "facebook advertising link", "Facebook Data Policy", null)]
+        [NUnit.Framework.TestCaseAttribute("returns-policy", "contact us link", "Contact Us", null)]
         public virtual void SelectingHyperlinksWithinTheInformationalPageWillNavigateUsersToTheCorrectLocation(string informationalPage, string hyperLink, string expectedPage, string[] exampleTags)
         {
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Selecting hyperlinks within the informational page will navigate users to the cor" +

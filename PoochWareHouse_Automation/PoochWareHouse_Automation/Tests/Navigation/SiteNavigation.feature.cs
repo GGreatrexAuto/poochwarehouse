@@ -213,7 +213,7 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.TestCaseAttribute("privacy-policy", "Homepage header", null)]
         [NUnit.Framework.TestCaseAttribute("terms-of-use", "Homepage header", null)]
         [NUnit.Framework.TestCaseAttribute("contact-us", "Homepage header", null)]
-        [NUnit.Framework.TestCaseAttribute("news", "Homepage header", null)]
+        [NUnit.Framework.TestCaseAttribute("News & Blog", "Homepage header", null)]
         [NUnit.Framework.TestCaseAttribute("sale-items", "PoochWarehouse logo", null)]
         [NUnit.Framework.TestCaseAttribute("all-products", "PoochWarehouse logo", null)]
         [NUnit.Framework.TestCaseAttribute("beds-blankets", "PoochWarehouse logo", null)]
