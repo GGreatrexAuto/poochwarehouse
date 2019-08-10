@@ -98,6 +98,7 @@
     <Compile Include="Navigation\InformationalPages\FooterNavigation.cs" />
     <Compile Include="Navigation\HeaderNavigation.cs" />
     <Compile Include="Navigation\HomePageNavigation.cs" />
+    <Compile Include="Navigation\Login.cs" />
     <Compile Include="Navigation\News\NewsArticleGenericNavigation.cs" />
     <Compile Include="Navigation\News\NewsArticleSummerHereNavigation.cs" />
     <Compile Include="Navigation\News\NewsArticleWhyHarnessesNavigation.cs" />
