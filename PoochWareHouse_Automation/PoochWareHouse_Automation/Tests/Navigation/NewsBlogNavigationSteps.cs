@@ -1,9 +1,6 @@
-﻿using System;
-using NUnit.Framework;
-using PoochWareHouse_Automation.Configuration;
+﻿using NUnit.Framework;
 using PoochWareHouse_Automation.Helpers;
 using PoochWareHouse_Automation.Helpers.Assertions;
-using PoochWareHouse_Automation.Navigation;
 using PoochWareHouse_Automation.Navigation.News;
 using PoochWareHouse_Automation.Pages.News;
 using TechTalk.SpecFlow;
@@ -14,17 +11,10 @@ namespace PoochWareHouse_Automation.Tests.Navigation
     [Scope(Feature = "News and Blog Navigation")]
     public sealed class NewsBlogNavigationSteps
     {
-        //private readonly Site _site;
-        //private readonly UrlHelper _urlsHelper;
-        //private readonly PreReleaseLoginHelper _preReleaseLoginHelper;
         private readonly CommonStepHelper _commonStepHelper;
-
 
         public NewsBlogNavigationSteps()
         {
-            //_site = new Site();
-            //_urlsHelper = new UrlHelper();
-            //_preReleaseLoginHelper = new PreReleaseLoginHelper();
             _commonStepHelper = new CommonStepHelper();
         }
 
@@ -33,17 +23,6 @@ namespace PoochWareHouse_Automation.Tests.Navigation
         public void GivenIAccessTheArticlePage(string pageName)
         {
             _commonStepHelper.AccessWebsite(pageName);
-            //_site.InitialiseChromeDriver();
-
-            //var url = _urlsHelper.SetUrl(pageName);
-            
-            //_site.NavigateAndMaximise(url);
-
-            //var currentUrl = _site.GetWebPageUrl();
-
-            //var preReleaseMode = _preReleaseLoginHelper.IsWebsiteInPreReleaseMode(currentUrl);
-
-            //_preReleaseLoginHelper.ByPassPreReleaseAndNavigateToPage(preReleaseMode, url);
         }
         
         [Given(@"dismiss the cookies overlay")]

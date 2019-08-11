@@ -1,10 +1,8 @@
 ﻿using NUnit.Framework;
 using PoochWareHouse_Automation.Configuration;
 using PoochWareHouse_Automation.Helpers;
-using PoochWareHouse_Automation.Helpers.Assertions;
 using PoochWareHouse_Automation.PageActions;
 using PoochWareHouse_Automation.Pages;
-using PoochWareHouse_Automation.Pages.InformationalPages;
 using TechTalk.SpecFlow;
 
 namespace PoochWareHouse_Automation.Tests.Navigation
@@ -16,19 +14,8 @@ namespace PoochWareHouse_Automation.Tests.Navigation
         private LoginFormActions _loginFormActions;
         private readonly CommonStepHelper _commonStepHelper;
 
-        //private readonly UrlHelper _urlHelper;
-        //private readonly PreReleaseLoginHelper _preReleaseLoginHelper;
-        //private readonly Site _site;
-
-
-
         public LoginNavigationSteps()
         {
-            //_loginFormActions = new LoginFormActions();
-            //_urlHelper = new UrlHelper();
-            //_preReleaseLoginHelper = new PreReleaseLoginHelper();
-            //_site = new Site();
-
             _commonStepHelper = new CommonStepHelper();
         }
 
@@ -36,17 +23,6 @@ namespace PoochWareHouse_Automation.Tests.Navigation
         public void GivenIAccessingThePage(string pageName)
         {
             _commonStepHelper.AccessWebsite(pageName);
-            //_site.InitialiseChromeDriver();
-
-            //var url = _urlHelper.SetUrl(pageName);
-
-            //_site.NavigateAndMaximise(url);
-
-            //var currentUrl = _site.GetWebPageUrl();
-
-            //var preReleaseMode = _preReleaseLoginHelper.IsWebsiteInPreReleaseMode(currentUrl);
-
-            //_preReleaseLoginHelper.ByPassPreReleaseAndNavigateToPage(preReleaseMode, url);
         }
 
         [Given(@"I clear the cookie notice")]

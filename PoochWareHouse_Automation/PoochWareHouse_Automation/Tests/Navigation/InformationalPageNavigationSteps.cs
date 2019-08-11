@@ -11,19 +11,10 @@ namespace PoochWareHouse_Automation.Tests.Navigation
     [Scope(Feature = "Informational Page Navigation")]
     public sealed class InformationalPageNavigationSteps
     {
-        //private readonly Site _site;
-        //private readonly UrlHelper _urlHelper;
-        //private readonly PreReleaseLoginHelper _preReleaseLoginHelper;
-
         private readonly CommonStepHelper _commonStepHelper;
 
         public InformationalPageNavigationSteps()
         {
-            //_site = new Site();
-            //_urlHelper = new UrlHelper();
-            //_preReleaseLoginHelper = new PreReleaseLoginHelper();
-
-
             _commonStepHelper = new CommonStepHelper();
         }
 
@@ -31,18 +22,6 @@ namespace PoochWareHouse_Automation.Tests.Navigation
         public void GivenIAccessThePage(string informationalPage)
         {
             _commonStepHelper.AccessWebsite(informationalPage);
-
-            //_site.InitialiseChromeDriver();
-
-            //var url = _urlHelper.SetUrl(informationalPage);
-
-            //_site.NavigateAndMaximise(url);
-
-            //var currentUrl = _site.GetWebPageUrl();
-
-            //var preReleaseMode = _preReleaseLoginHelper.IsWebsiteInPreReleaseMode(currentUrl);
-
-            //_preReleaseLoginHelper.ByPassPreReleaseAndNavigateToPage(preReleaseMode, url);
         }
 
         [Given(@"I clear the cookie notice")]
