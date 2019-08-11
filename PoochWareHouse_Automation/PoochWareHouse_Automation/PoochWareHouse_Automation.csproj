@@ -80,6 +80,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Configuration\Config.cs" />
+    <Compile Include="Configuration\LoginConfiguration.cs" />
     <Compile Include="Configuration\Urls.cs" />
     <Compile Include="Driver.cs" />
     <Compile Include="EntryPoint.cs" />
@@ -105,6 +106,7 @@
     <Compile Include="Navigation\News\NewsBlogNavigation.cs" />
     <Compile Include="Navigation\InformationalPages\PrivacyPolicyNavigation.cs" />
     <Compile Include="Navigation\InformationalPages\ReturnsPolicyNavigation.cs" />
+    <Compile Include="PageActions\LoginFormActions.cs" />
     <Compile Include="Pages\AllProducts.cs" />
     <Compile Include="Pages\Collections\ProductsPagesGenericItems.cs" />
     <Compile Include="Pages\Collections\CollectionsStaticText.cs" />
@@ -121,6 +123,7 @@
     <Compile Include="Pages\InformationalPages\ReturnsPolicy.cs" />
     <Compile Include="Pages\InformationalPages\TermsOfUse.cs" />
     <Compile Include="Pages\LoginForm.cs" />
+    <Compile Include="Pages\MyAccount.cs" />
     <Compile Include="Pages\News\NewsArticlePoochCarSafety.cs" />
     <Compile Include="Pages\News\NewsArticleSummerIsHere.cs" />
     <Compile Include="Pages\News\News.cs" />
@@ -136,6 +139,7 @@
     <Compile Include="Site.cs" />
     <Compile Include="Tests\Navigation\AllProductsSteps.cs" />
     <Compile Include="Tests\Navigation\InformationalPageNavigationSteps.cs" />
+    <Compile Include="Tests\Navigation\LoginNavigationSteps.cs" />
     <Compile Include="Tests\Navigation\NewsBlogNavigationSteps.cs" />
     <Compile Include="Tests\PreReleaseLogonSteps.cs" />
     <Compile Include="Tests\Navigation\SiteNavigationSteps.cs" />
@@ -145,6 +149,7 @@
     <None Include="packages.config" />
     <None Include="Tests\Navigation\AllProducts.feature" />
     <None Include="Tests\Navigation\InformationalPageNavigation.feature" />
+    <None Include="Tests\Navigation\LoginNavigation.feature" />
     <None Include="Tests\Navigation\NewsBlogNavigation.feature" />
     <None Include="Tests\PreReleaseLogon.feature">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
