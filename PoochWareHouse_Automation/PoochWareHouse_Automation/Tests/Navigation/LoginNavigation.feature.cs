@@ -88,6 +88,46 @@ this.ScenarioInitialize(scenarioInfo);
 #line hidden
             this.ScenarioCleanup();
         }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Once logged in selecting the View address button will navigate the user to the yo" +
+            "ur addresses page")]
+        public virtual void OnceLoggedInSelectingTheViewAddressButtonWillNavigateTheUserToTheYourAddressesPage()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Once logged in selecting the View address button will navigate the user to the yo" +
+                    "ur addresses page", null, ((string[])(null)));
+#line 10
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 11
+ testRunner.Given("I access the My Account page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 12
+ testRunner.When("I select the view addresses button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 13
+ testRunner.Then("the Your Addresses page will be displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Once logged in selecting the log out link will navigate the user to the your addr" +
+            "esses page")]
+        public virtual void OnceLoggedInSelectingTheLogOutLinkWillNavigateTheUserToTheYourAddressesPage()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Once logged in selecting the log out link will navigate the user to the your addr" +
+                    "esses page", null, ((string[])(null)));
+#line 15
+ this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 16
+ testRunner.Given("I access the My Account page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 17
+ testRunner.When("I select the log out link", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 18
+ testRunner.Then("the website homepage will be displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
     }
 }
 #pragma warning restore
