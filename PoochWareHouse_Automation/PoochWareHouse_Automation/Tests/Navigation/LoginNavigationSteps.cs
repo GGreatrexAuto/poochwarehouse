@@ -14,32 +14,39 @@ namespace PoochWareHouse_Automation.Tests.Navigation
     public sealed class LoginNavigationSteps
     {
         private LoginFormActions _loginFormActions;
-        private readonly UrlHelper _urlHelper;
-        private readonly PreReleaseLoginHelper _preReleaseLoginHelper;
-        private readonly Site _site;
+        private readonly CommonStepHelper _commonStepHelper;
+
+        //private readonly UrlHelper _urlHelper;
+        //private readonly PreReleaseLoginHelper _preReleaseLoginHelper;
+        //private readonly Site _site;
+
+
 
         public LoginNavigationSteps()
         {
-            _loginFormActions = new LoginFormActions();
-            _urlHelper = new UrlHelper();
-            _preReleaseLoginHelper = new PreReleaseLoginHelper();
-            _site = new Site();
+            //_loginFormActions = new LoginFormActions();
+            //_urlHelper = new UrlHelper();
+            //_preReleaseLoginHelper = new PreReleaseLoginHelper();
+            //_site = new Site();
+
+            _commonStepHelper = new CommonStepHelper();
         }
 
         [Given(@"I access the '(.*)' page")]
         public void GivenIAccessingThePage(string pageName)
         {
-            _site.InitialiseChromeDriver();
+            _commonStepHelper.AccessWebsite(pageName);
+            //_site.InitialiseChromeDriver();
 
-            var url = _urlHelper.SetUrl(pageName);
+            //var url = _urlHelper.SetUrl(pageName);
 
-            _site.NavigateAndMaximise(url);
+            //_site.NavigateAndMaximise(url);
 
-            var currentUrl = _site.GetWebPageUrl();
+            //var currentUrl = _site.GetWebPageUrl();
 
-            var preReleaseMode = _preReleaseLoginHelper.IsWebsiteInPreReleaseMode(currentUrl);
+            //var preReleaseMode = _preReleaseLoginHelper.IsWebsiteInPreReleaseMode(currentUrl);
 
-            _preReleaseLoginHelper.ByPassPreReleaseAndNavigateToPage(preReleaseMode, url);
+            //_preReleaseLoginHelper.ByPassPreReleaseAndNavigateToPage(preReleaseMode, url);
         }
 
         [Given(@"I clear the cookie notice")]

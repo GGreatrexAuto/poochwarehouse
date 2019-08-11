@@ -84,9 +84,10 @@
     <Compile Include="Configuration\Urls.cs" />
     <Compile Include="Driver.cs" />
     <Compile Include="EntryPoint.cs" />
-    <Compile Include="Helpers\Assertions\PreReleaseLoginHelper.cs" />
+    <Compile Include="Helpers\PreReleaseLoginHelper.cs" />
     <Compile Include="Helpers\Assertions\UrlHelper.cs" />
     <Compile Include="Helpers\BrowserHelper.cs" />
+    <Compile Include="Helpers\CommonStepHelper.cs" />
     <Compile Include="Helpers\CookieOverlayActions.cs" />
     <Compile Include="Helpers\Assertions\HomepageAssertions.cs" />
     <Compile Include="Helpers\Assertions\InformationalPageAssertions.cs" />

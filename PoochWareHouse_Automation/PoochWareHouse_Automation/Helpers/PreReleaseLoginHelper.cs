@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using PoochWareHouse_Automation.Configuration;
 using PoochWareHouse_Automation.Tests;
 
-namespace PoochWareHouse_Automation.Helpers.Assertions
+namespace PoochWareHouse_Automation.Helpers
 {
     public class PreReleaseLoginHelper
     {

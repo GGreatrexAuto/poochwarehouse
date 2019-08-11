@@ -14,33 +14,36 @@ namespace PoochWareHouse_Automation.Tests.Navigation
     [Scope(Feature = "News and Blog Navigation")]
     public sealed class NewsBlogNavigationSteps
     {
-        private readonly Site _site;
-        private readonly UrlHelper _urlsHelper;
-        private readonly PreReleaseLoginHelper _preReleaseLoginHelper;
+        //private readonly Site _site;
+        //private readonly UrlHelper _urlsHelper;
+        //private readonly PreReleaseLoginHelper _preReleaseLoginHelper;
+        private readonly CommonStepHelper _commonStepHelper;
+
 
         public NewsBlogNavigationSteps()
         {
-            _site = new Site();
-            _urlsHelper = new UrlHelper();
-            _preReleaseLoginHelper = new PreReleaseLoginHelper();
-
+            //_site = new Site();
+            //_urlsHelper = new UrlHelper();
+            //_preReleaseLoginHelper = new PreReleaseLoginHelper();
+            _commonStepHelper = new CommonStepHelper();
         }
 
         [Given(@"I access the '(.*)' article page")]
         [Given(@"the news '(.*)' is loaded")]
         public void GivenIAccessTheArticlePage(string pageName)
         {
-            _site.InitialiseChromeDriver();
+            _commonStepHelper.AccessWebsite(pageName);
+            //_site.InitialiseChromeDriver();
 
-            var url = _urlsHelper.SetUrl(pageName);
+            //var url = _urlsHelper.SetUrl(pageName);
             
-            _site.NavigateAndMaximise(url);
+            //_site.NavigateAndMaximise(url);
 
-            var currentUrl = _site.GetWebPageUrl();
+            //var currentUrl = _site.GetWebPageUrl();
 
-            var preReleaseMode = _preReleaseLoginHelper.IsWebsiteInPreReleaseMode(currentUrl);
+            //var preReleaseMode = _preReleaseLoginHelper.IsWebsiteInPreReleaseMode(currentUrl);
 
-            _preReleaseLoginHelper.ByPassPreReleaseAndNavigateToPage(preReleaseMode, url);
+            //_preReleaseLoginHelper.ByPassPreReleaseAndNavigateToPage(preReleaseMode, url);
         }
         
         [Given(@"dismiss the cookies overlay")]

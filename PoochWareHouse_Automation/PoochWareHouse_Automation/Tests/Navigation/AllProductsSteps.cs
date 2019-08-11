@@ -11,31 +11,36 @@ namespace PoochWareHouse_Automation.Tests.Navigation
     [Scope(Feature = "All Products")]
     public sealed class AllProductsSteps
     {
-        private readonly Site _site;
-        private readonly UrlHelper _urlHelper;
-        private readonly PreReleaseLoginHelper _preReleaseLoginHelper;
+        //private readonly Site _site;
+        //private readonly UrlHelper _urlHelper;
+        //private readonly PreReleaseLoginHelper _preReleaseLoginHelper;
+
+        private readonly CommonStepHelper _commonStepHelper;
 
         public AllProductsSteps()
         {
-            _site = new Site();
-            _urlHelper = new UrlHelper();
-            _preReleaseLoginHelper = new PreReleaseLoginHelper();
+            //_site = new Site();
+            //_urlHelper = new UrlHelper();
+            //_preReleaseLoginHelper = new PreReleaseLoginHelper();
+
+            _commonStepHelper = new CommonStepHelper();
         }
 
         [Given(@"I access the all products page number '(.*)'")]
         public void GivenIAccessTheAllProductsPageNumber(int pageNumber)
         {
-            _site.InitialiseChromeDriver();
+            _commonStepHelper.AccessWebsite(pageNumber.ToString());
+            //_site.InitialiseChromeDriver();
 
-            var url = _urlHelper.SetUrl(pageNumber.ToString());
+            //var url = _urlHelper.SetUrl(pageNumber.ToString());
 
-            _site.NavigateAndMaximise(url);
+            //_site.NavigateAndMaximise(url);
 
-            var currentUrl = _site.GetWebPageUrl();
+            //var currentUrl = _site.GetWebPageUrl();
 
-            var preReleaseMode = _preReleaseLoginHelper.IsWebsiteInPreReleaseMode(currentUrl);
+            //var preReleaseMode = _preReleaseLoginHelper.IsWebsiteInPreReleaseMode(currentUrl);
 
-            _preReleaseLoginHelper.ByPassPreReleaseAndNavigateToPage(preReleaseMode, url);
+            //_preReleaseLoginHelper.ByPassPreReleaseAndNavigateToPage(preReleaseMode, url);
         }
 
         [Given(@"I clear the cookie overlay")]
