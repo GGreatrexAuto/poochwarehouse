@@ -79,9 +79,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Configuration\AddressConfig.cs" />
     <Compile Include="Configuration\Config.cs" />
     <Compile Include="Configuration\LoginConfiguration.cs" />
     <Compile Include="Configuration\Urls.cs" />
+    <Compile Include="CustomerAddressObject.cs" />
     <Compile Include="Driver.cs" />
     <Compile Include="EntryPoint.cs" />
     <Compile Include="Helpers\PreReleaseLoginHelper.cs" />
@@ -146,6 +148,12 @@
     <Compile Include="Tests\Navigation\NewsBlogNavigationSteps.cs" />
     <Compile Include="Tests\PreReleaseLogonSteps.cs" />
     <Compile Include="Tests\Navigation\SiteNavigationSteps.cs" />
+    <Compile Include="Tests\YourAddresses.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>YourAddresses.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\YourAddressesSteps.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -158,6 +166,10 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Tests\Navigation\SiteNavigation.feature" />
+    <None Include="Tests\YourAddresses.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>YourAddresses.feature.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
