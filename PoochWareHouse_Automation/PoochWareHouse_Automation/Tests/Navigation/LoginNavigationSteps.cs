@@ -18,6 +18,7 @@ namespace PoochWareHouse_Automation.Tests.Navigation
         public LoginNavigationSteps()
         {
             _commonStepHelper = new CommonStepHelper();
+            _loginFormActions = new LoginFormActions();
         }
 
         [Given(@"I access the '(.*)' page")]
