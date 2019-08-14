@@ -1,15 +1,35 @@
 ﻿namespace PoochWareHouse_Automation.Configuration
 {
-    public static class AddressConfig
+    public class AddressConfig
     {
-        public static string ValidFirstName = "Gareth";
-        public static string ValidSurname = "Test";
-        public static string ValidCompany = "Testers Ltd";
-        public static string ValidAddress = "Address Line one";
-        public static string ValidApartment = "Apartment";
-        public static string ValidCity = "TestTown";
-        public static string ValidCountry = "Albania";
-        public static string ValidPostcode = "AA20 1AA";
-        public static string ValidPhoneNumber = "07922 999666";
+        public string FirstName ;
+        private string Surname;
+        private string Company;
+        private string Address; 
+        private string Apartment; 
+        private string City; 
+        private string Country;
+        private string Postcode;
+        private string PhoneNumber;
+        private bool DefaultAddress;
+
+        public AddressConfig ValidAddress()
+        {
+            return new AddressConfig
+            {
+                FirstName = "Gareth",
+                Surname = "Test",
+                Company = "Tester Ltd",
+                Address = "AddressTestone",
+                Apartment = "999666",
+                City = "Doja",
+                Country = "Albania",
+                Postcode = "BS11 1XX",
+                PhoneNumber = "07999111999",
+                DefaultAddress = true
+
+            };
+        }
+
     }
 }
