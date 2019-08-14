@@ -14,17 +14,20 @@ namespace PoochWareHouse_Automation.PageActions
 
         public static void PopulateCustomerAddress(AddressConfig addressconfig)
         {
-            YourAddresses.FirstName.SendKeys(addressconfig.ValidAddress().FirstName);
-            YourAddresses.LastName.SendKeys();
-            YourAddresses.Apartment.SendKeys();
-            YourAddresses.Address.SendKeys();
-            YourAddresses.Company.SendKeys();
-            YourAddresses.City.SendKeys();
-            YourAddresses.Country.SendKeys();
-            YourAddresses.PostalCode.SendKeys();
-            YourAddresses.Phone.SendKeys();
-            YourAddresses.DefaultAddressCheckbox.Click();
-        }
+            YourAddresses.FirstName.SendKeys(addressconfig.AddressDetails().FirstName);
+            YourAddresses.LastName.SendKeys(addressconfig.AddressDetails().Surname);
+            YourAddresses.Apartment.SendKeys(addressconfig.AddressDetails().Apartment);
+            YourAddresses.Address.SendKeys(addressconfig.AddressDetails().Address);
+            YourAddresses.Company.SendKeys(addressconfig.AddressDetails().Company);
+            YourAddresses.City.SendKeys(addressconfig.AddressDetails().City);
+            YourAddresses.Country.SendKeys(addressconfig.AddressDetails().Country);
+            YourAddresses.PostalCode.SendKeys(addressconfig.AddressDetails().Postcode);
+            YourAddresses.Phone.SendKeys(addressconfig.AddressDetails().PhoneNumber);
 
+            if (addressconfig.DefaultAddress == true && YourAddresses.DefaultAddressCheckbox.Selected == false)
+            {
+                YourAddresses.DefaultAddressCheckbox.Click();
+            }
+        }
     }
 }

@@ -3,17 +3,17 @@
     public class AddressConfig
     {
         public string FirstName ;
-        private string Surname;
-        private string Company;
-        private string Address; 
-        private string Apartment; 
-        private string City; 
-        private string Country;
-        private string Postcode;
-        private string PhoneNumber;
-        private bool DefaultAddress;
+        public string Surname;
+        public string Company;
+        public string Address; 
+        public string Apartment; 
+        public string City; 
+        public string Country;
+        public string Postcode;
+        public string PhoneNumber;
+        public bool DefaultAddress;
 
-        public AddressConfig ValidAddress()
+        public AddressConfig AddressDetails()
         {
             return new AddressConfig
             {

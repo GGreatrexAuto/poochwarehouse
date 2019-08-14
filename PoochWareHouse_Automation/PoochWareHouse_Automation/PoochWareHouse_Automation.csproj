@@ -168,7 +168,7 @@
     </None>
     <None Include="Tests\Navigation\SiteNavigation.feature" />
     <None Include="Tests\YourAddresses.feature">
-      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <Generator>MSBUILD</Generator>
       <LastGenOutput>YourAddresses.feature.cs</LastGenOutput>
     </None>
   </ItemGroup>
