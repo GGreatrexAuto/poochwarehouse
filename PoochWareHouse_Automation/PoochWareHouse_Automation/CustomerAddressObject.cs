@@ -12,5 +12,10 @@
         public string Postcode;
         public string PhoneNumber;
         public bool DefaultAddress;
+
+        public CustomerAddressObject CustomerAddress()
+        {
+            return new CustomerAddressObject();
+        }
     }
 }
