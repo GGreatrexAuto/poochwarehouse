@@ -12,22 +12,39 @@ namespace PoochWareHouse_Automation.PageActions
     {
         private AddressConfig _addressConfig = new AddressConfig();
 
-        public static void PopulateCustomerAddress(AddressConfig addressconfig)
+        public void PopulateCustomerAddress(AddressConfig addressConfig)
         {
-            YourAddresses.FirstName.SendKeys(addressconfig.AddressDetails().FirstName);
-            YourAddresses.LastName.SendKeys(addressconfig.AddressDetails().Surname);
-            YourAddresses.Apartment.SendKeys(addressconfig.AddressDetails().Apartment);
-            YourAddresses.Address.SendKeys(addressconfig.AddressDetails().Address);
-            YourAddresses.Company.SendKeys(addressconfig.AddressDetails().Company);
-            YourAddresses.City.SendKeys(addressconfig.AddressDetails().City);
-            YourAddresses.Country.SendKeys(addressconfig.AddressDetails().Country);
-            YourAddresses.PostalCode.SendKeys(addressconfig.AddressDetails().Postcode);
-            YourAddresses.Phone.SendKeys(addressconfig.AddressDetails().PhoneNumber);
+            YourAddresses.FirstName.SendKeys(addressConfig.AddressDetails().FirstName);
+            YourAddresses.LastName.SendKeys(addressConfig.AddressDetails().Surname);
+            YourAddresses.Apartment.SendKeys(addressConfig.AddressDetails().Apartment);
+            YourAddresses.Address.SendKeys(addressConfig.AddressDetails().Address);
+            YourAddresses.Company.SendKeys(addressConfig.AddressDetails().Company);
+            YourAddresses.City.SendKeys(addressConfig.AddressDetails().City);
+            YourAddresses.Country.SendKeys(addressConfig.AddressDetails().Country);
+            YourAddresses.PostalCode.SendKeys(addressConfig.AddressDetails().Postcode);
+            YourAddresses.Phone.SendKeys(addressConfig.AddressDetails().PhoneNumber);
 
-            if (addressconfig.DefaultAddress == true && YourAddresses.DefaultAddressCheckbox.Selected == false)
+            if (addressConfig.DefaultAddress == true && YourAddresses.DefaultAddressCheckbox.Selected == false)
             {
                 YourAddresses.DefaultAddressCheckbox.Click();
             }
+        }
+
+        public AddressConfig GetAddress()
+        {
+            return new AddressConfig
+            {
+                Company = YourAddresses.CompanyDefaultView.Text,
+                FirstName = YourAddresses.FullNameDefaultView.Text,
+                Surname = YourAddresses.FullNameDefaultView.Text,
+                Address = YourAddresses.AddressDefaultView.Text,
+                Apartment = YourAddresses.ApartmentDefaultView.Text,
+                City = YourAddresses.PostcodeCityDefaultView.Text,
+                Country = YourAddresses.CountryDefaultView.Text,
+                Postcode = YourAddresses.PostcodeCityDefaultView.Text
+
+
+            };
         }
     }
 }

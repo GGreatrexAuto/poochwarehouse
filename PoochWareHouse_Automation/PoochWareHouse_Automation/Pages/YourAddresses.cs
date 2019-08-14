@@ -19,9 +19,20 @@ namespace PoochWareHouse_Automation.Pages
         public static IWebElement Country => Driver._webdriver.FindElement(By.Id("AddressCountryNew"));
         public static IWebElement PostalCode => Driver._webdriver.FindElement(By.Id("AddressZipNew"));
         public static IWebElement Phone => Driver._webdriver.FindElement(By.Id("AddressPhoneNew"));
-
         public static IWebElement DefaultAddressCheckbox =>
             Driver._webdriver.FindElement(By.Id("address_default_address_new"));
+
+        //public static IWebElement FullNameDefaultView => Driver._webdriver.FindElement(By.XPath("//*[@id=\"MainContent\"]/div[2]/div/div/ul/li/div[1]/p/text()[1]"));
+        //public static IWebElement CompanyDefaultView =>
+        //    Driver._webdriver.FindElement(By.XPath("//*[@id=\"MainContent\"]/div[2]/div/div/ul/li/div[1]/p/text()[2]"));
+        //public static IWebElement AddressDefaultView => Driver._webdriver.FindElement(By.XPath("//*[@id=\"MainContent\"]/div[2]/div/div/ul/li/div[1]/p/text()[3]"));
+        //public static IWebElement ApartmentDefaultView => Driver._webdriver.FindElement(By.XPath("//*[@id=\"MainContent\"]/div[2]/div/div/ul/li/div[1]/p/text()[4]"));
+        //public static IWebElement PostcodeCityDefaultView => Driver._webdriver.FindElement(By.XPath("//*[@id=\"MainContent\"]/div[2]/div/div/ul/li/div[1]/p/text()[5]"));
+        //public static IWebElement CountryDefaultView => Driver._webdriver.FindElement(By.XPath("//*[@id=\"MainContent\"]/div[2]/div/div/ul/li/div[1]/p/text()[6]"));
+        
+
+
+
 
         public static IWebElement AddAddressButton =>
             Driver._webdriver.FindElement(By.XPath("//*[@id=\"address_form_new\"]/div[5]/input"));
