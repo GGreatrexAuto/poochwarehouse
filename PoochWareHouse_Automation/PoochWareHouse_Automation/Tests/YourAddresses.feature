@@ -1,7 +1,7 @@
 ﻿Feature: Your Addresses
 
 
-@WIP
+#@WIP
 Scenario: When logged in to the website the user should be able to add an address
 	Given I access my account
 	And click the View Addresses button

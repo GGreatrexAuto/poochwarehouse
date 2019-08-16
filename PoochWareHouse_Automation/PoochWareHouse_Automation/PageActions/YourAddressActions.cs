@@ -30,21 +30,9 @@ namespace PoochWareHouse_Automation.PageActions
             }
         }
 
-        public AddressConfig GetAddress()
+        public string GetDefaultCustomerAddress()
         {
-            return new AddressConfig
-            {
-                Company = YourAddresses.CompanyDefaultView.Text,
-                FirstName = YourAddresses.FullNameDefaultView.Text,
-                Surname = YourAddresses.FullNameDefaultView.Text,
-                Address = YourAddresses.AddressDefaultView.Text,
-                Apartment = YourAddresses.ApartmentDefaultView.Text,
-                City = YourAddresses.PostcodeCityDefaultView.Text,
-                Country = YourAddresses.CountryDefaultView.Text,
-                Postcode = YourAddresses.PostcodeCityDefaultView.Text
-
-
-            };
+            return YourAddresses.DefaultAddressView.Text;
         }
     }
 }

@@ -29,10 +29,9 @@ namespace PoochWareHouse_Automation.Pages
         //public static IWebElement ApartmentDefaultView => Driver._webdriver.FindElement(By.XPath("//*[@id=\"MainContent\"]/div[2]/div/div/ul/li/div[1]/p/text()[4]"));
         //public static IWebElement PostcodeCityDefaultView => Driver._webdriver.FindElement(By.XPath("//*[@id=\"MainContent\"]/div[2]/div/div/ul/li/div[1]/p/text()[5]"));
         //public static IWebElement CountryDefaultView => Driver._webdriver.FindElement(By.XPath("//*[@id=\"MainContent\"]/div[2]/div/div/ul/li/div[1]/p/text()[6]"));
-        
 
-
-
+        public static IWebElement DefaultAddressView =>
+            Driver._webdriver.FindElement(By.XPath("//*[@id=\"MainContent\"]/div[2]/div/div/ul/li/div[1]/p"));
 
         public static IWebElement AddAddressButton =>
             Driver._webdriver.FindElement(By.XPath("//*[@id=\"address_form_new\"]/div[5]/input"));
