@@ -38,5 +38,9 @@ namespace PoochWareHouse_Automation.Pages
 
         public static IWebElement CancelButton =>
             Driver._webdriver.FindElement(By.XPath("//*[@id=\"address_form_new\"]/div[6]/button"));
+
+        public static IWebElement DeleteButton =>
+            Driver._webdriver.FindElement(
+                By.XPath("//*[@id=\"MainContent\"]/div[2]/div/div/ul/li/div[1]/ul/li[2]/button"));
     }
 }

@@ -34,5 +34,11 @@ namespace PoochWareHouse_Automation.PageActions
         {
             return YourAddresses.DefaultAddressView.Text;
         }
+
+        public void DeleteDefaultAddress()
+        {
+            YourAddresses.DeleteButton.Click();
+        }
+
     }
 }
