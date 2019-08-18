@@ -1,4 +1,7 @@
-﻿namespace PoochWareHouse_Automation.Helpers
+﻿using System.Net;
+using PoochWareHouse_Automation.Configuration;
+
+namespace PoochWareHouse_Automation.Helpers
 {
     public static class TestErrorHelper
     {
@@ -24,6 +27,12 @@
         public static string ExpectedExternalUrlDoNotMatch(string expectedUrl, string actualUrl)
         {
             var error = $"The expected external url [{expectedUrl}], did not match the [{actualUrl}]";
+            return error;
+        }
+
+        public static string ExpectedAddressNotDisplayed(string expectedAddressLine)
+        {
+            var error = $"The expected address line [{expectedAddressLine}], was not found in the displayed address.";
             return error;
         }
     }

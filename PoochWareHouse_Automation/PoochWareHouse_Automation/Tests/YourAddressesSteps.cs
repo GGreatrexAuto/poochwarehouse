@@ -67,10 +67,23 @@ namespace PoochWareHouse_Automation.Tests
         {
             var actualDisplayedAddress = _addressActions.GetDefaultCustomerAddress();
 
-            Console.WriteLine(actualDisplayedAddress);
             Assert.IsNotNull(actualDisplayedAddress);
+
+            Assert.IsTrue(actualDisplayedAddress.Contains(_expectedAddress.Address), TestErrorHelper.ExpectedAddressNotDisplayed(_expectedAddress.Address));
+            Assert.IsTrue(actualDisplayedAddress.Contains(_expectedAddress.Apartment), TestErrorHelper.ExpectedAddressNotDisplayed(_expectedAddress.Address));
+            Assert.IsTrue(actualDisplayedAddress.Contains(_expectedAddress.City), TestErrorHelper.ExpectedAddressNotDisplayed(_expectedAddress.Address));
+            Assert.IsTrue(actualDisplayedAddress.Contains(_expectedAddress.Company), TestErrorHelper.ExpectedAddressNotDisplayed(_expectedAddress.Address));
+            Assert.IsTrue(actualDisplayedAddress.Contains(_expectedAddress.Country), TestErrorHelper.ExpectedAddressNotDisplayed(_expectedAddress.Address));
+            Assert.IsTrue(actualDisplayedAddress.Contains(_expectedAddress.FirstName), TestErrorHelper.ExpectedAddressNotDisplayed(_expectedAddress.Address));
+            Assert.IsTrue(actualDisplayedAddress.Contains(_expectedAddress.PhoneNumber), TestErrorHelper.ExpectedAddressNotDisplayed(_expectedAddress.Address));
+            Assert.IsTrue(actualDisplayedAddress.Contains(_expectedAddress.Postcode), TestErrorHelper.ExpectedAddressNotDisplayed(_expectedAddress.Address));
+            Assert.IsTrue(actualDisplayedAddress.Contains(_expectedAddress.Surname), TestErrorHelper.ExpectedAddressNotDisplayed(_expectedAddress.Address));
+            
+
+            Console.WriteLine($"The actual address was {actualDisplayedAddress}");
         }
 
+        
 
     }
 }
