@@ -62,9 +62,11 @@ namespace PoochWareHouse_Automation.Tests
             YourAddresses.AddAddressButton.Click();
         }
 
-        [Then(@"the address details will be saved as entered")]
+        [Then(@"the default address details will be saved as entered")]
         public void ThenTheAddressDetailsWillBeSavedAsEntered()
         {
+            Assert.IsTrue(YourAddresses.DefaultAddressHeading.Displayed, TestErrorHelper.ExpectedItemNotDisplayed("heading", "Default"));
+
             var actualDisplayedAddress = _addressActions.GetDefaultCustomerAddress();
 
             Assert.IsNotNull(actualDisplayedAddress);
@@ -80,7 +82,7 @@ namespace PoochWareHouse_Automation.Tests
             
             Console.WriteLine($"The actual address was {actualDisplayedAddress}");
 
-            _addressActions.DeleteDefaultAddress();
+            //_addressActions.DeleteDefaultAddress();
         }
 
         

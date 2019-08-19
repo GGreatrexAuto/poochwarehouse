@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using OpenQA.Selenium;
 using PoochWareHouse_Automation.Configuration;
 using PoochWareHouse_Automation.Pages;
 
@@ -37,7 +38,11 @@ namespace PoochWareHouse_Automation.PageActions
 
         public void DeleteDefaultAddress()
         {
+            
             YourAddresses.DeleteButton.Click();
+
+            IAlert deleteAddressAlert = Driver._webdriver.SwitchTo().Alert();
+            deleteAddressAlert.Accept();
         }
 
     }
