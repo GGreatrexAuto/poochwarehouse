@@ -33,7 +33,7 @@ namespace PoochWareHouse_Automation.PageActions
 
         public string GetDefaultCustomerAddress()
         {
-            return YourAddresses.DefaultAddressView.Text;
+            return YourAddresses.AddressOneView.Text;
         }
 
         public void DeleteDefaultAddress()

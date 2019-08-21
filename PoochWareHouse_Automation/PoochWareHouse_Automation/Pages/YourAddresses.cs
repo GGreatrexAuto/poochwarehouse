@@ -23,7 +23,7 @@ namespace PoochWareHouse_Automation.Pages
             Driver._webdriver.FindElement(By.Id("address_default_address_new"));
         public static IWebElement DefaultAddressHeading => Driver._webdriver.FindElement(By.XPath("//*[@id=\"MainContent\"]/div[2]/div/div/ul/li/div[1]/h2"));
 
-        public static IWebElement DefaultAddressView =>
+        public static IWebElement AddressOneView =>
             Driver._webdriver.FindElement(By.XPath("//*[@id=\"MainContent\"]/div[2]/div/div/ul/li/div[1]/p"));
 
         public static IWebElement AddAddressButton =>
