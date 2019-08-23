@@ -15,15 +15,15 @@ namespace PoochWareHouse_Automation.PageActions
 
         public void PopulateCustomerAddress(AddressConfig addressConfig)
         {
-            YourAddresses.FirstName.SendKeys(addressConfig.DefaultAddressDetails().FirstName);
-            YourAddresses.LastName.SendKeys(addressConfig.DefaultAddressDetails().Surname);
-            YourAddresses.Apartment.SendKeys(addressConfig.DefaultAddressDetails().Apartment);
-            YourAddresses.Address.SendKeys(addressConfig.DefaultAddressDetails().Address);
-            YourAddresses.Company.SendKeys(addressConfig.DefaultAddressDetails().Company);
-            YourAddresses.City.SendKeys(addressConfig.DefaultAddressDetails().City);
-            YourAddresses.Country.SendKeys(addressConfig.DefaultAddressDetails().Country);
-            YourAddresses.PostalCode.SendKeys(addressConfig.DefaultAddressDetails().Postcode);
-            YourAddresses.Phone.SendKeys(addressConfig.DefaultAddressDetails().PhoneNumber);
+            YourAddresses.FirstName.SendKeys(addressConfig.FirstName);
+            YourAddresses.LastName.SendKeys(addressConfig.Surname);
+            YourAddresses.Apartment.SendKeys(addressConfig.Apartment);
+            YourAddresses.Address.SendKeys(addressConfig.Address);
+            YourAddresses.Company.SendKeys(addressConfig.Company);
+            YourAddresses.City.SendKeys(addressConfig.City);
+            YourAddresses.Country.SendKeys(addressConfig.Country);
+            YourAddresses.PostalCode.SendKeys(addressConfig.Postcode);
+            YourAddresses.Phone.SendKeys(addressConfig.PhoneNumber);
 
             if (addressConfig.DefaultAddress == true && YourAddresses.DefaultAddressCheckbox.Selected == false)
             {
@@ -31,9 +31,14 @@ namespace PoochWareHouse_Automation.PageActions
             }
         }
 
-        public string GetDefaultCustomerAddress()
+        public string GetCustomerAddressOne()
         {
             return YourAddresses.AddressOneView.Text;
+        }
+
+        public string GetCustomerAddressTwo()
+        {
+            return YourAddresses.AddressTwoView.Text;
         }
 
         public void DeleteDefaultAddress()

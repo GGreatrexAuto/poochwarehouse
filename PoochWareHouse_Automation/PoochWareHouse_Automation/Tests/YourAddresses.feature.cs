@@ -94,6 +94,30 @@ this.ScenarioInitialize(scenarioInfo);
 #line hidden
             this.ScenarioCleanup();
         }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("When logged in to the site the user should be able to add more than one address")]
+        [NUnit.Framework.CategoryAttribute("DeleteAddress")]
+        public virtual void WhenLoggedInToTheSiteTheUserShouldBeAbleToAddMoreThanOneAddress()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("When logged in to the site the user should be able to add more than one address", null, new string[] {
+                        "DeleteAddress"});
+#line 14
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 15
+ testRunner.Given("I login and add a default address", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 16
+  testRunner.And("then add a second address", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 17
+ testRunner.When("I press Add Address", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 18
+ testRunner.Then("the second added address will be saved as entered", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 19
+  testRunner.And("the default address details will be saved as entered", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
     }
 }
 #pragma warning restore

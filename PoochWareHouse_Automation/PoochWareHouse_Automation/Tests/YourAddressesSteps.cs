@@ -25,6 +25,16 @@ namespace PoochWareHouse_Automation.Tests
             _expectedAddress = new AddressConfig();
         }
 
+        [Given(@"I login and add a default address")]
+        public void GivenILoginAndAddADefaultAddress()
+        {
+            GivenIAccessMyAccount();
+            GivenClickTheViewAddressesButton();
+            GivenClickAddANewAddress();
+            GivenEnterAddressDetails("valid");
+            WhenIPressAddAddress();
+        }
+
         [Given(@"I access my account")]
         public void GivenIAccessMyAccount()
         {
@@ -45,6 +55,14 @@ namespace PoochWareHouse_Automation.Tests
             YourAddresses.AddNewAddressButton.Click();
         }
 
+        [Given(@"then add a second address")]
+        public void GivenThenAddASecondAddress()
+        {
+            GivenClickAddANewAddress();
+            _addressActions.PopulateCustomerAddress(_expectedAddress.FurtherAddressDetails());
+        }
+
+
         [Given(@"enter '(.*)' address details")]
         public void GivenEnterAddressDetails(string validity)
         {
@@ -52,7 +70,7 @@ namespace PoochWareHouse_Automation.Tests
             
             if (validity == "valid")
             {
-                _addressActions.PopulateCustomerAddress(_expectedAddress);
+                _addressActions.PopulateCustomerAddress(_expectedAddress.DefaultAddressDetails());
             }
         }
 
@@ -67,7 +85,7 @@ namespace PoochWareHouse_Automation.Tests
         {
             Assert.IsTrue(YourAddresses.AddressOneHeading.Displayed, TestErrorHelper.ExpectedItemNotDisplayed("heading", "Default"));
 
-            var actualDisplayedAddress = _addressActions.GetDefaultCustomerAddress();
+            var actualDisplayedAddress = _addressActions.GetCustomerAddressOne();
 
             Assert.IsNotNull(actualDisplayedAddress);
             
@@ -83,7 +101,25 @@ namespace PoochWareHouse_Automation.Tests
             Console.WriteLine($"The actual address was {actualDisplayedAddress}");
         }
 
-        
+        [Then(@"the second added address will be saved as entered")]
+        public void ThenTheSecondAddedAddressWillBeSavedAsEntered()
+        {
+            var actualDisplayedAddress = _addressActions.GetCustomerAddressTwo();
+
+            Assert.IsNotNull(actualDisplayedAddress);
+
+            Assert.IsTrue(actualDisplayedAddress.Contains(_expectedAddress.FurtherAddressDetails().Address), TestErrorHelper.ExpectedAddressNotDisplayed(_expectedAddress.FurtherAddressDetails().Address));
+            Assert.IsTrue(actualDisplayedAddress.Contains(_expectedAddress.FurtherAddressDetails().Apartment), TestErrorHelper.ExpectedAddressNotDisplayed(_expectedAddress.FurtherAddressDetails().Apartment));
+            Assert.IsTrue(actualDisplayedAddress.Contains(_expectedAddress.FurtherAddressDetails().City), TestErrorHelper.ExpectedAddressNotDisplayed(_expectedAddress.FurtherAddressDetails().City));
+            Assert.IsTrue(actualDisplayedAddress.Contains(_expectedAddress.FurtherAddressDetails().Company), TestErrorHelper.ExpectedAddressNotDisplayed(_expectedAddress.FurtherAddressDetails().Company));
+            Assert.IsTrue(actualDisplayedAddress.Contains(_expectedAddress.FurtherAddressDetails().Country), TestErrorHelper.ExpectedAddressNotDisplayed(_expectedAddress.FurtherAddressDetails().Country));
+            Assert.IsTrue(actualDisplayedAddress.Contains(_expectedAddress.FurtherAddressDetails().FirstName), TestErrorHelper.ExpectedAddressNotDisplayed(_expectedAddress.FurtherAddressDetails().FirstName));
+            Assert.IsTrue(actualDisplayedAddress.Contains(_expectedAddress.FurtherAddressDetails().Postcode), TestErrorHelper.ExpectedAddressNotDisplayed(_expectedAddress.FurtherAddressDetails().Postcode));
+            Assert.IsTrue(actualDisplayedAddress.Contains(_expectedAddress.FurtherAddressDetails().Surname), TestErrorHelper.ExpectedAddressNotDisplayed(_expectedAddress.FurtherAddressDetails().Surname));
+
+            Console.WriteLine($"The actual address was {actualDisplayedAddress}");
+        }
+
 
     }
 }
