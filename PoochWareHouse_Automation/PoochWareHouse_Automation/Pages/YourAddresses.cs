@@ -21,10 +21,20 @@ namespace PoochWareHouse_Automation.Pages
         public static IWebElement Phone => Driver._webdriver.FindElement(By.Id("AddressPhoneNew"));
         public static IWebElement DefaultAddressCheckbox =>
             Driver._webdriver.FindElement(By.Id("address_default_address_new"));
-        public static IWebElement AddressOneHeading => Driver._webdriver.FindElement(By.XPath("//*[@id=\"MainContent\"]/div[2]/div/div/ul/li/div[1]/h2"));
 
+        public static IWebElement AddressOneHeading => Driver._webdriver.FindElement(By.XPath("//*[@id=\"MainContent\"]/div[2]/div/div/ul/li/div[1]/h2"));
         public static IWebElement AddressOneView =>
             Driver._webdriver.FindElement(By.XPath("//*[@id=\"MainContent\"]/div[2]/div/div/ul/li/div[1]/p"));
+        public static IWebElement DeleteAddressOneButton =>
+            Driver._webdriver.FindElement(
+                By.XPath("//*[@id=\"MainContent\"]/div[2]/div/div/ul/li/div[1]/ul/li[2]/button"));
+        public static IWebElement EditAddressOneButton => Driver._webdriver.FindElement(By.XPath("//*[@id=\"EditFormButton_1747020939315\"]"));
+
+        public static IWebElement AddressTwoHeading => Driver._webdriver.FindElement(By.XPath("//*[@id=\"MainContent\"]/div[2]/div/div/ul/li[2]/div[1]/h2"));
+        public static IWebElement AddressTwoView => Driver._webdriver.FindElement(By.XPath("//*[@id=\"MainContent\"]/div[2]/div/div/ul/li[2]/div[1]/p"));
+        public static IWebElement DeleteAddressTwoButton => Driver._webdriver.FindElement(By.XPath("//*[@id=\"MainContent\"]/div[2]/div/div/ul/li[2]/div[1]/ul/li[2]/button"));
+        public static IWebElement EditAddressTwoButton => Driver._webdriver.FindElement(By.XPath("//*[@id=\"EditFormButton_1747022250035\"]"));
+
 
         public static IWebElement AddAddressButton =>
             Driver._webdriver.FindElement(By.XPath("//*[@id=\"address_form_new\"]/div[5]/input"));
@@ -32,8 +42,6 @@ namespace PoochWareHouse_Automation.Pages
         public static IWebElement CancelButton =>
             Driver._webdriver.FindElement(By.XPath("//*[@id=\"address_form_new\"]/div[6]/button"));
 
-        public static IWebElement DeleteButton =>
-            Driver._webdriver.FindElement(
-                By.XPath("//*[@id=\"MainContent\"]/div[2]/div/div/ul/li/div[1]/ul/li[2]/button"));
+        
     }
 }

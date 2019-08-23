@@ -13,7 +13,7 @@
         public string PhoneNumber;
         public bool DefaultAddress;
 
-        public AddressConfig AddressDetails()
+        public AddressConfig DefaultAddressDetails()
         {
             return new AddressConfig
             {
@@ -31,5 +31,22 @@
             };
         }
 
+        public AddressConfig FurtherAddressDetails()
+        {
+            return new AddressConfig
+            {
+                FirstName = "Rhys",
+                Surname = "Testers",
+                Company = "PoochWareHouse",
+                Address = "AddressTesttwo",
+                Apartment = "11A",
+                City = "Cardiff",
+                Country = "United Kingdom",
+                Postcode = "CF5 2ZZ",
+                PhoneNumber = "07888222888",
+                DefaultAddress = false
+            };
+
+
+        }
     }
-}

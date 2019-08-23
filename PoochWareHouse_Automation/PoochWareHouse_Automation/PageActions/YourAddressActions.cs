@@ -15,15 +15,15 @@ namespace PoochWareHouse_Automation.PageActions
 
         public void PopulateCustomerAddress(AddressConfig addressConfig)
         {
-            YourAddresses.FirstName.SendKeys(addressConfig.AddressDetails().FirstName);
-            YourAddresses.LastName.SendKeys(addressConfig.AddressDetails().Surname);
-            YourAddresses.Apartment.SendKeys(addressConfig.AddressDetails().Apartment);
-            YourAddresses.Address.SendKeys(addressConfig.AddressDetails().Address);
-            YourAddresses.Company.SendKeys(addressConfig.AddressDetails().Company);
-            YourAddresses.City.SendKeys(addressConfig.AddressDetails().City);
-            YourAddresses.Country.SendKeys(addressConfig.AddressDetails().Country);
-            YourAddresses.PostalCode.SendKeys(addressConfig.AddressDetails().Postcode);
-            YourAddresses.Phone.SendKeys(addressConfig.AddressDetails().PhoneNumber);
+            YourAddresses.FirstName.SendKeys(addressConfig.DefaultAddressDetails().FirstName);
+            YourAddresses.LastName.SendKeys(addressConfig.DefaultAddressDetails().Surname);
+            YourAddresses.Apartment.SendKeys(addressConfig.DefaultAddressDetails().Apartment);
+            YourAddresses.Address.SendKeys(addressConfig.DefaultAddressDetails().Address);
+            YourAddresses.Company.SendKeys(addressConfig.DefaultAddressDetails().Company);
+            YourAddresses.City.SendKeys(addressConfig.DefaultAddressDetails().City);
+            YourAddresses.Country.SendKeys(addressConfig.DefaultAddressDetails().Country);
+            YourAddresses.PostalCode.SendKeys(addressConfig.DefaultAddressDetails().Postcode);
+            YourAddresses.Phone.SendKeys(addressConfig.DefaultAddressDetails().PhoneNumber);
 
             if (addressConfig.DefaultAddress == true && YourAddresses.DefaultAddressCheckbox.Selected == false)
             {
@@ -39,7 +39,7 @@ namespace PoochWareHouse_Automation.PageActions
         public void DeleteDefaultAddress()
         {
             
-            YourAddresses.DeleteButton.Click();
+            YourAddresses.DeleteAddressOneButton.Click();
 
             IAlert deleteAddressAlert = Driver._webdriver.SwitchTo().Alert();
             deleteAddressAlert.Accept();

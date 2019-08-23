@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using System;
+using NUnit.Framework;
 using OpenQA.Selenium;
 using PoochWareHouse_Automation.Pages;
 using TechTalk.SpecFlow;
@@ -42,10 +43,28 @@ namespace PoochWareHouse_Automation
         [Scope(Tag ="DeleteAddress")]
         public void DeleteAddressAddedByTest()
         {
-            YourAddresses.DeleteButton.Click();
+            try
+            {
+                if (YourAddresses.AddressTwoView.Displayed == true)
+                {
+                    YourAddresses.DeleteAddressTwoButton.Click();
 
-            IAlert deleteAddressAlert = Driver._webdriver.SwitchTo().Alert();
-            deleteAddressAlert.Accept();
+                    IAlert deleteAddressOneAlert = Driver._webdriver.SwitchTo().Alert();
+                    deleteAddressOneAlert.Accept();
+                }
+            }
+            catch (NoSuchElementException)
+            {
+                Console.WriteLine("A second address was not in place to delete.");
+            }
+
+            if (YourAddresses.AddressOneView.Displayed == true)
+            {
+                YourAddresses.DeleteAddressOneButton.Click();
+
+                IAlert deleteAddressTwoAlert = Driver._webdriver.SwitchTo().Alert();
+                deleteAddressTwoAlert.Accept();
+            }
         }
     }
 }
