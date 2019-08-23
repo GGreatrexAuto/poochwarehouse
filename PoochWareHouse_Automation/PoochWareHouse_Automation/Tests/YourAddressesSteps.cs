@@ -65,7 +65,7 @@ namespace PoochWareHouse_Automation.Tests
         [Then(@"the default address details will be saved as entered")]
         public void ThenTheAddressDetailsWillBeSavedAsEntered()
         {
-            Assert.IsTrue(YourAddresses.DefaultAddressHeading.Displayed, TestErrorHelper.ExpectedItemNotDisplayed("heading", "Default"));
+            Assert.IsTrue(YourAddresses.AddressOneHeading.Displayed, TestErrorHelper.ExpectedItemNotDisplayed("heading", "Default"));
 
             var actualDisplayedAddress = _addressActions.GetDefaultCustomerAddress();
 

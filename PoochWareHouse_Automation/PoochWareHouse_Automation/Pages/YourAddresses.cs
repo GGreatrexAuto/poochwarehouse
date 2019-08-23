@@ -21,7 +21,7 @@ namespace PoochWareHouse_Automation.Pages
         public static IWebElement Phone => Driver._webdriver.FindElement(By.Id("AddressPhoneNew"));
         public static IWebElement DefaultAddressCheckbox =>
             Driver._webdriver.FindElement(By.Id("address_default_address_new"));
-        public static IWebElement DefaultAddressHeading => Driver._webdriver.FindElement(By.XPath("//*[@id=\"MainContent\"]/div[2]/div/div/ul/li/div[1]/h2"));
+        public static IWebElement AddressOneHeading => Driver._webdriver.FindElement(By.XPath("//*[@id=\"MainContent\"]/div[2]/div/div/ul/li/div[1]/h2"));
 
         public static IWebElement AddressOneView =>
             Driver._webdriver.FindElement(By.XPath("//*[@id=\"MainContent\"]/div[2]/div/div/ul/li/div[1]/p"));
