@@ -16,6 +16,7 @@ namespace PoochWareHouse_Automation.Tests
         private readonly CommonStepHelper _commonStepHelper;
         private YourAddressActions _addressActions;
         private AddressConfig _expectedAddress;
+        private LoginConfiguration _credentials;
 
         public YourAddressesSteps()
         {
@@ -23,6 +24,7 @@ namespace PoochWareHouse_Automation.Tests
             _loginFormActions = new LoginFormActions();
             _addressActions = new YourAddressActions();
             _expectedAddress = new AddressConfig();
+            _credentials = new LoginConfiguration();
         }
 
         [Given(@"I login and add a default address")]
@@ -40,7 +42,7 @@ namespace PoochWareHouse_Automation.Tests
         {
             _commonStepHelper.AccessWebsite("login");
             CookieOverlayActions.ClearCookieOverlay();
-            _loginFormActions.LoginUserAccount(LoginConfiguration.ValidUserName, LoginConfiguration.ValidPassword);
+            _loginFormActions.LoginUserAccount(_credentials.ValidCredentials());
         }
 
         [Given(@"click the View Addresses button")]

@@ -16,5 +16,4 @@ Scenario: When logged in to the site the user should be able to add more than on
 		And then add a second address
 	When I press Add Address
 	Then the second added address will be saved as entered
-		And the default address details will be saved as entered
-		
+		And the default address details will be saved as entered		

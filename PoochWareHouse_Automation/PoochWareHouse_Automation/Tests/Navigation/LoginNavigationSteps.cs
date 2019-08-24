@@ -45,10 +45,14 @@ namespace PoochWareHouse_Automation.Tests.Navigation
         [When(@"I enter '(.*)' login credentials")]
         public void GivenIEnterLoginCredentials(string validity)
         {
+            LoginConfiguration credentials = new LoginConfiguration();
+
             if (validity == "valid")
             {
-                _loginFormActions.LoginUserAccount(LoginConfiguration.ValidUserName, LoginConfiguration.ValidPassword);
+                credentials = credentials.ValidCredentials();
             }
+
+            _loginFormActions.LoginUserAccount(credentials);
         }
 
         [When(@"I select the view addresses button")]

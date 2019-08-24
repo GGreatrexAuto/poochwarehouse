@@ -7,11 +7,19 @@ using PoochWareHouse_Automation.Pages;
 
 namespace PoochWareHouse_Automation.Configuration
 {
-    public static class LoginConfiguration
+    public class LoginConfiguration
     {
-        public static string ValidUserName = "grgreatrex@hotmail.com";
-        public static string ValidPassword = "Test001";
+        public string UserName = "grgreatrex@hotmail.com";
+        public string Password = "Test001";
 
+        public LoginConfiguration ValidCredentials()
+        {
+            return new LoginConfiguration
+            {
+                UserName = "grgreatrex@hotmail.com",
+                Password = "Test001",
+            };
+        }
 
     }
 }
