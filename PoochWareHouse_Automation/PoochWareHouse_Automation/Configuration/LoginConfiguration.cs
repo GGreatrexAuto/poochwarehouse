@@ -9,8 +9,8 @@ namespace PoochWareHouse_Automation.Configuration
 {
     public class LoginConfiguration
     {
-        public string UserName = "grgreatrex@hotmail.com";
-        public string Password = "Test001";
+        public string UserName;
+        public string Password;
 
         public LoginConfiguration ValidCredentials()
         {
@@ -21,5 +21,31 @@ namespace PoochWareHouse_Automation.Configuration
             };
         }
 
+        public LoginConfiguration InvalidEmailFormat()
+        {
+            return new LoginConfiguration
+            {
+                UserName = "grgreatrex",
+                Password = "Test001"
+            };
+        }
+
+        public LoginConfiguration IncorrectPassword()
+        {
+            return new LoginConfiguration
+            {
+                UserName = "grgreatrex@hotmail.com",
+                Password = "Test002"
+            };
+        }
+
+        public LoginConfiguration EmailNotRegistered()
+        {
+            return new LoginConfiguration
+            {
+                UserName = "grgreatrex@hotmail.co.uk",
+                Password = "Test001"
+            };
+        }
     }
 }
