@@ -143,6 +143,12 @@
     <Compile Include="Pages\YourCart.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.cs" />
+    <Compile Include="Tests\LoginValidation.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LoginValidation.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Tests\LoginValidationSteps.cs" />
     <Compile Include="Tests\Navigation\AllProductsSteps.cs" />
     <Compile Include="Tests\Navigation\InformationalPageNavigationSteps.cs" />
     <Compile Include="Tests\Navigation\LoginNavigationSteps.cs" />
@@ -159,6 +165,10 @@
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
+    <None Include="Tests\LoginValidation.feature">
+      <Generator>msbuild</Generator>
+      <LastGenOutput>LoginValidation.feature.cs</LastGenOutput>
+    </None>
     <None Include="Tests\Navigation\AllProducts.feature" />
     <None Include="Tests\Navigation\InformationalPageNavigation.feature" />
     <None Include="Tests\Navigation\LoginNavigation.feature" />

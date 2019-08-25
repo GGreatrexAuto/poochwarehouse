@@ -17,5 +17,11 @@ namespace PoochWareHouse_Automation.PageActions
             Login.CompletePasswordField(credentials.Password);
             Login.ClickLoginButton();
         }
+
+        public void EnterCredentials(LoginConfiguration credentials)
+        {
+            Login.CompleteUserNameField(credentials.UserName);
+            Login.CompletePasswordField(credentials.Password);
+        }
     }
 }
