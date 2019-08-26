@@ -35,5 +35,11 @@ namespace PoochWareHouse_Automation.Helpers
             var error = $"The expected address line [{expectedAddressLine}], was not found in the displayed address.";
             return error;
         }
+
+        public static string ErrorsDoNotMatch(string expectedError, string actualError)
+        {
+            var error = $"The expected error [{expectedError}] did not match the actual error [{actualError}].";
+            return error;
+        }
     }
 }

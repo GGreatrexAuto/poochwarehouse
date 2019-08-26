@@ -15,5 +15,7 @@ namespace PoochWareHouse_Automation.Pages
         public static IWebElement UserNameField => Driver._webdriver.FindElement(By.Id("CustomerEmail"));
 
         public static IWebElement PasswordField => Driver._webdriver.FindElement(By.Id("CustomerPassword"));
+
+        public static IWebElement ErrorMessage => Driver._webdriver.FindElement(By.XPath("//*[@id=\"customer_login\"]/div[1]/div/ul/li"));
     }
 }

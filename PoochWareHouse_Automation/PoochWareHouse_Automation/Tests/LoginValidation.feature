@@ -11,5 +11,9 @@ Scenario: When a user enters valid credentials then they will be permitted to ac
 Scenario: When a user adds an incorrect password then the user will not be permitted to enter the my account section
 	Given an incorrect password is entered with a registered email address
 	When I press login
-	Then an error will be displayed stating invalid credentials
+	Then an error will be displayed stating 'Invalid login credentials.'
+		And the username field wil be cleared
+		And the username field colour will change
+		And the password field wil be cleared
+		And the password field colour will change
 		And the my account page will not be displayed.

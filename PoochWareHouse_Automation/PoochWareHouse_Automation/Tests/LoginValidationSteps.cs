@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using PoochWareHouse_Automation.Configuration;
 using PoochWareHouse_Automation.Helpers;
 using PoochWareHouse_Automation.Navigation;
@@ -58,6 +53,43 @@ namespace PoochWareHouse_Automation.Tests
         {
             Assert.IsTrue(MyAccount.MyAccountPageHeading.Displayed,TestErrorHelper.ExpectedItemNotDisplayed("heading", "My Account"));
         }
+
+        [Then(@"an error will be displayed stating '(.*)'")]
+        public void ThenAnErrorWillBeDisplayedStating(string expectedErrorMessage)
+        {
+            var actualErrorMessage = LoginForm.ErrorMessage.Text;
+
+            Assert.AreEqual(expectedErrorMessage, actualErrorMessage, TestErrorHelper.ErrorsDoNotMatch(expectedErrorMessage, actualErrorMessage));
+        }
+
+        [Then(@"the my account page will not be displayed\.")]
+        public void ThenTheMyAccountPageWillNotBeDisplayed_()
+        {
+            Assert.IsTrue(LoginForm.LoginPageheader.Displayed);
+            Assert.AreEqual(LoginForm.LoginPageheader.Text, "My Account");
+        }
+
+        [Then(@"the username field wil be cleared")]
+        public void ThenTheUsernameFieldWilBeCleared()
+        {
+            Assert.AreEqual(LoginForm.UserNameField.Text, string.Empty);
+        }
+
+        [Then(@"the username field colour will change")]
+        public void ThenTheUsernameFieldColourWillChange()
+        {
+            var userNameBackGroundColour = LoginForm.UserNameField.GetCssValue("background-color");
+
+            
+        }
+
+
+        [Then(@"the password field wil be cleared")]
+        public void ThenThePasswordFieldWilBeCleared()
+        {
+            Assert.AreEqual(LoginForm.PasswordField.Text, string.Empty);
+        }
+
 
 
     }
