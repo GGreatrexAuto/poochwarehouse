@@ -73,7 +73,7 @@ namespace PoochWareHouse_Automation.Tests
         {
 #line 3
 #line 4
-testRunner.Given("I access the login page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("I access the login page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
         }
         
@@ -95,6 +95,90 @@ this.FeatureBackground();
  testRunner.When("I press login", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 9
  testRunner.Then("the my account page will be displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("When a user adds an incorrect password then the user will not be permitted to ent" +
+            "er the my account section")]
+        public virtual void WhenAUserAddsAnIncorrectPasswordThenTheUserWillNotBePermittedToEnterTheMyAccountSection()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("When a user adds an incorrect password then the user will not be permitted to ent" +
+                    "er the my account section", null, ((string[])(null)));
+#line 11
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 3
+this.FeatureBackground();
+#line 12
+ testRunner.Given("an incorrect password is entered with a registered email address", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 13
+ testRunner.When("I press login", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 14
+ testRunner.Then("an error will be displayed stating \'Invalid login credentials.\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 15
+  testRunner.And("the username field will be cleared", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 17
+  testRunner.And("the password field will be cleared", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 19
+  testRunner.And("the my account page will not be displayed.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("When a user attempts to login with an email in an incorrect format then an error " +
+            "will be displayed")]
+        public virtual void WhenAUserAttemptsToLoginWithAnEmailInAnIncorrectFormatThenAnErrorWillBeDisplayed()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("When a user attempts to login with an email in an incorrect format then an error " +
+                    "will be displayed", null, ((string[])(null)));
+#line 21
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 3
+this.FeatureBackground();
+#line 22
+ testRunner.Given("an invalid email is entered", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 23
+ testRunner.When("I press login", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 24
+ testRunner.Then("an error will be displayed stating \'Invalid login credentials.\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 25
+  testRunner.And("the username field will be cleared", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 27
+  testRunner.And("the password field will be cleared", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 29
+  testRunner.And("the my account page will not be displayed.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("When a user attempts to login with an email account that has not been registered " +
+            "an error will be displayed")]
+        public virtual void WhenAUserAttemptsToLoginWithAnEmailAccountThatHasNotBeenRegisteredAnErrorWillBeDisplayed()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("When a user attempts to login with an email account that has not been registered " +
+                    "an error will be displayed", null, ((string[])(null)));
+#line 31
+this.ScenarioInitialize(scenarioInfo);
+            this.ScenarioStart();
+#line 3
+this.FeatureBackground();
+#line 32
+ testRunner.Given("an unregistered email account is used", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 33
+ testRunner.When("I press login", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 34
+ testRunner.Then("an error will be displayed stating \'Invalid login credentials.\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 35
+  testRunner.And("the username field will be cleared", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 37
+  testRunner.And("the password field will be cleared", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 39
+  testRunner.And("the my account page will not be displayed.", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }

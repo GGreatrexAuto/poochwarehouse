@@ -175,6 +175,7 @@
     <None Include="Tests\Navigation\NewsBlogNavigation.feature" />
     <None Include="Tests\PreReleaseLogon.feature">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <Generator>msbuild</Generator>
     </None>
     <None Include="Tests\Navigation\SiteNavigation.feature" />
     <None Include="Tests\YourAddresses.feature">

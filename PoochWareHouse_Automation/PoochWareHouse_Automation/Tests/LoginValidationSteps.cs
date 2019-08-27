@@ -42,6 +42,18 @@ namespace PoochWareHouse_Automation.Tests
             _loginFormActions.EnterCredentials(_credentials.IncorrectPassword());
         }
 
+        [Given(@"an invalid email is entered")]
+        public void GivenAnInvalidEmailIsEntered()
+        {
+            _loginFormActions.EnterCredentials(_credentials.InvalidEmailFormat());
+        }
+
+        [Given(@"an unregistered email account is used")]
+        public void GivenAnUnregisteredEmailAccountIsUsed()
+        {
+            _loginFormActions.EnterCredentials(_credentials.EmailNotRegistered());
+        }
+        
         [When(@"I press login")]
         public void WhenIPressLogin()
         {
@@ -66,10 +78,10 @@ namespace PoochWareHouse_Automation.Tests
         public void ThenTheMyAccountPageWillNotBeDisplayed_()
         {
             Assert.IsTrue(LoginForm.LoginPageheader.Displayed);
-            Assert.AreEqual(LoginForm.LoginPageheader.Text, "My Account");
+            Assert.AreEqual(LoginForm.LoginPageheader.Text, "Login");
         }
 
-        [Then(@"the username field wil be cleared")]
+        [Then(@"the username field will be cleared")]
         public void ThenTheUsernameFieldWilBeCleared()
         {
             Assert.AreEqual(LoginForm.UserNameField.Text, string.Empty);
@@ -78,18 +90,26 @@ namespace PoochWareHouse_Automation.Tests
         [Then(@"the username field colour will change")]
         public void ThenTheUsernameFieldColourWillChange()
         {
+            //TODO
             var userNameBackGroundColour = LoginForm.UserNameField.GetCssValue("background-color");
 
             
         }
 
-
-        [Then(@"the password field wil be cleared")]
+        [Then(@"the password field will be cleared")]
         public void ThenThePasswordFieldWilBeCleared()
         {
             Assert.AreEqual(LoginForm.PasswordField.Text, string.Empty);
         }
 
+        [Then(@"the password field colour will change")]
+        public void ThenThePasswordFieldColourWillChange()
+        {
+            //TODO
+            var passwordBackGroundColout = LoginForm.PasswordField.GetCssValue("background-color");
+
+
+        }
 
 
     }
