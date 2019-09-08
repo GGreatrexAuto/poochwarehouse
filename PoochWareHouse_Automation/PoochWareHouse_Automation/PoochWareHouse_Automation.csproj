@@ -81,6 +81,7 @@
   <ItemGroup>
     <Compile Include="Configuration\AddressConfig.cs" />
     <Compile Include="Configuration\Config.cs" />
+    <Compile Include="Configuration\CreateAccountConfiguration.cs" />
     <Compile Include="Configuration\LoginConfiguration.cs" />
     <Compile Include="Configuration\Urls.cs" />
     <Compile Include="CustomerAddressObject.cs" />

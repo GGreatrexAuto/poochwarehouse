@@ -1,6 +1,6 @@
 ﻿Feature: Create Account Validation
 
-@WIP
+#@WIP
 Scenario Outline: Attempting to create an account without providing an email address will not be permitted
 	Given I access the create account page
 	And do not enter an email address
@@ -45,10 +45,10 @@ Examples:
 | Form This email address is already associated with an account. If this account is yours, you can reset your password |
 
 @WIP
-Scenario Outline: Attempting to create an account when providing an invalid email address will not be permitted
+Scenario Outline: Attempting to create an account when providing an invalid email will not be permitted
 	Given I access the create account page
-	And enter a valid email address
-	And enter an invalid password
+	And enter an invalid formatted email address
+	And enter a valid password
 	When I press create account button
 	Then the error '<errorMessage>' will be displayed beneath the 'email' field
 		And the error '<errorMessage>' will be displayed in the error section

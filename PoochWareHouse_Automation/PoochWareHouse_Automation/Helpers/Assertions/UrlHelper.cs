@@ -101,6 +101,9 @@ namespace PoochWareHouse_Automation.Helpers.Assertions
                 case "3":
                     url = Urls.AllProductsUrlPgThree;
                     break;
+                case "register":
+                    url = Urls.CreateAccount;
+                    break;
                 default:
                     Assert.Inconclusive(TestErrorHelper.CaseValueNotRecognised(webPage));
                     url = null;

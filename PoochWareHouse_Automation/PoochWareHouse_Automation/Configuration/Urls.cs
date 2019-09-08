@@ -38,5 +38,6 @@
         public static string ExternalGoogleOptOut = "https://tools.google.com/dlpage/gaoptout";
         public static string ExternalGooglePrivacy = "https://policies.google.com/privacy?hl=en";
         public static string ExternalFacebookAdvertising = "https://www.facebook.com/policy.php";
+        public static string CreateAccount = "https://poochwarehouse.co.uk/account/register";
     }
 }
