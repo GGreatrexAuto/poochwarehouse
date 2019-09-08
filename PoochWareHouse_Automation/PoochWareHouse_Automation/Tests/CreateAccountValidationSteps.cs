@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using PoochWareHouse_Automation.Pages;
 using TechTalk.SpecFlow;
 
 namespace PoochWareHouse_Automation.Tests
@@ -12,5 +13,20 @@ namespace PoochWareHouse_Automation.Tests
 
     public sealed class CreateAccountValidationSteps
     {
+        
+
+
+
+
+        [When(@"I press create account button")]
+        public void WhenIPressCreateAccountButton()
+        {
+            CreateAccount.CreateAccountButton.Click();
+        }
+
+
+
+
+
     }
 }
