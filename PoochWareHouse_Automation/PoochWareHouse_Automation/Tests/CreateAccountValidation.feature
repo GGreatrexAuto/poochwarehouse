@@ -16,7 +16,7 @@ Examples:
 | Email can't be blank. |
 
 
-@WIP
+#@WIP
 Scenario Outline: Attempting to create an account without providing a password will not be permitted
 	Given I access the create account page
 	And enter a valid email address
@@ -31,7 +31,7 @@ Examples:
 | errorMessage             |
 | Password can't be blank. |
 
-@WIP
+#@WIP
 Scenario Outline: Attempting to create an account using a previously registered email account will not be permitted
 	Given I access the create account page
 	And enter an email address that has previously been registered
@@ -44,7 +44,7 @@ Examples:
 | errorMessage                                                                                                         |
 | Form This email address is already associated with an account. If this account is yours, you can reset your password |
 
-@WIP
+#@WIP
 Scenario Outline: Attempting to create an account when providing an invalid email will not be permitted
 	Given I access the create account page
 	And enter an invalid formatted email address
@@ -59,7 +59,7 @@ Examples:
 | errorMessage      |
 | Email is invalid. |
 
-@WIP
+#@WIP
 Scenario Outline: Attempting to create an account when providing a password less than five characters in length is not permitted
 	Given I access the create account page
 	And enter a valid email address

@@ -95,8 +95,10 @@ namespace PoochWareHouse_Automation.Tests
         }
 
         [Then(@"the error '(.*)' will be displayed in the error section")]
-        public void ThenTheErrorTBeBlank_WillBeDisplayedInTheErrorSection(string expectedError)
+        public void ThenTheErrorTBeBlank_WillBeDisplayedInTheErrorSection(string error)
         {
+            var expectedError = TrimFullStop(error);
+
             var actualError = CreateAccount.CreateAccountErrorSection.Text;
 
             Assert.IsTrue(ActualErrorContainsExpectedError(expectedError, actualError), TestErrorHelper.ErrorsDoNotMatch(expectedError, actualError));
@@ -114,8 +116,7 @@ namespace PoochWareHouse_Automation.Tests
             Console.WriteLine("Step not complete, need to convert rgb to hex");
         }
 
-
-        private static bool ActualErrorContainsExpectedError(string expectedError, string actualError)
+        private bool ActualErrorContainsExpectedError(string expectedError, string actualError)
         {
             if (actualError.Contains(expectedError))
             {
@@ -123,6 +124,17 @@ namespace PoochWareHouse_Automation.Tests
             }
 
             return false;
+        }
+
+        private string TrimFullStop(string error)
+        {
+            if (error.LastIndexOf('.') == error.Length-1 )
+            {
+                var trimmedError = error.Remove(error.Length - 1);
+                return trimmedError;
+            }
+
+            return error;
         }
     }
 }

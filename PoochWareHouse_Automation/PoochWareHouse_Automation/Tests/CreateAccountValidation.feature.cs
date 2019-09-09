@@ -103,18 +103,11 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Attempting to create an account without providing a password will not be permitte" +
             "d")]
-        [NUnit.Framework.CategoryAttribute("WIP")]
         [NUnit.Framework.TestCaseAttribute("Password can\'t be blank.", null)]
         public virtual void AttemptingToCreateAnAccountWithoutProvidingAPasswordWillNotBePermitted(string errorMessage, string[] exampleTags)
         {
-            string[] @__tags = new string[] {
-                    "WIP"};
-            if ((exampleTags != null))
-            {
-                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
-            }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Attempting to create an account without providing a password will not be permitte" +
-                    "d", null, @__tags);
+                    "d", null, exampleTags);
 #line 20
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -141,19 +134,12 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Attempting to create an account using a previously registered email account will " +
             "not be permitted")]
-        [NUnit.Framework.CategoryAttribute("WIP")]
         [NUnit.Framework.TestCaseAttribute("Form This email address is already associated with an account. If this account is" +
             " yours, you can reset your password", null)]
         public virtual void AttemptingToCreateAnAccountUsingAPreviouslyRegisteredEmailAccountWillNotBePermitted(string errorMessage, string[] exampleTags)
         {
-            string[] @__tags = new string[] {
-                    "WIP"};
-            if ((exampleTags != null))
-            {
-                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
-            }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Attempting to create an account using a previously registered email account will " +
-                    "not be permitted", null, @__tags);
+                    "not be permitted", null, exampleTags);
 #line 35
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
@@ -174,29 +160,22 @@ this.ScenarioInitialize(scenarioInfo);
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Attempting to create an account when providing an invalid email address will not " +
-            "be permitted")]
-        [NUnit.Framework.CategoryAttribute("WIP")]
+        [NUnit.Framework.DescriptionAttribute("Attempting to create an account when providing an invalid email will not be permi" +
+            "tted")]
         [NUnit.Framework.TestCaseAttribute("Email is invalid.", null)]
-        public virtual void AttemptingToCreateAnAccountWhenProvidingAnInvalidEmailAddressWillNotBePermitted(string errorMessage, string[] exampleTags)
+        public virtual void AttemptingToCreateAnAccountWhenProvidingAnInvalidEmailWillNotBePermitted(string errorMessage, string[] exampleTags)
         {
-            string[] @__tags = new string[] {
-                    "WIP"};
-            if ((exampleTags != null))
-            {
-                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
-            }
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Attempting to create an account when providing an invalid email address will not " +
-                    "be permitted", null, @__tags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Attempting to create an account when providing an invalid email will not be permi" +
+                    "tted", null, exampleTags);
 #line 48
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 49
  testRunner.Given("I access the create account page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 50
- testRunner.And("enter a valid email address", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("enter an invalid formatted email address", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 51
- testRunner.And("enter an invalid password", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("enter a valid password", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 52
  testRunner.When("I press create account button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 53
@@ -214,18 +193,11 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Attempting to create an account when providing a password less than five characte" +
             "rs in length is not permitted")]
-        [NUnit.Framework.CategoryAttribute("WIP")]
         [NUnit.Framework.TestCaseAttribute("Password is too short (minimum is 5 characters).", null)]
         public virtual void AttemptingToCreateAnAccountWhenProvidingAPasswordLessThanFiveCharactersInLengthIsNotPermitted(string errorMessage, string[] exampleTags)
         {
-            string[] @__tags = new string[] {
-                    "WIP"};
-            if ((exampleTags != null))
-            {
-                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
-            }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Attempting to create an account when providing a password less than five characte" +
-                    "rs in length is not permitted", null, @__tags);
+                    "rs in length is not permitted", null, exampleTags);
 #line 63
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
